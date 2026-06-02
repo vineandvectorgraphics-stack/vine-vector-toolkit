@@ -1,144 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Vine & Vector Toolkit</title>
 
 <style>
+:root{
+  --bg:#f7f3ee;
+  --card:#ffffff;
+  --ink:#1f2937;
+  --muted:#6b7280;
+
+  --ai:#dbeafe;
+  --branding:#fde2e4;
+  --assets:#e9f5db;
+  --mockups:#fff3bf;
+  --motion:#e0e7ff;
+}
 
 body{
-font-family:Arial,sans-serif;
-background:#faf6f2;
-margin:0;
-padding:40px;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(#00000008 1px, transparent 1px),
+    linear-gradient(90deg, #00000008 1px, transparent 1px),
+    var(--bg);
+  background-size:40px 40px;
+  color:var(--ink);
 }
 
-.hero{
-text-align:center;
-margin-bottom:60px;
+header{
+  padding:60px 20px;
+  text-align:center;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:10px;
+h1{
+  font-size:52px;
+  margin:0;
+}
+
+p{
+  color:var(--muted);
 }
 
 .search{
-width:100%;
-max-width:700px;
-padding:15px;
-font-size:18px;
-border-radius:12px;
-border:none;
-box-shadow:0 0 10px rgba(0,0,0,.1);
+  margin-top:20px;
+  padding:14px;
+  width:80%;
+  max-width:600px;
+  border-radius:14px;
+  border:1px solid #ddd;
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  padding:40px;
 }
 
 .card{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+  background:var(--card);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+  border:1px solid #eee;
+  transition:0.2s ease;
 }
 
-.card h2{
-margin-top:0;
+.card:hover{
+  transform:translateY(-4px);
 }
 
+.tag{
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:999px;
+  display:inline-block;
+  margin-bottom:10px;
+}
+
+.ai{background:var(--ai);}
+.branding{background:var(--branding);}
+.assets{background:var(--assets);}
+.mockups{background:var(--mockups);}
+.motion{background:var(--motion);}
+
+a{
+  text-decoration:none;
+  color:var(--ink);
+}
+
+ul{
+  padding-left:18px;
+}
 </style>
-
 </head>
 
 <body>
 
-<div class="hero">
-<h1>🌿 Vine & Vector Toolkit</h1>
-
-<p>
-Creative Resources for Designers
-</p>
-
-<input
-class="search"
-placeholder="Search resources..."
->
-</div>
+<header>
+  <h1>🌿 Vine & Vector Toolkit</h1>
+  <p>Creative tools, AI, mockups, design assets & inspiration</p>
+  <input class="search" placeholder="Search tools..." />
+</header>
 
 <div class="grid">
 
-<div class="card">
-<h2>🌐 Generative AI</h2>
-<p>20+ AI resources</p>
-</div>
-
-<div class="card">
-
-<h2>🌐 Generative AI</h2>
-
-<ul>
-
-<li>
-<a href="https://firefly.adobe.com" target="_blank">
-Adobe Firefly
-</a>
-</li>
-
-<li>
-<a href="https://leonardo.ai" target="_blank">
-Leonardo AI
-</a>
-</li>
-
-<li>
-<a href="https://claude.ai" target="_blank">
-Claude
-</a>
-</li>
-
-</ul>
-
-</div>
-  
-<div class="card">
-<h2>🎨 Branding</h2>
-<p>Brand identity inspiration</p>
-</div>
-
-<div class="card">
-<h2>📦 Design Assets</h2>
-<p>Free resources & templates</p>
-</div>
-
-<div class="card">
-<h2>🖼 Mockups</h2>
-<p>Print, apparel & device mockups</p>
-</div>
-
+  <!-- AI -->
   <div class="card">
-<h2>🎬 Motion & 3D</h2>
-<p>Animation and 3D tools</p>
-</div>
+    <span class="tag ai">Generative AI</span>
+    <ul>
+      <li><a href="https://firefly.adobe.com">Adobe Firefly</a></li>
+      <li><a href="https://leonardo.ai">Leonardo AI</a></li>
+      <li><a href="https://claude.ai">Claude</a></li>
+      <li><a href="https://perplexity.ai">Perplexity</a></li>
+    </ul>
+  </div>
 
-<div class="card">
-<h2>🎧 Audio</h2>
-<p>Sound effects and music tools</p>
-</div>
+  <!-- Branding -->
+  <div class="card">
+    <span class="tag branding">Branding</span>
+    <ul>
+      <li><a href="https://bpando.org">BP&O</a></li>
+      <li><a href="https://identitydesigned.com">Identity Designed</a></li>
+    </ul>
+  </div>
 
-<div class="card">
-<h2>💻 Web & Dev</h2>
-<p>Frontend and UI resources</p>
-</div>
+  <!-- Assets -->
+  <div class="card">
+    <span class="tag assets">Design Assets</span>
+    <ul>
+      <li><a href="https://unsplash.com">Unsplash</a></li>
+      <li><a href="https://www.freepik.com">Freepik</a></li>
+      <li><a href="https://www.figma.com/community">Figma Community</a></li>
+    </ul>
+  </div>
 
-<div class="card">
-<h2>🎮 Fun Web</h2>
-<p>Interactive websites</p>
-</div>
-  
+  <!-- Mockups -->
+  <div class="card">
+    <span class="tag mockups">Mockups</span>
+    <ul>
+      <li><a href="https://www.screely.com">Screely</a></li>
+      <li><a href="https://www.mockupworld.co">Mockup World</a></li>
+    </ul>
+  </div>
+
+  <!-- Motion -->
+  <div class="card">
+    <span class="tag motion">Motion & 3D</span>
+    <ul>
+      <li><a href="https://runwayml.com">Runway</a></li>
+      <li><a href="https://pika.art">Pika</a></li>
+      <li><a href="https://sketchfab.com">Sketchfab</a></li>
+    </ul>
+  </div>
+
 </div>
 
 </body>
