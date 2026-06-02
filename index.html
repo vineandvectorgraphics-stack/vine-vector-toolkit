@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vine & Vector Dashboard</title>
+<title>Vine & Vector Toolkit</title>
 
 <style>
 body{
@@ -15,13 +15,13 @@ body{
 
 /* HEADER */
 header{
-  padding:50px 20px 25px;
+  padding:50px 20px 20px;
   text-align:center;
 }
 
 h1{
   margin:0;
-  font-size:42px;
+  font-size:40px;
   letter-spacing:-0.5px;
 }
 
@@ -34,53 +34,50 @@ h1{
 .searchWrap{
   display:flex;
   justify-content:center;
-  margin:20px 0 10px;
+  margin:18px 0 10px;
 }
 
 input{
   width:420px;
-  max-width:90%;
+  max-width:92%;
   padding:12px 14px;
   border-radius:12px;
   border:1px solid #ddd;
   outline:none;
   background:#fff;
-  font-size:14px;
 }
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:22px;
-  padding:30px 40px 70px;
+  gap:18px;
+  padding:30px 35px 80px;
 }
 
-/* CATEGORY PANEL (dashboard card style) */
+/* CATEGORY */
 .category{
-  background:rgba(255,255,255,0.9);
-  border:1px solid #e8e6e1;
+  background:#fff;
+  border:1px solid #e7e5e0;
   border-radius:16px;
-  padding:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.04);
+  padding:14px;
 }
 
-/* category header */
 .category h2{
-  font-size:13px;
-  text-transform:uppercase;
+  font-size:12px;
   letter-spacing:1px;
-  margin:4px 0 14px;
+  text-transform:uppercase;
+  margin:6px 0 12px;
   color:#333;
 }
 
-/* TOOL ROW */
+/* TOOL */
 .tool{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   text-decoration:none;
-  padding:10px;
+  padding:9px;
   margin:6px 0;
   border-radius:12px;
   border:1px solid transparent;
@@ -89,7 +86,7 @@ input{
 
 .tool:hover{
   background:#fafafa;
-  border:1px solid #eaeaea;
+  border:1px solid #eee;
 }
 
 .tool img{
@@ -100,7 +97,6 @@ input{
 
 .tool b{
   font-size:13px;
-  display:block;
 }
 
 .tool small{
@@ -108,18 +104,15 @@ input{
   color:#777;
 }
 
-/* HIDE FILTER STYLE */
-.hidden{
-  display:none;
-}
+.hidden{display:none;}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Vine & Vector Dashboard</h1>
-  <div class="subtitle">Freelancer toolkit • curated creative systems</div>
+  <h1>Vine & Vector Toolkit</h1>
+  <div class="subtitle">Freelancer creative dashboard</div>
 
   <div class="searchWrap">
     <input id="search" placeholder="Search tools..." />
@@ -131,132 +124,173 @@ input{
 <script>
 
 /* =========================
-   DATA (ALPHABETIZED)
+   FULL DATASET (REFINED)
 ========================= */
 
 const data = [
 
+/* ================= AI ================= */
 {
-name:"3D + Motion",
+name:"AI Creation Suite",
 tools:[
-["Adobe After Effects","https://www.adobe.com/products/aftereffects.html","Motion graphics"],
-["Luma AI","https://lumalabs.ai","3D + video AI"],
-["Meta SAM3D","https://sam.ai","3D AI tools"],
-["Runable","https://runable.com","AI dev tools"],
-["Runway","https://runwayml.com","AI video tools"],
-["Sketchfab","https://sketchfab.com","3D library"],
-["Sloyd","https://sloyd.ai","3D assets"],
-["Spline","https://spline.design","3D web design"],
+["Adobe Firefly","https://firefly.adobe.com","Image AI"],
+["Artbreeder","https://artbreeder.com","Image AI"],
+["Claude","https://claude.ai","AI assistant"],
+["DeepAI","https://deepai.org","AI tools"],
+["ElevenLabs","https://elevenlabs.io","Voice AI"],
+["Google Labs","https://labs.google.com","AI research"],
+["Krea AI","https://krea.ai","Creative AI"],
+["Leonardo AI","https://leonardo.ai","Image AI"],
+["Luma AI","https://lumalabs.ai","3D AI"],
+["Napkin AI","https://napkin.ai","Notes AI"],
+["Perplexity","https://perplexity.ai","AI search"],
+["Pika","https://pika.art","Video AI"],
+["Playground AI","https://playgroundai.com","Image AI"],
 ["Stable Diffusion","https://stability.ai","AI model"],
-["Tripo AI","https://tripo3d.ai","3D generation"],
+["Suno","https://suno.com","Music AI"],
+["Udio","https://udio.com","Music AI"],
 ["Unicorn Studio","https://unicorn.studio","Motion AI"]
 ].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
+/* ================= BRANDING ================= */
 {
-name:"Audio",
-tools:[
-["A Soft Murmur","https://asoftmurmur.com","Ambient sounds"],
-["BBC Sound Effects","https://bbcrewind.co.uk","Sound library"],
-["MyInstants","https://myinstants.com","Sound buttons"],
-["Radio Garden","https://radio.garden","Global radio"],
-["Suno","https://suno.com","AI music"],
-["Udio","https://udio.com","AI music"],
-["Vocal Remover","https://vocalremover.org","Audio tool"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
-},
-
-{
-name:"Branding",
+name:"Branding & Identity",
 tools:[
 ["BP&O","https://bpando.org","Brand inspiration"],
-["BrandNew","https://underconsideration.com/brandnew","Brand case studies"],
-["Identity Designed","https://identitydesigned.com","Identity systems"]
+["BrandNew","https://underconsideration.com/brandnew","Brand analysis"],
+["Identity Designed","https://identitydesigned.com","Identity work"]
 ].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
+/* ================= LOGOS ================= */
 {
-name:"Color",
+name:"Logo Systems",
 tools:[
-["Adobe Color","https://color.adobe.com","Color palettes"],
-["Coolors","https://coolors.co","Palette generator"],
-["Happy Hues","https://www.happyhues.co","Color inspiration"],
-["Photo Gradient","https://photogradient.com","Gradients"],
-["Shader Gradient","https://shadergradient.co","Shaders"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
-},
-
-{
-name:"Design Assets",
-tools:[
-["Freepik","https://freepik.com","Design assets"],
-["Openverse","https://openverse.org","Open content"],
-["Pexels","https://pexels.com","Free assets"],
-["Pixabay","https://pixabay.com","Stock media"],
-["SVG Repo","https://svgrepo.com","SVGs"],
-["Unsplash","https://unsplash.com","Photos"],
-["Vecteezy","https://vecteezy.com","Vectors"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
-},
-
-{
-name:"Dev Tools",
-tools:[
-["CodePen","https://codepen.io","Frontend playground"],
-["Figma","https://figma.com","Design tool"],
-["JSFiddle","https://jsfiddle.net","Code testing"],
-["React Bits","https://reactbits.dev","UI components"],
-["Replit","https://replit.com","Coding"],
-["StackBlitz","https://stackblitz.com","Web IDE"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
-},
-
-{
-name:"Editing Tools",
-tools:[
-["123Apps","https://123apps.com","Online tools"],
-["Convertio","https://convertio.co","File converter"],
-["iLoveIMG","https://iloveimg.com","Image tools"],
-["Photopea","https://photopea.com","Photoshop online"],
-["Remove.bg","https://remove.bg","Background remover"],
-["TinyWow","https://tinywow.com","Web utilities"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
-},
-
-{
-name:"Fun",
-tools:[
-["AirConsole","https://airconsole.com","Games"],
-["Draw a Fish","https://drawafish.com","Interactive art"],
-["Floor796","https://floor796.com","Animated world"],
-["GeoFS","https://geo-fs.com","Flight sim"],
-["MyRetroTVs","https://myretrotvs.com","Retro TV"],
-["UCHINOKO Maker","https://uchinoko-maker.com","Character tool"],
-["White Screen Online","https://whitescreen.online","Utility"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
-},
-
-{
-name:"Logos",
-tools:[
-["Logoed","https://logoed.co","Logo gallery"],
+["Logoed","https://logoed.co","Logo archive"],
 ["Logobook","https://logobook.com","Logo archive"],
 ["LogoLounge","https://logolounge.com","Logo database"],
 ["Logggos","https://logggos.com","Logo inspiration"]
 ].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
+/* ================= TYPE ================= */
 {
-name:"Typography",
+name:"Typography & UI",
 tools:[
 ["AutoDraw","https://autodraw.com","Sketch tool"],
 ["Calligrapher AI","https://calligrapher.ai","Handwriting AI"],
-["Emoji Combos","https://emojicombos.com","Emoji tools"],
-["Font Joy","https://fontjoy.com","Font pairing"],
-["Google Fonts","https://fonts.google.com","Free fonts"],
-["Paper Animator","https://paper-animator.com","Animation tool"],
-["Typ.io","https://typ.io","Font inspiration"],
-["Type Scale","https://type-scale.com","Typography scale"]
+["FontJoy","https://fontjoy.com","Font pairing"],
+["Google Fonts","https://fonts.google.com","Fonts"],
+["Paper Animator","https://paper-animator.com","Animation"],
+["Type Scale","https://type-scale.com","Type system"],
+["Typ.io","https://typ.io","Typography"],
+["Space Type Generator","https://spacetypegenerator.com","Type tool"],
+["Emoji Combos","https://emojicombos.com","Emoji tools"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+/* ================= ASSETS ================= */
+{
+name:"Design Assets",
+tools:[
+["Absurd Design","https://absurd.design","Illustrations"],
+["Blush","https://blush.design","Illustrations"],
+["DrawKit","https://drawkit.com","Illustrations"],
+["Freepik","https://freepik.com","Assets"],
+["LS Graphics","https://ls.graphics","Mockups"],
+["Openverse","https://openverse.org","Open assets"],
+["SVG Repo","https://svgrepo.com","SVGs"],
+["Vecteezy","https://vecteezy.com","Vectors"],
+["Unsplash","https://unsplash.com","Photos"],
+["Pixabay","https://pixabay.com","Photos"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+/* ================= MOCKUPS ================= */
+{
+name:"Mockups",
+tools:[
+["Angle Mockups","https://angle.sh","Device mockups"],
+["Cleanmock","https://cleanmock.com","Mockups"],
+["Dieline","https://thedieline.com","Packaging"],
+["Mockup World","https://mockupworld.co","Mockups"],
+["Pacdora","https://pacdora.com","Packaging"],
+["Printful","https://printful.com/mockup-generator","Apparel"],
+["Printify","https://printify.com","Apparel"],
+["Renderforest","https://renderforest.com/mockups","Mockups"],
+["Screely","https://screely.com","Screens"],
+["Rotato","https://rotato.app","3D mockups"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+/* ================= AUDIO ================= */
+{
+name:"Audio Tools",
+tools:[
+["A Soft Murmur","https://asoftmurmur.com","Ambient"],
+["BBC Sound Effects","https://bbcrewind.co.uk","Sound library"],
+["MyInstants","https://myinstants.com","Sounds"],
+["Radio Garden","https://radio.garden","Radio"],
+["Suno","https://suno.com","AI music"],
+["Udio","https://udio.com","AI music"],
+["Vocal Remover","https://vocalremover.org","Audio tool"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+/* ================= DEV ================= */
+{
+name:"Dev & Web Tools",
+tools:[
+["Bentogrids","https://bentogrids.com","Layouts"],
+["CodePen","https://codepen.io","Coding"],
+["Figma","https://figma.com","Design"],
+["JSFiddle","https://jsfiddle.net","Code"],
+["Magic UI","https://magicui.design","UI kit"],
+["React Bits","https://reactbits.dev","Components"],
+["Replit","https://replit.com","Coding"],
+["StackBlitz","https://stackblitz.com","IDE"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+/* ================= EDITING ================= */
+{
+name:"Image Editing Tools",
+tools:[
+["123Apps","https://123apps.com","Utilities"],
+["Convertio","https://convertio.co","File convert"],
+["iLoveIMG","https://iloveimg.com","Image tools"],
+["Photopea","https://photopea.com","Photoshop"],
+["Remove.bg","https://remove.bg","BG remover"],
+["TinyWow","https://tinywow.com","Utilities"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+/* ================= SCIENCE ================= */
+{
+name:"Science & Learning",
+tools:[
+["BioDigital Human","https://biodigital.com","Anatomy"],
+["DeepL","https://deepl.com","Translation"],
+["Duolingo","https://duolingo.com","Language"],
+["Hubble Birthday","https://nasa.gov","Space"],
+["HowStuffWorks","https://howstuffworks.com","Education"],
+["iFixit","https://ifixit.com","Repairs"],
+["Scale of the Universe","https://htwins.net/scale2","Visualization"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+/* ================= FUN ================= */
+{
+name:"Fun & Experimental",
+tools:[
+["AirConsole","https://airconsole.com","Games"],
+["Draw a Fish","https://drawafish.com","Art"],
+["Floor796","https://floor796.com","Animation"],
+["GeoFS","https://geo-fs.com","Flight sim"],
+["MyRetroTVs","https://myretrotvs.com","Retro"],
+["UCHINOKO Maker","https://uchinoko-maker.com","Fun"],
+["White Screen Online","https://whitescreen.online","Utility"]
 ].sort((a,b)=>a[0].localeCompare(b[0]))
 }
 
@@ -266,43 +300,45 @@ tools:[
    RENDER
 ========================= */
 
-function createCategory(cat){
-  const div = document.createElement("div");
-  div.className = "category";
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = "";
 
-  let html = `<h2>${cat.name}</h2>`;
+  data.forEach(cat=>{
+    const div = document.createElement("div");
+    div.className = "category";
 
-  cat.tools.forEach(t=>{
-    const icon = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(t[1]).hostname}`;
+    let html = `<h2>${cat.name}</h2>`;
 
-    html += `
-      <a class="tool" href="${t[1]}" target="_blank">
-        <img src="${icon}">
-        <div>
-          <b>${t[0]}</b>
-          <small>${t[2]}</small>
-        </div>
-      </a>
-    `;
+    cat.tools.forEach(t=>{
+      const icon = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(t[1]).hostname}`;
+
+      html += `
+        <a class="tool" href="${t[1]}" target="_blank">
+          <img src="${icon}">
+          <div>
+            <b>${t[0]}</b>
+            <small>${t[2]}</small>
+          </div>
+        </a>
+      `;
+    });
+
+    div.innerHTML = html;
+    app.appendChild(div);
   });
-
-  div.innerHTML = html;
-  return div;
 }
 
-/* INIT */
-const app = document.getElementById("app");
-data.forEach(cat => app.appendChild(createCategory(cat)));
+render();
 
 /* SEARCH */
-const search = document.getElementById("search");
-
-search.addEventListener("input", e=>{
+document.getElementById("search").addEventListener("input", e=>{
   const val = e.target.value.toLowerCase();
 
-  document.querySelectorAll(".tool").forEach(tool=>{
-    const text = tool.innerText.toLowerCase();
-    tool.style.display = text.includes(val) ? "flex" : "none";
+  document.querySelectorAll(".tool").forEach(t=>{
+    t.style.display = t.innerText.toLowerCase().includes(val)
+      ? "flex"
+      : "none";
   });
 });
 
