@@ -6,23 +6,46 @@
 <title>Vine & Vector Toolkit</title>
 
 <style>
+
+/* =========================
+   BACKGROUND: LINED PAPER
+========================= */
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Arial;
-  background: linear-gradient(135deg, #f6f4f0, #f1f3ff);
   color:#141414;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #ffffff 0px,
+      #ffffff 28px,
+      #e9e9e9 29px
+    );
+  background-attachment: fixed;
 }
 
-/* HEADER */
+/* soft overlay wash */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(245,247,255,0.7));
+  pointer-events:none;
+}
+
+/* =========================
+   HEADER
+========================= */
 header{
-  padding:60px 20px 10px;
+  position:relative;
+  padding:70px 20px 20px;
   text-align:center;
 }
 
 h1{
   margin:0;
-  font-size:42px;
-  letter-spacing:-0.6px;
+  font-size:44px;
+  letter-spacing:-0.8px;
 }
 
 .subtitle{
@@ -30,64 +53,112 @@ h1{
   margin-top:8px;
 }
 
-/* SEARCH */
+/* =========================
+   SEARCH
+========================= */
 .searchWrap{
   display:flex;
   justify-content:center;
   margin:18px 0 10px;
+  position:relative;
 }
 
 input{
   width:420px;
   max-width:92%;
-  padding:12px 14px
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  outline:none;
+}
 
-/* GRID */
+/* =========================
+   GRID
+========================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
   gap:18px;
   padding:30px 35px 80px;
+  position:relative;
 }
 
-/* CATEGORY */
+/* =========================
+   CATEGORY BASE (GLASS CARD)
+========================= */
 .category{
-  background:#fff;
-  border:1px solid #e7e5e0;
-  border-radius:16px;
+  border-radius:18px;
   padding:14px;
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.55);
+  border:1px solid rgba(255,255,255,0.7);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+  position:relative;
+  overflow:hidden;
 }
 
+/* top glow bar */
+.category::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  height:4px;
+  width:100%;
+}
+
+/* CATEGORY COLORS */
+.cat-ai::before{ background:#7c5cff; }
+.cat-brand::before{ background:#ff5c93; }
+.cat-logo::before{ background:#ffb347; }
+.cat-type::before{ background:#4dd4ac; }
+.cat-assets::before{ background:#4aa3ff; }
+.cat-mockup::before{ background:#ff7a59; }
+.cat-audio::before{ background:#9b6cff; }
+.cat-dev::before{ background:#2dd4bf; }
+.cat-edit::before{ background:#60a5fa; }
+.cat-science::before{ background:#34d399; }
+.cat-fun::before{ background:#f472b6; }
+
+/* title */
 .category h2{
   font-size:12px;
-  letter-spacing:1px;
+  letter-spacing:1.2px;
   text-transform:uppercase;
   margin:6px 0 12px;
   color:#333;
 }
 
-/* TOOL */
+/* =========================
+   TOOL CARD
+========================= */
 .tool{
   display:flex;
   align-items:center;
   gap:10px;
   text-decoration:none;
-  padding:9px;
+  padding:10px;
   margin:6px 0;
   border-radius:12px;
-  border:1px solid transparent;
-  transition:0.15s ease;
+
+  background: rgba(255,255,255,0.4);
+  border:1px solid rgba(255,255,255,0.6);
+
+  transition:0.18s ease;
 }
 
 .tool:hover{
-  background:#fafafa;
-  border:1px solid #eee;
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.75);
 }
 
 .tool img{
   width:22px;
   height:22px;
-  border-radius:5px;
+  border-radius:6px;
 }
 
 .tool b{
@@ -100,6 +171,7 @@ input{
 }
 
 .hidden{display:none;}
+
 </style>
 </head>
 
@@ -107,7 +179,7 @@ input{
 
 <header>
   <h1>Vine & Vector Toolkit</h1>
-  <div class="subtitle">Freelancer creative dashboard</div>
+  <div class="subtitle">A curated creative freelancer dashboard</div>
 
   <div class="searchWrap">
     <input id="search" placeholder="Search tools..." />
@@ -119,174 +191,168 @@ input{
 <script>
 
 /* =========================
-   FULL DATASET (REFINED)
+   DATA (same structure)
 ========================= */
 
 const data = [
 
-/* ================= AI ================= */
 {
 name:"AI Creation Suite",
+class:"cat-ai",
 tools:[
 ["Adobe Firefly","https://firefly.adobe.com","Image AI"],
 ["Artbreeder","https://artbreeder.com","Image AI"],
-["Claude","https://claude.ai","AI assistant"],
+["Claude","https://claude.ai","Assistant"],
 ["DeepAI","https://deepai.org","AI tools"],
 ["ElevenLabs","https://elevenlabs.io","Voice AI"],
 ["Google Labs","https://labs.google.com","AI research"],
 ["Krea AI","https://krea.ai","Creative AI"],
 ["Leonardo AI","https://leonardo.ai","Image AI"],
 ["Luma AI","https://lumalabs.ai","3D AI"],
-["Napkin AI","https://napkin.ai","Notes AI"],
-["Perplexity","https://perplexity.ai","AI search"],
+["Napkin AI","https://napkin.ai","Notes"],
+["Perplexity","https://perplexity.ai","Search"],
 ["Pika","https://pika.art","Video AI"],
 ["Playground AI","https://playgroundai.com","Image AI"],
-["Stable Diffusion","https://stability.ai","AI model"],
+["Stable Diffusion","https://stability.ai","Model"],
 ["Suno","https://suno.com","Music AI"],
 ["Udio","https://udio.com","Music AI"],
-["Unicorn Studio","https://unicorn.studio","Motion AI"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Unicorn Studio","https://unicorn.studio","Motion"]
+]
 },
 
-/* ================= BRANDING ================= */
 {
 name:"Branding & Identity",
+class:"cat-brand",
 tools:[
-["BP&O","https://bpando.org","Brand inspiration"],
-["BrandNew","https://underconsideration.com/brandnew","Brand analysis"],
-["Identity Designed","https://identitydesigned.com","Identity work"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["BP&O","https://bpando.org","Brand blog"],
+["BrandNew","https://underconsideration.com/brandnew","Brand critique"],
+["Identity Designed","https://identitydesigned.com","Identity"]
+]
 },
 
-/* ================= LOGOS ================= */
 {
 name:"Logo Systems",
+class:"cat-logo",
 tools:[
-["Logoed","https://logoed.co","Logo archive"],
-["Logobook","https://logobook.com","Logo archive"],
-["LogoLounge","https://logolounge.com","Logo database"],
-["Logggos","https://logggos.com","Logo inspiration"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Logoed","https://logoed.co","Logos"],
+["Logobook","https://logobook.com","Archive"],
+["LogoLounge","https://logolounge.com","Database"],
+["Logggos","https://logggos.com","Inspo"]
+]
 },
 
-/* ================= TYPE ================= */
 {
 name:"Typography & UI",
+class:"cat-type",
 tools:[
-["AutoDraw","https://autodraw.com","Sketch tool"],
-["Calligrapher AI","https://calligrapher.ai","Handwriting AI"],
-["FontJoy","https://fontjoy.com","Font pairing"],
+["AutoDraw","https://autodraw.com","Sketch"],
+["Calligrapher AI","https://calligrapher.ai","Handwriting"],
+["FontJoy","https://fontjoy.com","Fonts"],
 ["Google Fonts","https://fonts.google.com","Fonts"],
-["Paper Animator","https://paper-animator.com","Animation"],
-["Type Scale","https://type-scale.com","Type system"],
-["Typ.io","https://typ.io","Typography"],
-["Space Type Generator","https://spacetypegenerator.com","Type tool"],
-["Emoji Combos","https://emojicombos.com","Emoji tools"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Paper Animator","https://paper-animator.com","Motion"],
+["Type Scale","https://type-scale.com","Layout"],
+["Typ.io","https://typ.io","Type"],
+["Space Type Generator","https://spacetypegenerator.com","Type"],
+["Emoji Combos","https://emojicombos.com","Emoji"]
+]
 },
 
-/* ================= ASSETS ================= */
 {
 name:"Design Assets",
+class:"cat-assets",
 tools:[
-["Absurd Design","https://absurd.design","Illustrations"],
-["Blush","https://blush.design","Illustrations"],
-["DrawKit","https://drawkit.com","Illustrations"],
+["Blush","https://blush.design","Illustration"],
+["DrawKit","https://drawkit.com","Illustration"],
 ["Freepik","https://freepik.com","Assets"],
 ["LS Graphics","https://ls.graphics","Mockups"],
-["Openverse","https://openverse.org","Open assets"],
-["SVG Repo","https://svgrepo.com","SVGs"],
-["Vecteezy","https://vecteezy.com","Vectors"],
-["Unsplash","https://unsplash.com","Photos"],
-["Pixabay","https://pixabay.com","Photos"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Openverse","https://openverse.org","Open"],
+["SVG Repo","https://svgrepo.com","SVG"],
+["Unsplash","https://unsplash.com","Photo"],
+["Pixabay","https://pixabay.com","Photo"]
+]
 },
 
-/* ================= MOCKUPS ================= */
 {
 name:"Mockups",
+class:"cat-mockup",
 tools:[
-["Angle Mockups","https://angle.sh","Device mockups"],
+["Angle Mockups","https://angle.sh","Device"],
 ["Cleanmock","https://cleanmock.com","Mockups"],
-["Dieline","https://thedieline.com","Packaging"],
 ["Mockup World","https://mockupworld.co","Mockups"],
 ["Pacdora","https://pacdora.com","Packaging"],
-["Printful","https://printful.com/mockup-generator","Apparel"],
+["Printful","https://printful.com","Apparel"],
 ["Printify","https://printify.com","Apparel"],
-["Renderforest","https://renderforest.com/mockups","Mockups"],
 ["Screely","https://screely.com","Screens"],
-["Rotato","https://rotato.app","3D mockups"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Rotato","https://rotato.app","3D"]
+]
 },
 
-/* ================= AUDIO ================= */
 {
 name:"Audio Tools",
+class:"cat-audio",
 tools:[
 ["A Soft Murmur","https://asoftmurmur.com","Ambient"],
-["BBC Sound Effects","https://bbcrewind.co.uk","Sound library"],
+["BBC Sound Effects","https://bbcrewind.co.uk","Sound"],
 ["MyInstants","https://myinstants.com","Sounds"],
 ["Radio Garden","https://radio.garden","Radio"],
 ["Suno","https://suno.com","AI music"],
 ["Udio","https://udio.com","AI music"],
-["Vocal Remover","https://vocalremover.org","Audio tool"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Vocal Remover","https://vocalremover.org","Audio"]
+]
 },
 
-/* ================= DEV ================= */
 {
-name:"Dev & Web Tools",
+name:"Dev Tools",
+class:"cat-dev",
 tools:[
-["Bentogrids","https://bentogrids.com","Layouts"],
-["CodePen","https://codepen.io","Coding"],
+["CodePen","https://codepen.io","Code"],
 ["Figma","https://figma.com","Design"],
 ["JSFiddle","https://jsfiddle.net","Code"],
-["Magic UI","https://magicui.design","UI kit"],
-["React Bits","https://reactbits.dev","Components"],
-["Replit","https://replit.com","Coding"],
-["StackBlitz","https://stackblitz.com","IDE"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Replit","https://replit.com","Dev"],
+["StackBlitz","https://stackblitz.com","IDE"],
+["Magic UI","https://magicui.design","UI"],
+["React Bits","https://reactbits.dev","Components"]
+]
 },
 
-/* ================= EDITING ================= */
 {
-name:"Image Editing Tools",
+name:"Image Editing",
+class:"cat-edit",
 tools:[
-["123Apps","https://123apps.com","Utilities"],
-["Convertio","https://convertio.co","File convert"],
-["iLoveIMG","https://iloveimg.com","Image tools"],
-["Photopea","https://photopea.com","Photoshop"],
-["Remove.bg","https://remove.bg","BG remover"],
-["TinyWow","https://tinywow.com","Utilities"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["Photopea","https://photopea.com","Editor"],
+["Remove.bg","https://remove.bg","BG remove"],
+["TinyWow","https://tinywow.com","Tools"],
+["iLoveIMG","https://iloveimg.com","Tools"],
+["Convertio","https://convertio.co","Convert"],
+["123Apps","https://123apps.com","Utilities"]
+]
 },
 
-/* ================= SCIENCE ================= */
 {
 name:"Science & Learning",
+class:"cat-science",
 tools:[
 ["BioDigital Human","https://biodigital.com","Anatomy"],
-["DeepL","https://deepl.com","Translation"],
 ["Duolingo","https://duolingo.com","Language"],
-["Hubble Birthday","https://nasa.gov","Space"],
-["HowStuffWorks","https://howstuffworks.com","Education"],
-["iFixit","https://ifixit.com","Repairs"],
-["Scale of the Universe","https://htwins.net/scale2","Visualization"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+["DeepL","https://deepl.com","Translate"],
+["iFixit","https://ifixit.com","Repair"],
+["HowStuffWorks","https://howstuffworks.com","Learn"],
+["Scale of the Universe","https://htwins.net/scale2","Space"]
+]
 },
 
-/* ================= FUN ================= */
 {
-name:"Fun & Experimental",
+name:"Fun Zone",
+class:"cat-fun",
 tools:[
 ["AirConsole","https://airconsole.com","Games"],
-["Draw a Fish","https://drawafish.com","Art"],
-["Floor796","https://floor796.com","Animation"],
+["Draw a Fish","https://drawafish.com","Fun"],
 ["GeoFS","https://geo-fs.com","Flight sim"],
+["Floor796","https://floor796.com","Art"],
 ["MyRetroTVs","https://myretrotvs.com","Retro"],
-["UCHINOKO Maker","https://uchinoko-maker.com","Fun"],
+["UCHINOKO Maker","https://uchinoko-maker.com","Cute"],
 ["White Screen Online","https://whitescreen.online","Utility"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
+]
 }
 
 ];
@@ -301,7 +367,7 @@ function render(){
 
   data.forEach(cat=>{
     const div = document.createElement("div");
-    div.className = "category";
+    div.className = "category " + cat.class;
 
     let html = `<h2>${cat.name}</h2>`;
 
