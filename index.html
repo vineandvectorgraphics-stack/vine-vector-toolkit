@@ -6,8 +6,9 @@
 <title>Vine & Vector Toolkit</title>
 
 <style>
+
 /* =========================
-   BACKGROUND (PAPER)
+   PAPER BACKGROUND
 ========================= */
 body{
   margin:0;
@@ -17,17 +18,17 @@ body{
       to bottom,
       #ffffff 0px,
       #ffffff 28px,
-      #ffffff 29px
+      #ececec 29px
     );
   color:#111;
 }
 
-/* soft overlay glow */
+/* soft light overlay */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.7), rgba(240,242,255,0.6));
+  background: radial-gradient(circle at top, rgba(255,255,255,0.8), rgba(245,247,255,0.6));
   pointer-events:none;
 }
 
@@ -35,19 +36,39 @@ body::before{
    HEADER
 ========================= */
 header{
-  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
   padding:50px 20px 10px;
 }
 
+/* LOGO */
+header img{
+  width:120px;
+  height:auto;
+  object-fit:contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.12));
+  transition: transform 0.25s ease;
+}
+
+header img:hover{
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* TITLE */
 h1{
   margin:0;
   font-size:42px;
   letter-spacing:-0.5px;
+  color:#000;
+  font-weight:700;
 }
 
+/* subtitle */
 .subtitle{
   color:#666;
-  margin-top:8px;
+  font-size:14px;
 }
 
 /* =========================
@@ -65,13 +86,13 @@ input{
   padding:12px 14px;
   border-radius:14px;
   border:1px solid rgba(0,0,0,0.08);
-  background:rgba(255,255,255,0.7);
+  background:rgba(255,255,255,0.75);
   backdrop-filter: blur(12px);
   outline:none;
 }
 
 /* =========================
-   GRID
+   GRID LAYOUT
 ========================= */
 .grid{
   column-count:3;
@@ -83,14 +104,14 @@ input{
 @media(max-width:650px){ .grid{column-count:1;} }
 
 /* =========================
-   CATEGORY CARD (GLASS)
+   CATEGORY CARD
 ========================= */
 .category{
   break-inside: avoid;
   margin-bottom:18px;
 
-  background:rgba(255,255,255,0.6);
-  border:1px solid rgba(255,255,255,0.8);
+  background:rgba(255,255,255,0.65);
+  border:1px solid rgba(255,255,255,0.85);
   backdrop-filter: blur(16px);
 
   border-radius:18px;
@@ -106,9 +127,10 @@ input{
   letter-spacing:1.2px;
   margin:6px 0 10px;
   cursor:pointer;
+  color:#111;
 }
 
-/* TOOL */
+/* TOOL ITEM */
 .tool{
   display:flex;
   align-items:center;
@@ -120,7 +142,7 @@ input{
 
   border-radius:12px;
 
-  background:rgba(255,255,255,0.45);
+  background:rgba(255,255,255,0.5);
   border:1px solid rgba(255,255,255,0.7);
 
   transition:0.15s ease;
@@ -128,7 +150,7 @@ input{
 
 .tool:hover{
   transform:translateY(-2px);
-  background:rgba(255,255,255,0.8);
+  background:rgba(255,255,255,0.85);
   box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
@@ -138,35 +160,47 @@ input{
   border-radius:6px;
 }
 
-.tool b{font-size:13px;}
+.tool b{font-size:13px; color:#111;}
 .tool small{font-size:11px;color:#666;}
 
+/* collapsed category */
 .collapsed .tool{
   display:none;
 }
 
-/* SEARCH HIDE */
-.hidden{display:none;}
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
 <header>
+  <!-- PUT YOUR LOGO IN /assets/logo.png -->
+  <img src="assets/logo.png" alt="Vine & Vector Logo">
+
   <h1>Vine & Vector Toolkit</h1>
+
   <div class="subtitle">Creative freelancer resource dashboard</div>
 </header>
 
+<!-- =========================
+     SEARCH
+========================= -->
 <div class="searchWrap">
   <input id="search" placeholder="Search tools or categories..." />
 </div>
 
+<!-- =========================
+     APP
+========================= -->
 <div class="grid" id="app"></div>
 
 <script>
 
 /* =========================
-   FULL DATASET
+   FULL TOOL DATA
 ========================= */
 const data = [
 
@@ -276,7 +310,7 @@ tools:[
 ["Convertio","https://convertio.co","Convert"],
 ["iLoveIMG","https://iloveimg.com","Image"],
 ["Photopea","https://photopea.com","Editor"],
-["Remove.bg","https://remove.bg","BG remove"],
+["Remove.bg","https://remove.bg","BG"],
 ["TinyWow","https://tinywow.com","Tools"]
 ]
 },
@@ -373,12 +407,16 @@ function render(){
 
 render();
 
-/* collapse */
+/* =========================
+   TOGGLE
+========================= */
 function toggle(el){
   el.parentElement.classList.toggle("collapsed");
 }
 
-/* search */
+/* =========================
+   SEARCH
+========================= */
 document.getElementById("search").addEventListener("input", e=>{
   const val = e.target.value.toLowerCase();
 
