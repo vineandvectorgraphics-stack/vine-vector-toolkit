@@ -8,72 +8,85 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#f7f3ee;
-  color:#111;
+  font-family: ui-sans-serif, system-ui, -apple-system, Arial;
+  background:#f6f4f1;
+  color:#1a1a1a;
 }
 
+/* HEADER */
 header{
+  padding:50px 20px 30px;
   text-align:center;
-  padding:40px 20px;
 }
 
 h1{
   margin:0;
-  font-size:40px;
+  font-size:42px;
+  letter-spacing:-0.5px;
 }
 
+p{
+  color:#666;
+  margin-top:10px;
+}
+
+/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:20px;
-  padding:20px 40px 60px;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:22px;
+  padding:30px 40px 70px;
 }
 
+/* CATEGORY CARD */
 .category{
   background:#fff;
   border-radius:18px;
-  padding:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.05);
+  padding:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,.04);
+  border:1px solid #eee;
 }
 
 .category h2{
-  margin-top:0;
+  font-size:16px;
+  margin:0 0 12px;
+  letter-spacing:0.2px;
 }
 
+/* TOOL ITEM */
 .tool{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
   text-decoration:none;
-  padding:10px;
-  margin:8px 0;
+  padding:10px 10px;
+  margin:6px 0;
   border-radius:12px;
-  border:1px solid #eee;
-  background:#fff;
-  transition:0.2s;
+  border:1px solid transparent;
+  transition:0.2s ease;
 }
 
 .tool:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  background:#fafafa;
+  border:1px solid #eee;
+  transform:translateY(-1px);
 }
 
 .tool img{
-  width:26px;
-  height:26px;
-  border-radius:6px;
+  width:22px;
+  height:22px;
+  border-radius:5px;
+  flex-shrink:0;
 }
 
 .tool b{
+  font-size:13px;
   display:block;
-  font-size:14px;
 }
 
 .tool small{
-  display:block;
   font-size:11px;
-  color:#666;
+  color:#777;
 }
 </style>
 </head>
@@ -81,99 +94,35 @@ h1{
 <body>
 
 <header>
-  <h1>🌿 Vine & Vector Toolkit</h1>
-  <p>Creative resources for designers</p>
+  <h1>Vine & Vector Toolkit</h1>
+  <p>Freelancer creative resource system</p>
 </header>
 
 <div class="grid" id="app"></div>
 
 <script>
+
+/* =========================
+   DATA (ALPHABETIZED)
+========================= */
+
 const data = [
 
 {
-name:"🌐 Generative AI",
+name:"3D + Motion",
 tools:[
-["Adobe Firefly","https://firefly.adobe.com","AI image generation"],
-["Artbreeder","https://www.artbreeder.com","Image blending AI"],
-["Claude","https://claude.ai","AI assistant"],
-["DeepAI","https://deepai.org","AI tools"],
-["ElevenLabs","https://elevenlabs.io","AI voice generation"],
-["Google Labs","https://labs.google.com","Experimental AI"],
-["Krea AI","https://www.krea.ai","Real-time AI tools"],
-["Leonardo AI","https://leonardo.ai","AI image creation"],
-["Luma AI","https://lumalabs.ai","3D + video AI"],
-["Napkin AI","https://napkin.ai","Idea generation"],
-["Perplexity","https://perplexity.ai","AI search"],
-["Pika","https://pika.art","AI video generation"],
-["Playground AI","https://playgroundai.com","AI images"],
-["Runable","https://runable.com","AI dev tools"],
-["Stable Diffusion","https://stability.ai","Open model"],
-["Suno","https://suno.com","AI music"],
-["Udio","https://udio.com","AI music"],
-["Unicorn Studio","https://unicorn.studio","3D motion AI"]
-]
-},
-
-{
-name:"🎨 Branding",
-tools:[
-["BrandNew","https://underconsideration.com/brandnew","Brand case studies"],
-["BP&O","https://bpando.org","Brand inspiration"],
-["Identity Designed","https://identitydesigned.com","Identity systems"]
-]
-},
-
-{
-name:"🪪 Logos",
-tools:[
-["Logobook","https://logobook.com","Logo archive"],
-["Logggos","https://logggos.com","Logo inspiration"],
-["Logoed","https://logoed.co","Logo gallery"],
-["LogoLounge","https://logolounge.com","Logo database"]
-]
-},
-
-{
-name:"🧾 Typography",
-tools:[
-["AutoDraw","https://autodraw.com","Sketch tool"],
-["Calligrapher AI","https://calligrapher.ai","Handwriting AI"],
-["Emoji Combos","https://emojicombos.com","Emoji tools"],
-["Font Joy","https://fontjoy.com","Font pairing"],
-["Google Fonts","https://fonts.google.com","Free fonts"],
-["Paper Animator","https://paper-animator.com","Animation tool"],
-["Type Scale","https://type-scale.com","Typography scale"],
-["Typ.io","https://typ.io","Font inspiration"]
-]
-},
-
-{
-name:"🧊 3D + Motion",
-tools:[
+["Adobe After Effects","https://www.adobe.com/products/aftereffects.html","Motion graphics"],
+["Meshy","https://meshy.ai","Text to 3D"],
 ["Runway","https://runwayml.com","AI video tools"],
-["Meshy","https://meshy.ai","Text-to-3D"],
-["Sloyd","https://sloyd.ai","3D assets"],
-["Tripo AI","https://tripo3d.ai","3D generation"],
 ["Sketchfab","https://sketchfab.com","3D library"],
-["Spline","https://spline.design","3D web design"]
-]
+["Sloyd","https://sloyd.ai","3D assets"],
+["Spline","https://spline.design","3D web design"],
+["Tripo AI","https://tripo3d.ai","3D generation"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
-name:"🎨 Design Assets",
-tools:[
-["Unsplash","https://unsplash.com","Photos"],
-["Pixabay","https://pixabay.com","Stock media"],
-["Pexels","https://pexels.com","Free assets"],
-["Freepik","https://freepik.com","Design assets"],
-["Vecteezy","https://vecteezy.com","Vectors"],
-["SVG Repo","https://svgrepo.com","SVGs"],
-["Openverse","https://openverse.org","Open content"]
-]
-},
-
-{
-name:"🎧 Audio",
+name:"Audio",
 tools:[
 ["A Soft Murmur","https://asoftmurmur.com","Ambient sounds"],
 ["BBC Sound Effects","https://bbcrewind.co.uk","Sound library"],
@@ -182,47 +131,119 @@ tools:[
 ["Suno","https://suno.com","AI music"],
 ["Udio","https://udio.com","AI music"],
 ["Vocal Remover","https://vocalremover.org","Audio tool"]
-]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
-name:"🖼 Editing Tools",
+name:"Branding",
 tools:[
-["Photopea","https://photopea.com","Online Photoshop"],
-["Remove.bg","https://remove.bg","Background remover"],
-["iLoveIMG","https://iloveimg.com","Image tools"],
-["TinyWow","https://tinywow.com","Web tools"],
-["Convertio","https://convertio.co","File converter"],
-["123Apps","https://123apps.com","Online utilities"]
-]
+["BP&O","https://bpando.org","Brand inspiration"],
+["BrandNew","https://underconsideration.com/brandnew","Brand case studies"],
+["Identity Designed","https://identitydesigned.com","Identity systems"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
-name:"💻 Dev Tools",
+name:"Color",
 tools:[
-["Figma","https://figma.com","Design tool"],
+["Adobe Color","https://color.adobe.com","Color palettes"],
+["Coolors","https://coolors.co","Palette generator"],
+["Happy Hues","https://www.happyhues.co","Color inspiration"],
+["Photo Gradient","https://photogradient.com","Gradients"],
+["Shader Gradient","https://shadergradient.co","Shaders"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Design Assets",
+tools:[
+["Freepik","https://freepik.com","Design assets"],
+["Openverse","https://openverse.org","Open content"],
+["Pexels","https://pexels.com","Free assets"],
+["Pixabay","https://pixabay.com","Stock media"],
+["SVG Repo","https://svgrepo.com","SVGs"],
+["Unsplash","https://unsplash.com","Photos"],
+["Vecteezy","https://vecteezy.com","Vectors"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Dev Tools",
+tools:[
 ["CodePen","https://codepen.io","Frontend playground"],
+["Figma","https://figma.com","Design tool"],
 ["JSFiddle","https://jsfiddle.net","Code testing"],
-["StackBlitz","https://stackblitz.com","Web IDE"],
+["React Bits","https://reactbits.dev","UI components"],
 ["Replit","https://replit.com","Coding"],
-["React Bits","https://reactbits.dev","UI components"]
-]
+["StackBlitz","https://stackblitz.com","Web IDE"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
-name:"🎮 Fun",
+name:"Editing Tools",
 tools:[
-["GeoFS","https://geo-fs.com","Flight sim"],
-["Floor796","https://floor796.com","Animated world"],
-["White Screen Online","https://whitescreen.online","Utility"],
+["123Apps","https://123apps.com","Online tools"],
+["Convertio","https://convertio.co","File converter"],
+["iLoveIMG","https://iloveimg.com","Image tools"],
+["Photopea","https://photopea.com","Photoshop online"],
+["Remove.bg","https://remove.bg","Background remover"],
+["TinyWow","https://tinywow.com","Web utilities"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Fun",
+tools:[
 ["AirConsole","https://airconsole.com","Games"],
 ["Draw a Fish","https://drawafish.com","Interactive art"],
+["Floor796","https://floor796.com","Animated world"],
+["GeoFS","https://geo-fs.com","Flight sim"],
 ["MyRetroTVs","https://myretrotvs.com","Retro TV"],
-["UCHINOKO Maker","https://uchinoko-maker.com","Character tool"]
-]
+["UCHINOKO Maker","https://uchinoko-maker.com","Character tool"],
+["White Screen Online","https://whitescreen.online","Utility"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Logos",
+tools:[
+["Logoed","https://logoed.co","Logo gallery"],
+["Logobook","https://logobook.com","Logo archive"],
+["LogoLounge","https://logolounge.com","Logo database"],
+["Logggos","https://logggos.com","Logo inspiration"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Typography",
+tools:[
+["AutoDraw","https://autodraw.com","Sketch tool"],
+["Calligrapher AI","https://calligrapher.ai","Handwriting AI"],
+["Emoji Combos","https://emojicombos.com","Emoji tools"],
+["Font Joy","https://fontjoy.com","Font pairing"],
+["Google Fonts","https://fonts.google.com","Free fonts"],
+["Paper Animator","https://paper-animator.com","Animation tool"],
+["Typ.io","https://typ.io","Font inspiration"],
+["Type Scale","https://type-scale.com","Typography scale"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"3D Tools",
+tools:[
+["Luma AI","https://lumalabs.ai","3D + video AI"],
+["Meta SAM3D","https://sam.ai","3D AI tools"],
+["Runable","https://runable.com","AI dev tools"],
+["Stable Diffusion","https://stability.ai","AI model"],
+["Unicorn Studio","https://unicorn.studio","Motion AI"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 }
 
 ];
+
+/* =========================
+   RENDER
+========================= */
 
 function createCategory(cat){
   const div = document.createElement("div");
@@ -249,6 +270,7 @@ function createCategory(cat){
 
 const app = document.getElementById("app");
 data.forEach(cat => app.appendChild(createCategory(cat)));
+
 </script>
 
 </body>
