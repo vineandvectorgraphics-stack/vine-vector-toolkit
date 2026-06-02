@@ -8,7 +8,7 @@
 <style>
 
 /* =========================
-   BASE BACKGROUND
+   BASE
 ========================= */
 body{
   margin:0;
@@ -23,7 +23,6 @@ body{
   color:#111;
 }
 
-/* glow overlay */
 body::before{
   content:"";
   position:fixed;
@@ -81,10 +80,12 @@ input{
   padding:30px 40px 100px;
 }
 
-@media(max-width:900px){ .grid{column-count:1;} }
+@media(max-width:900px){
+  .grid{column-count:1;}
+}
 
 /* =========================
-   CATEGORY BLOCK (KEY FIX)
+   CATEGORY BLOCK
 ========================= */
 .category{
   break-inside: avoid;
@@ -97,22 +98,17 @@ input{
   backdrop-filter: blur(16px);
 
   border:1px solid rgba(0,0,0,0.05);
-
   box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* CATEGORY HEADER */
 .category h2{
   margin:0;
-  padding:14px 14px;
-
+  padding:14px;
   font-size:12px;
   text-transform:uppercase;
   letter-spacing:1.4px;
-
   background:rgba(0,0,0,0.03);
-
-  border-left:6px solid var(--c, #999);
+  border-left:6px solid var(--c);
   cursor:pointer;
 }
 
@@ -121,13 +117,10 @@ input{
   display:flex;
   gap:10px;
   align-items:center;
-
   text-decoration:none;
 
   padding:10px 14px;
-
   border-bottom:1px solid rgba(0,0,0,0.04);
-
   transition:0.15s ease;
 }
 
@@ -141,12 +134,10 @@ input{
   border-radius:5px;
 }
 
-.tool b{font-size:13px; color:#111;}
+.tool b{font-size:13px;}
 .tool small{font-size:11px;color:#666;}
 
-.collapsed .tool{
-  display:none;
-}
+.collapsed .tool{display:none;}
 
 </style>
 </head>
@@ -155,11 +146,11 @@ input{
 
 <header>
   <h1>Vine & Vector Toolkit</h1>
-  <div class="subtitle">Freelancer resource dashboard</div>
+  <div class="subtitle">Freelancer creative resource system</div>
 </header>
 
 <div class="searchWrap">
-  <input id="search" placeholder="Search tools or categories..." />
+  <input id="search" placeholder="Search tools..." />
 </div>
 
 <div class="grid" id="app"></div>
@@ -167,9 +158,69 @@ input{
 <script>
 
 /* =========================
-   FULL ORGANIZED DATA
+   FULL TOOLKIT (ALPHABETICAL)
 ========================= */
 const data = [
+
+{
+name:"Audio & Sound",
+color:"#ff595e",
+tools:[
+["A Soft Murmur","https://asoftmurmur.com"],
+["BBC Sound Effects","https://bbcrewind.co.uk"],
+["MyInstants","https://myinstants.com"],
+["Radio Garden","https://radio.garden"],
+["Split My Song","https://splitmysong.com"],
+["Suno","https://suno.com"],
+["Udio","https://udio.com"],
+["Vocal Remover","https://vocalremover.org"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Branding & Inspiration",
+color:"#ff006e",
+tools:[
+["BP&O","https://bpando.org"],
+["BrandNew","https://underconsideration.com/brandnew"],
+["Identity Designed","https://identitydesigned.com"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Color Systems",
+color:"#00bbf9",
+tools:[
+["Coolors","https://coolors.co"],
+["Happy Hues","https://www.happyhues.co"],
+["Shader Gradient","https://shadergradient.co"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Coding & Dev Tools",
+color:"#4361ee",
+tools:[
+["CodePen","https://codepen.io"],
+["Figma","https://figma.com"],
+["JSFiddle","https://jsfiddle.net"],
+["Replit","https://replit.com"],
+["StackBlitz","https://stackblitz.com"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Design Assets",
+color:"#8ac926",
+tools:[
+["Canva","https://canva.com"],
+["Figma Community","https://figma.com/community"],
+["Freepik","https://freepik.com"],
+["Nappy","https://nappy.co"],
+["Pixabay","https://pixabay.com"],
+["Unsplash","https://unsplash.com"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
 
 {
 name:"Generative AI",
@@ -181,7 +232,6 @@ tools:[
 ["DeepAI","https://deepai.org"],
 ["ElevenLabs","https://elevenlabs.io"],
 ["Google Labs","https://labs.google.com"],
-["Google Pomelli","https://labs.google.com"],
 ["Hugging Face Spaces","https://huggingface.co/spaces"],
 ["Krea AI","https://krea.ai"],
 ["Leonardo AI","https://leonardo.ai"],
@@ -190,32 +240,50 @@ tools:[
 ["Perplexity","https://perplexity.ai"],
 ["Pika","https://pika.art"],
 ["Playground AI","https://playgroundai.com"],
+["Runway","https://runwayml.com"],
 ["Stable Diffusion","https://stability.ai"],
 ["Suno","https://suno.com"],
 ["Udio","https://udio.com"],
 ["Unicorn Studio","https://unicorn.studio"]
-]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
-name:"Branding & Inspiration",
-color:"#ff4d6d",
+name:"Image Editing",
+color:"#2ec4b6",
 tools:[
-["BrandNew","https://underconsideration.com/brandnew"],
-["BP&O","https://bpando.org"],
-["Identity Designed","https://identitydesigned.com"]
-]
+["123Apps","https://123apps.com"],
+["Convertio","https://convertio.co"],
+["iLoveIMG","https://iloveimg.com"],
+["Photopea","https://photopea.com"],
+["Remove.bg","https://remove.bg"],
+["TinyWow","https://tinywow.com"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
-name:"Logos",
+name:"Mockups",
 color:"#ffb703",
 tools:[
-["Logobook","https://logobook.com"],
-["Logggos","https://logggos.com"],
-["Logoed","https://logoed.co"],
-["LogoLounge","https://logolounge.com"]
-]
+["Mockup World","https://mockupworld.co"],
+["Pacdora","https://pacdora.com"],
+["Printful","https://printful.com"],
+["Printify","https://printify.com"],
+["Screely","https://screely.com"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
+},
+
+{
+name:"Science & Learning",
+color:"#1982c4",
+tools:[
+["BioDigital Human","https://biodigital.com"],
+["DeepL","https://deepl.com"],
+["Duolingo","https://duolingo.com"],
+["HowStuffWorks","https://howstuffworks.com"],
+["iFixit","https://ifixit.com"],
+["Scale of the Universe","https://htwins.net/scale2"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
@@ -231,7 +299,7 @@ tools:[
 ["Space Type Generator","https://spacetypegenerator.com"],
 ["Type Scale","https://type-scale.com"],
 ["Typ.io","https://typ.io"]
-]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
@@ -241,117 +309,21 @@ tools:[
 ["Meshy","https://meshy.ai"],
 ["Runway","https://runwayml.com"],
 ["Sloyd","https://sloyd.ai"],
-["Tripo AI","https://tripo3d.ai"],
-["Sketchfab","https://sketchfab.com"]
-]
-},
-
-{
-name:"Image Effects",
-color:"#8338ec",
-tools:[
-["ASCII Art Generator","https://www.ascii-art-generator.org"],
-["Image Color Picker","https://imagecolorpicker.com"],
-["Tooools","https://www.toools.design"]
-]
-},
-
-{
-name:"Color Systems",
-color:"#00bbf9",
-tools:[
-["Coolors","https://coolors.co"],
-["Happy Hues","https://www.happyhues.co"],
-["Shader Gradient","https://shadergradient.co"]
-]
-},
-
-{
-name:"Audio & Sound",
-color:"#fb5607",
-tools:[
-["A Soft Murmur","https://asoftmurmur.com"],
-["BBC Sound Effects","https://bbcrewind.co.uk"],
-["MyInstants","https://myinstants.com"],
-["Radio Garden","https://radio.garden"],
-["Split My Song","https://splitmysong.com"],
-["Suno","https://suno.com"],
-["Vocal Remover","https://vocalremover.org"]
-]
-},
-
-{
-name:"Image / File Editing",
-color:"#2ec4b6",
-tools:[
-["123Apps","https://123apps.com"],
-["Convertio","https://convertio.co"],
-["iLoveIMG","https://iloveimg.com"],
-["Photopea","https://photopea.com"],
-["Remove.bg","https://remove.bg"],
-["TinyWow","https://tinywow.com"]
-]
-},
-
-{
-name:"Design Assets",
-color:"#8ac926",
-tools:[
-["Canva","https://canva.com"],
-["Figma Community","https://figma.com/community"],
-["Freepik","https://freepik.com"],
-["Unsplash","https://unsplash.com"],
-["Pixabay","https://pixabay.com"],
-["Nappy","https://nappy.co"]
-]
-},
-
-{
-name:"Mockups",
-color:"#ff006e",
-tools:[
-["Mockup World","https://mockupworld.co"],
-["Pacdora","https://pacdora.com"],
-["Screely","https://screely.com"],
-["Printful","https://printful.com"],
-["Printify","https://printify.com"]
-]
-},
-
-{
-name:"Dev Tools",
-color:"#4361ee",
-tools:[
-["CodePen","https://codepen.io"],
-["Figma","https://figma.com"],
-["Replit","https://replit.com"],
-["StackBlitz","https://stackblitz.com"]
-]
-},
-
-{
-name:"Science & Learning",
-color:"#1982c4",
-tools:[
-["BioDigital Human","https://biodigital.com"],
-["DeepL","https://deepl.com"],
-["Duolingo","https://duolingo.com"],
-["HowStuffWorks","https://howstuffworks.com"],
-["iFixit","https://ifixit.com"],
-["Scale of the Universe","https://htwins.net/scale2"]
-]
+["Sketchfab","https://sketchfab.com"],
+["Tripo AI","https://tripo3d.ai"]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
 {
 name:"Fun",
-color:"#ff595e",
+color:"#fb5607",
 tools:[
 ["AirConsole","https://airconsole.com"],
 ["Draw a Fish","https://drawafish.com"],
 ["GeoFS","https://geo-fs.com"],
 ["MyRetroTVs","https://myretrotvs.com"],
 ["White Screen Online","https://whitescreen.online"]
-]
+].sort((a,b)=>a[0].localeCompare(b[0]))
 }
 
 ];
@@ -360,50 +332,47 @@ tools:[
    RENDER
 ========================= */
 function render(){
-  const app = document.getElementById("app");
-  app.innerHTML = "";
+  const app=document.getElementById("app");
+  app.innerHTML="";
 
   data.forEach(cat=>{
-    const div = document.createElement("div");
-    div.className = "category";
-    div.style.setProperty("--c", cat.color);
+    const div=document.createElement("div");
+    div.className="category";
+    div.style.setProperty("--c",cat.color);
 
-    let html = `<h2 onclick="toggle(this)">${cat.name}</h2>`;
+    let html=`<h2 onclick="toggle(this)">${cat.name}</h2>`;
 
     cat.tools.forEach(t=>{
-      const icon = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(t[1]).hostname}`;
+      const icon=`https://www.google.com/s2/favicons?sz=64&domain=${new URL(t[1]).hostname}`;
 
-      html += `
-        <a class="tool" href="${t[1]}" target="_blank">
-          <img src="${icon}">
-          <div>
-            <b>${t[0]}</b><br>
-            <small>${t[1]}</small>
-          </div>
-        </a>
-      `;
+      html+=`
+      <a class="tool" href="${t[1]}" target="_blank">
+        <img src="${icon}">
+        <div>
+          <b>${t[0]}</b><br>
+          <small>${t[1]}</small>
+        </div>
+      </a>`;
     });
 
-    div.innerHTML = html;
+    div.innerHTML=html;
     app.appendChild(div);
   });
 }
 
 render();
 
-/* collapse */
 function toggle(el){
   el.parentElement.classList.toggle("collapsed");
 }
 
 /* search */
-document.getElementById("search").addEventListener("input", e=>{
-  const val = e.target.value.toLowerCase();
+document.getElementById("search").addEventListener("input",e=>{
+  const v=e.target.value.toLowerCase();
 
-  document.querySelectorAll(".category").forEach(cat=>{
-    cat.style.display = cat.innerText.toLowerCase().includes(val)
-      ? "block"
-      : "none";
+  document.querySelectorAll(".category").forEach(c=>{
+    c.style.display=c.innerText.toLowerCase().includes(v)
+      ?"block":"none";
   });
 });
 </script>
