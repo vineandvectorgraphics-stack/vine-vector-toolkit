@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Vine & Vector Toolkit</title>
 
 <style>
-
 body{
   margin:0;
   font-family: Arial, sans-serif;
   background:#f7f3ee;
+  color:#111;
 }
 
-/* HEADER */
 header{
-  padding:40px;
   text-align:center;
+  padding:40px 20px;
 }
 
 h1{
   margin:0;
-  font-size:42px;
+  font-size:40px;
 }
 
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:20px;
-  padding:40px;
+  padding:20px 40px 60px;
 }
 
-/* CATEGORY CARD */
 .category{
-  background:white;
+  background:#fff;
   border-radius:18px;
   padding:16px;
   box-shadow:0 10px 25px rgba(0,0,0,.05);
@@ -43,18 +41,17 @@ h1{
   margin-top:0;
 }
 
-/* TOOL CARD */
 .tool{
   display:flex;
-  gap:10px;
   align-items:center;
+  gap:10px;
   text-decoration:none;
   padding:10px;
   margin:8px 0;
   border-radius:12px;
   border:1px solid #eee;
-  transition:0.2s;
   background:#fff;
+  transition:0.2s;
 }
 
 .tool:hover{
@@ -74,10 +71,10 @@ h1{
 }
 
 .tool small{
+  display:block;
   font-size:11px;
   color:#666;
 }
-
 </style>
 </head>
 
@@ -85,70 +82,146 @@ h1{
 
 <header>
   <h1>🌿 Vine & Vector Toolkit</h1>
-  <p>Auto-generated creative resource library</p>
+  <p>Creative resources for designers</p>
 </header>
 
 <div class="grid" id="app"></div>
 
 <script>
 const data = [
+
 {
-  name:"🌐 Generative AI",
-  tools:[
-   [
+name:"🌐 Generative AI",
+tools:[
 ["Adobe Firefly","https://firefly.adobe.com","AI image generation"],
 ["Artbreeder","https://www.artbreeder.com","Image blending AI"],
 ["Claude","https://claude.ai","AI assistant"],
-["DeepAI","https://deepai.org","AI tools suite"],
+["DeepAI","https://deepai.org","AI tools"],
 ["ElevenLabs","https://elevenlabs.io","AI voice generation"],
-["Google Labs","https://labs.google.com","Experimental AI tools"],
-["Google Pomelli","https://labs.google.com","Google experimental AI tool"],
-["Hugging Face Spaces","https://huggingface.co/spaces","AI model hosting & demos"],
-["Krea AI","https://www.krea.ai","Real-time AI generation"],
+["Google Labs","https://labs.google.com","Experimental AI"],
+["Krea AI","https://www.krea.ai","Real-time AI tools"],
 ["Leonardo AI","https://leonardo.ai","AI image creation"],
-["Luma AI","https://lumalabs.ai","3D + video generation AI"],
-["Napkin AI","https://napkin.ai","AI ideation tool"],
-["Perplexity","https://www.perplexity.ai","AI search engine"],
+["Luma AI","https://lumalabs.ai","3D + video AI"],
+["Napkin AI","https://napkin.ai","Idea generation"],
+["Perplexity","https://perplexity.ai","AI search"],
 ["Pika","https://pika.art","AI video generation"],
-["Playground AI","https://playgroundai.com","AI image generator"],
-["Runable","https://runable.com","AI dev tools platform"],
-["Stable Diffusion","https://stability.ai","Open image generation model"],
-["Suno","https://suno.com","AI music generation"],
-["Udio","https://www.udio.com","AI music creation"],
-["Unicorn Studio","https://unicorn.studio","3D + motion AI tools"]
-  ]
+["Playground AI","https://playgroundai.com","AI images"],
+["Runable","https://runable.com","AI dev tools"],
+["Stable Diffusion","https://stability.ai","Open model"],
+["Suno","https://suno.com","AI music"],
+["Udio","https://udio.com","AI music"],
+["Unicorn Studio","https://unicorn.studio","3D motion AI"]
+]
 },
+
 {
-  name:"🎨 Branding",
-  tools:[
-["BrandNew","https://www.underconsideration.com/brandnew","Brand identity case studies + critique"],
-["BP&O","https://bpando.org","Branding, packaging + design analysis"],
-["Identity Designed","https://identitydesigned.com","Global identity system inspiration"]
-  ]
+name:"🎨 Branding",
+tools:[
+["BrandNew","https://underconsideration.com/brandnew","Brand case studies"],
+["BP&O","https://bpando.org","Brand inspiration"],
+["Identity Designed","https://identitydesigned.com","Identity systems"]
+]
 },
+
 {
-  name:"📦 Design Assets",
-  tools:[
-    ["Unsplash","https://unsplash.com","Free photos"],
-    ["Freepik","https://freepik.com","Vectors & assets"],
-    ["Figma Community","https://figma.com/community","Design files"]
-  ]
+name:"🪪 Logos",
+tools:[
+["Logobook","https://logobook.com","Logo archive"],
+["Logggos","https://logggos.com","Logo inspiration"],
+["Logoed","https://logoed.co","Logo gallery"],
+["LogoLounge","https://logolounge.com","Logo database"]
+]
 },
+
 {
-  name:"🖼 Mockups",
-  tools:[
-    ["Mockup World","https://mockupworld.co","Free mockups"],
-    ["Screely","https://screely.com","UI screenshots"]
-  ]
+name:"🧾 Typography",
+tools:[
+["AutoDraw","https://autodraw.com","Sketch tool"],
+["Calligrapher AI","https://calligrapher.ai","Handwriting AI"],
+["Emoji Combos","https://emojicombos.com","Emoji tools"],
+["Font Joy","https://fontjoy.com","Font pairing"],
+["Google Fonts","https://fonts.google.com","Free fonts"],
+["Paper Animator","https://paper-animator.com","Animation tool"],
+["Type Scale","https://type-scale.com","Typography scale"],
+["Typ.io","https://typ.io","Font inspiration"]
+]
 },
+
 {
-  name:"🎬 Motion & 3D",
-  tools:[
-    ["Runway","https://runwayml.com","AI video"],
-    ["Pika","https://pika.art","AI motion"],
-    ["Sketchfab","https://sketchfab.com","3D models"]
-  ]
+name:"🧊 3D + Motion",
+tools:[
+["Runway","https://runwayml.com","AI video tools"],
+["Meshy","https://meshy.ai","Text-to-3D"],
+["Sloyd","https://sloyd.ai","3D assets"],
+["Tripo AI","https://tripo3d.ai","3D generation"],
+["Sketchfab","https://sketchfab.com","3D library"],
+["Spline","https://spline.design","3D web design"]
+]
+},
+
+{
+name:"🎨 Design Assets",
+tools:[
+["Unsplash","https://unsplash.com","Photos"],
+["Pixabay","https://pixabay.com","Stock media"],
+["Pexels","https://pexels.com","Free assets"],
+["Freepik","https://freepik.com","Design assets"],
+["Vecteezy","https://vecteezy.com","Vectors"],
+["SVG Repo","https://svgrepo.com","SVGs"],
+["Openverse","https://openverse.org","Open content"]
+]
+},
+
+{
+name:"🎧 Audio",
+tools:[
+["A Soft Murmur","https://asoftmurmur.com","Ambient sounds"],
+["BBC Sound Effects","https://bbcrewind.co.uk","Sound library"],
+["MyInstants","https://myinstants.com","Sound buttons"],
+["Radio Garden","https://radio.garden","Global radio"],
+["Suno","https://suno.com","AI music"],
+["Udio","https://udio.com","AI music"],
+["Vocal Remover","https://vocalremover.org","Audio tool"]
+]
+},
+
+{
+name:"🖼 Editing Tools",
+tools:[
+["Photopea","https://photopea.com","Online Photoshop"],
+["Remove.bg","https://remove.bg","Background remover"],
+["iLoveIMG","https://iloveimg.com","Image tools"],
+["TinyWow","https://tinywow.com","Web tools"],
+["Convertio","https://convertio.co","File converter"],
+["123Apps","https://123apps.com","Online utilities"]
+]
+},
+
+{
+name:"💻 Dev Tools",
+tools:[
+["Figma","https://figma.com","Design tool"],
+["CodePen","https://codepen.io","Frontend playground"],
+["JSFiddle","https://jsfiddle.net","Code testing"],
+["StackBlitz","https://stackblitz.com","Web IDE"],
+["Replit","https://replit.com","Coding"],
+["React Bits","https://reactbits.dev","UI components"]
+]
+},
+
+{
+name:"🎮 Fun",
+tools:[
+["GeoFS","https://geo-fs.com","Flight sim"],
+["Floor796","https://floor796.com","Animated world"],
+["White Screen Online","https://whitescreen.online","Utility"],
+["AirConsole","https://airconsole.com","Games"],
+["Draw a Fish","https://drawafish.com","Interactive art"],
+["MyRetroTVs","https://myretrotvs.com","Retro TV"],
+["UCHINOKO Maker","https://uchinoko-maker.com","Character tool"]
+]
 }
+
 ];
 
 function createCategory(cat){
@@ -175,10 +248,7 @@ function createCategory(cat){
 }
 
 const app = document.getElementById("app");
-
-data.forEach(cat=>{
-  app.appendChild(createCategory(cat));
-});
+data.forEach(cat => app.appendChild(createCategory(cat)));
 </script>
 
 </body>
