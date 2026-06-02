@@ -1,100 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
 <title>Vine & Vector Toolkit</title>
 
 <style>
-:root{
-  --bg:#f7f3ee;
-  --card:#ffffff;
-  --ink:#1f2937;
-  --muted:#6b7280;
-
-  --ai:#dbeafe;
-  --branding:#fde2e4;
-  --assets:#e9f5db;
-  --mockups:#fff3bf;
-  --motion:#e0e7ff;
-}
 
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background:
-    linear-gradient(#00000008 1px, transparent 1px),
-    linear-gradient(90deg, #00000008 1px, transparent 1px),
-    var(--bg);
-  background-size:40px 40px;
-  color:var(--ink);
+  background:#f7f3ee;
 }
 
+/* HEADER */
 header{
-  padding:60px 20px;
+  padding:40px;
   text-align:center;
 }
 
 h1{
-  font-size:52px;
   margin:0;
+  font-size:42px;
 }
 
-p{
-  color:var(--muted);
-}
-
-.search{
-  margin-top:20px;
-  padding:14px;
-  width:80%;
-  max-width:600px;
-  border-radius:14px;
-  border:1px solid #ddd;
-}
-
+/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:20px;
   padding:40px;
 }
 
-.card{
-  background:var(--card);
+/* CATEGORY CARD */
+.category{
+  background:white;
   border-radius:18px;
-  padding:18px;
+  padding:16px;
   box-shadow:0 10px 25px rgba(0,0,0,.05);
-  border:1px solid #eee;
-  transition:0.2s ease;
 }
 
-.card:hover{
-  transform:translateY(-4px);
+.category h2{
+  margin-top:0;
 }
 
-.tag{
-  font-size:12px;
-  padding:4px 10px;
-  border-radius:999px;
-  display:inline-block;
-  margin-bottom:10px;
-}
-
-.ai{background:var(--ai);}
-.branding{background:var(--branding);}
-.assets{background:var(--assets);}
-.mockups{background:var(--mockups);}
-.motion{background:var(--motion);}
-
-a{
+/* TOOL CARD */
+.tool{
+  display:flex;
+  gap:10px;
+  align-items:center;
   text-decoration:none;
-  color:var(--ink);
+  padding:10px;
+  margin:8px 0;
+  border-radius:12px;
+  border:1px solid #eee;
+  transition:0.2s;
+  background:#fff;
 }
 
-ul{
-  padding-left:18px;
+.tool:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
 }
+
+.tool img{
+  width:26px;
+  height:26px;
+  border-radius:6px;
+}
+
+.tool b{
+  display:block;
+  font-size:14px;
+}
+
+.tool small{
+  font-size:11px;
+  color:#666;
+}
+
 </style>
 </head>
 
@@ -102,62 +85,83 @@ ul{
 
 <header>
   <h1>🌿 Vine & Vector Toolkit</h1>
-  <p>Creative tools, AI, mockups, design assets & inspiration</p>
-  <input class="search" placeholder="Search tools..." />
+  <p>Auto-generated creative resource library</p>
 </header>
 
-<div class="grid">
+<div class="grid" id="app"></div>
 
-  <!-- AI -->
-  <div class="card">
-    <span class="tag ai">Generative AI</span>
-    <ul>
-      <li><a href="https://firefly.adobe.com">Adobe Firefly</a></li>
-      <li><a href="https://leonardo.ai">Leonardo AI</a></li>
-      <li><a href="https://claude.ai">Claude</a></li>
-      <li><a href="https://perplexity.ai">Perplexity</a></li>
-    </ul>
-  </div>
+<script>
+const data = [
+{
+  name:"🌐 Generative AI",
+  tools:[
+    ["Adobe Firefly","https://firefly.adobe.com","AI image generation"],
+    ["Leonardo AI","https://leonardo.ai","AI image creation"],
+    ["Claude","https://claude.ai","AI assistant"],
+    ["Perplexity","https://perplexity.ai","AI search"]
+  ]
+},
+{
+  name:"🎨 Branding",
+  tools:[
+    ["BP&O","https://bpando.org","Brand inspiration"],
+    ["Identity Designed","https://identitydesigned.com","Brand identity"]
+  ]
+},
+{
+  name:"📦 Design Assets",
+  tools:[
+    ["Unsplash","https://unsplash.com","Free photos"],
+    ["Freepik","https://freepik.com","Vectors & assets"],
+    ["Figma Community","https://figma.com/community","Design files"]
+  ]
+},
+{
+  name:"🖼 Mockups",
+  tools:[
+    ["Mockup World","https://mockupworld.co","Free mockups"],
+    ["Screely","https://screely.com","UI screenshots"]
+  ]
+},
+{
+  name:"🎬 Motion & 3D",
+  tools:[
+    ["Runway","https://runwayml.com","AI video"],
+    ["Pika","https://pika.art","AI motion"],
+    ["Sketchfab","https://sketchfab.com","3D models"]
+  ]
+}
+];
 
-  <!-- Branding -->
-  <div class="card">
-    <span class="tag branding">Branding</span>
-    <ul>
-      <li><a href="https://bpando.org">BP&O</a></li>
-      <li><a href="https://identitydesigned.com">Identity Designed</a></li>
-    </ul>
-  </div>
+function createCategory(cat){
+  const div = document.createElement("div");
+  div.className = "category";
 
-  <!-- Assets -->
-  <div class="card">
-    <span class="tag assets">Design Assets</span>
-    <ul>
-      <li><a href="https://unsplash.com">Unsplash</a></li>
-      <li><a href="https://www.freepik.com">Freepik</a></li>
-      <li><a href="https://www.figma.com/community">Figma Community</a></li>
-    </ul>
-  </div>
+  let html = `<h2>${cat.name}</h2>`;
 
-  <!-- Mockups -->
-  <div class="card">
-    <span class="tag mockups">Mockups</span>
-    <ul>
-      <li><a href="https://www.screely.com">Screely</a></li>
-      <li><a href="https://www.mockupworld.co">Mockup World</a></li>
-    </ul>
-  </div>
+  cat.tools.forEach(t=>{
+    const icon = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(t[1]).hostname}`;
+    html += `
+      <a class="tool" href="${t[1]}" target="_blank">
+        <img src="${icon}">
+        <div>
+          <b>${t[0]}</b>
+          <small>${t[2]}</small>
+        </div>
+      </a>
+    `;
+  });
 
-  <!-- Motion -->
-  <div class="card">
-    <span class="tag motion">Motion & 3D</span>
-    <ul>
-      <li><a href="https://runwayml.com">Runway</a></li>
-      <li><a href="https://pika.art">Pika</a></li>
-      <li><a href="https://sketchfab.com">Sketchfab</a></li>
-    </ul>
-  </div>
+  div.innerHTML = html;
+  return div;
+}
 
-</div>
+const app = document.getElementById("app");
+
+data.forEach(cat=>{
+  app.appendChild(createCategory(cat));
+});
+</script>
 
 </body>
 </html>
