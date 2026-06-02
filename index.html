@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vine & Vector Toolkit</title>
+<title>Vine & Vector Dashboard</title>
 
 <style>
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Arial;
-  background:#f6f4f1;
-  color:#1a1a1a;
+  background:#f4f2ee;
+  color:#141414;
 }
 
 /* HEADER */
 header{
-  padding:50px 20px 30px;
+  padding:50px 20px 25px;
   text-align:center;
 }
 
@@ -25,9 +25,27 @@ h1{
   letter-spacing:-0.5px;
 }
 
-p{
+.subtitle{
   color:#666;
   margin-top:10px;
+}
+
+/* SEARCH */
+.searchWrap{
+  display:flex;
+  justify-content:center;
+  margin:20px 0 10px;
+}
+
+input{
+  width:420px;
+  max-width:90%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  outline:none;
+  background:#fff;
+  font-size:14px;
 }
 
 /* GRID */
@@ -38,45 +56,46 @@ p{
   padding:30px 40px 70px;
 }
 
-/* CATEGORY CARD */
+/* CATEGORY PANEL (dashboard card style) */
 .category{
-  background:#fff;
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 8px 25px rgba(0,0,0,.04);
-  border:1px solid #eee;
+  background:rgba(255,255,255,0.9);
+  border:1px solid #e8e6e1;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
 }
 
+/* category header */
 .category h2{
-  font-size:16px;
-  margin:0 0 12px;
-  letter-spacing:0.2px;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:4px 0 14px;
+  color:#333;
 }
 
-/* TOOL ITEM */
+/* TOOL ROW */
 .tool{
   display:flex;
   align-items:center;
   gap:12px;
   text-decoration:none;
-  padding:10px 10px;
+  padding:10px;
   margin:6px 0;
   border-radius:12px;
   border:1px solid transparent;
-  transition:0.2s ease;
+  transition:0.15s ease;
 }
 
 .tool:hover{
   background:#fafafa;
-  border:1px solid #eee;
-  transform:translateY(-1px);
+  border:1px solid #eaeaea;
 }
 
 .tool img{
   width:22px;
   height:22px;
   border-radius:5px;
-  flex-shrink:0;
 }
 
 .tool b{
@@ -88,14 +107,23 @@ p{
   font-size:11px;
   color:#777;
 }
+
+/* HIDE FILTER STYLE */
+.hidden{
+  display:none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Vine & Vector Toolkit</h1>
-  <p>Freelancer creative resource system</p>
+  <h1>Vine & Vector Dashboard</h1>
+  <div class="subtitle">Freelancer toolkit • curated creative systems</div>
+
+  <div class="searchWrap">
+    <input id="search" placeholder="Search tools..." />
+  </div>
 </header>
 
 <div class="grid" id="app"></div>
@@ -112,12 +140,16 @@ const data = [
 name:"3D + Motion",
 tools:[
 ["Adobe After Effects","https://www.adobe.com/products/aftereffects.html","Motion graphics"],
-["Meshy","https://meshy.ai","Text to 3D"],
+["Luma AI","https://lumalabs.ai","3D + video AI"],
+["Meta SAM3D","https://sam.ai","3D AI tools"],
+["Runable","https://runable.com","AI dev tools"],
 ["Runway","https://runwayml.com","AI video tools"],
 ["Sketchfab","https://sketchfab.com","3D library"],
 ["Sloyd","https://sloyd.ai","3D assets"],
 ["Spline","https://spline.design","3D web design"],
-["Tripo AI","https://tripo3d.ai","3D generation"]
+["Stable Diffusion","https://stability.ai","AI model"],
+["Tripo AI","https://tripo3d.ai","3D generation"],
+["Unicorn Studio","https://unicorn.studio","Motion AI"]
 ].sort((a,b)=>a[0].localeCompare(b[0]))
 },
 
@@ -226,17 +258,6 @@ tools:[
 ["Typ.io","https://typ.io","Font inspiration"],
 ["Type Scale","https://type-scale.com","Typography scale"]
 ].sort((a,b)=>a[0].localeCompare(b[0]))
-},
-
-{
-name:"3D Tools",
-tools:[
-["Luma AI","https://lumalabs.ai","3D + video AI"],
-["Meta SAM3D","https://sam.ai","3D AI tools"],
-["Runable","https://runable.com","AI dev tools"],
-["Stable Diffusion","https://stability.ai","AI model"],
-["Unicorn Studio","https://unicorn.studio","Motion AI"]
-].sort((a,b)=>a[0].localeCompare(b[0]))
 }
 
 ];
@@ -253,6 +274,7 @@ function createCategory(cat){
 
   cat.tools.forEach(t=>{
     const icon = `https://www.google.com/s2/favicons?sz=64&domain=${new URL(t[1]).hostname}`;
+
     html += `
       <a class="tool" href="${t[1]}" target="_blank">
         <img src="${icon}">
@@ -268,8 +290,21 @@ function createCategory(cat){
   return div;
 }
 
+/* INIT */
 const app = document.getElementById("app");
 data.forEach(cat => app.appendChild(createCategory(cat)));
+
+/* SEARCH */
+const search = document.getElementById("search");
+
+search.addEventListener("input", e=>{
+  const val = e.target.value.toLowerCase();
+
+  document.querySelectorAll(".tool").forEach(tool=>{
+    const text = tool.innerText.toLowerCase();
+    tool.style.display = text.includes(val) ? "flex" : "none";
+  });
+});
 
 </script>
 
