@@ -6,97 +6,151 @@
 <title>Vine & Vector Toolkit</title>
 
 <style>
+/* =========================
+  BACKGROUND (LINED PAPER)
+========================= */
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, Arial;
+
   background:
     repeating-linear-gradient(
       to bottom,
-      #fff 0px,
-      #fff 28px,
-      #f2f2f2 29px
+      #ffffff 0px,
+      #ffffff 28px,
+      #f3f3f3 29px
     );
+
   color:#111;
 }
 
-header{
-  text-align:center;
-  padding:50px 20px 10px;
+/* soft glow */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.8), rgba(240,242,255,0.6));
+  pointer-events:none;
 }
 
-h1{margin:0;font-size:42px;color:#000;}
-.subtitle{color:#666}
+/* =========================
+  HEADER
+========================= */
+header{
+  text-align:center;
+  padding:60px 20px 10px;
+}
 
+h1{
+  margin:0;
+  font-size:44px;
+  letter-spacing:-0.5px;
+  color:#000;
+}
+
+.subtitle{
+  color:#666;
+  margin-top:8px;
+}
+
+/* =========================
+  SEARCH
+========================= */
 .searchWrap{
   display:flex;
   justify-content:center;
-  margin:20px 0;
+  margin:20px 0 10px;
 }
 
 input{
   width:420px;
   max-width:90%;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid #ddd;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
 }
 
+/* =========================
+  GRID
+========================= */
 .grid{
   column-count:3;
   column-gap:18px;
-  padding:30px;
+  padding:30px 40px 80px;
 }
 
-@media(max-width:1000px){.grid{column-count:2}}
-@media(max-width:650px){.grid{column-count:1}}
+@media(max-width:1000px){ .grid{column-count:2;} }
+@media(max-width:650px){ .grid{column-count:1;} }
 
+/* =========================
+  CATEGORY CARD (GLASS)
+========================= */
 .category{
   break-inside: avoid;
   margin-bottom:18px;
-  border-radius:16px;
+
+  background:rgba(255,255,255,0.65);
+  border:1px solid rgba(255,255,255,0.8);
+  backdrop-filter: blur(16px);
+
+  border-radius:18px;
   padding:14px;
-  background:rgba(255,255,255,0.85);
-  border:1px solid rgba(0,0,0,0.06);
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+
+  box-shadow:0 12px 30px rgba(0,0,0,0.06);
 }
 
+/* category header */
 .catTitle{
-  font-size:13px;
-  font-weight:700;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.2px;
   margin-bottom:10px;
+  display:flex;
+  justify-content:space-between;
 }
 
+/* TOOL */
 .tool{
   display:flex;
   gap:10px;
-  padding:8px;
+  padding:9px;
   margin:6px 0;
-  border-radius:10px;
+  border-radius:12px;
   text-decoration:none;
   color:#111;
-  background:rgba(255,255,255,0.7);
+
+  background:rgba(255,255,255,0.6);
   border:1px solid rgba(0,0,0,0.05);
+
+  transition:0.15s ease;
 }
 
-.tool:hover{background:#fff}
+.tool:hover{
+  transform:translateY(-2px);
+  background:white;
+}
 
 .tool img{
-  width:18px;height:18px;border-radius:4px;
+  width:18px;
+  height:18px;
+  border-radius:4px;
 }
 
-small{color:#666}
+small{color:#666;font-size:11px;}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Vine & Vector Toolkit</h1>
-<div class="subtitle">Complete Creative Resource Library</div>
+  <h1>Vine & Vector Toolkit</h1>
+  <div class="subtitle">Premium freelancer resource dashboard</div>
 </header>
 
 <div class="searchWrap">
-<input id="search" placeholder="Search tools..." />
+  <input id="search" placeholder="Search tools, categories..." />
 </div>
 
 <div class="grid" id="app"></div>
@@ -104,13 +158,12 @@ small{color:#666}
 <script>
 
 /* =========================
-FULL COMPLETE DATASET
-(ALL CATEGORIES INCLUDED)
+  FULL CLEAN DATASET (FIXED)
 ========================= */
 
 const data = [
 
-/* ---------------- GENERATIVE AI ---------------- */
+/* ========== GENERATIVE AI ========== */
 {
 name:"Generative AI",
 color:"#7c5cff",
@@ -138,18 +191,18 @@ tools:[
 ]
 },
 
-/* ---------------- BRANDING ---------------- */
+/* ========== BRANDING ========== */
 {
 name:"Branding",
 color:"#ff4d6d",
 tools:[
-["BrandNew","https://underconsideration.com/brandnew"],
 ["BP&O","https://bpando.org"],
+["BrandNew","https://underconsideration.com/brandnew"],
 ["Identity Designed","https://identitydesigned.com"]
 ]
 },
 
-/* ---------------- LOGOS ---------------- */
+/* ========== LOGOS ========== */
 {
 name:"Logos",
 color:"#ffb703",
@@ -161,7 +214,7 @@ tools:[
 ]
 },
 
-/* ---------------- TYPOGRAPHY ---------------- */
+/* ========== TYPOGRAPHY ========== */
 {
 name:"Typography",
 color:"#3a86ff",
@@ -179,12 +232,12 @@ tools:[
 ]
 },
 
-/* ---------------- 3D ---------------- */
+/* ========== 3D ========== */
 {
-name:"3D / Modeling",
-color:"#8338ec",
+name:"3D / Models",
+color:"#06d6a0",
 tools:[
-["Meta SAM3D","https://meta.com"],
+["Meta SAM3D","https://sam.ai"],
 ["Meshy","https://meshy.ai"],
 ["Runway","https://runwayml.com"],
 ["Sloyd","https://sloyd.ai"],
@@ -192,40 +245,40 @@ tools:[
 ]
 },
 
-/* ---------------- IMAGE EFFECTS ---------------- */
+/* ========== IMAGE EFFECTS ========== */
 {
 name:"Image Effects",
-color:"#06d6a0",
+color:"#8338ec",
 tools:[
 ["ASCII Art Generator","https://www.ascii-art-generator.org"],
 ["Image Color Picker","https://imagecolorpicker.com"],
-["Perler Beads","https://beads.org"],
-["Pixel Motion","https://pixlmotion.com"],
-["Tiled Art","https://tiled.art"],
+["Perler Beads","https://www.pixelartshop.com"],
+["Pixel Motion","https://pixelflow.io"],
+["Tiled Art","https://patterninja.com"],
 ["Tooools","https://www.toools.design"]
 ]
 },
 
-/* ---------------- COLOR ---------------- */
+/* ========== COLOR ========== */
 {
 name:"Color",
 color:"#ff006e",
 tools:[
 ["Coolors","https://coolors.co"],
-["Happy Hues","https://happyhues.co"],
-["Paper Heatmap","https://observablehq.com"],
+["Happy Hues","https://www.happyhues.co"],
+["Paper Heatmap","https://observablehq.com/@tophtucker/paper-heatmap"],
 ["Photo Gradient","https://photogradient.com"],
 ["Shader Gradient","https://shadergradient.co"]
 ]
 },
 
-/* ---------------- AUDIO ---------------- */
+/* ========== AUDIO ========== */
 {
 name:"Audio",
-color:"#118ab2",
+color:"#00bbf9",
 tools:[
 ["A Soft Murmur","https://asoftmurmur.com"],
-["BBC Sound Effects","https://bbcrewind.co.uk"],
+["BBC Sound Effects","https://bbcsfx.acropolis.org.uk"],
 ["MyInstants","https://myinstants.com"],
 ["Radio Garden","https://radio.garden"],
 ["Split My Song","https://splitmysong.com"],
@@ -234,10 +287,10 @@ tools:[
 ]
 },
 
-/* ---------------- IMAGE EDITING ---------------- */
+/* ========== IMAGE EDITING ========== */
 {
 name:"Image Editing",
-color:"#ef476f",
+color:"#9b5de5",
 tools:[
 ["123Apps","https://123apps.com"],
 ["Convertio","https://convertio.co"],
@@ -248,15 +301,14 @@ tools:[
 ]
 },
 
-/* ---------------- FREE ASSETS ---------------- */
+/* ========== FREE ASSETS ========== */
 {
 name:"Free Assets",
-color:"#8ac926",
+color:"#2ec4b6",
 tools:[
 ["123FreeVectors","https://123freevectors.com"],
 ["Anthony Boyd Graphics","https://anthonyboyd.graphics"],
 ["BarnImages","https://barnimages.com"],
-["Bendito Mockup","https://benditomockup.com"],
 ["Burst","https://burst.shopify.com"],
 ["Canva Templates","https://canva.com/templates"],
 ["Creative Market Free Goods","https://creativemarket.com/free-goods"],
@@ -271,7 +323,6 @@ tools:[
 ["LS Graphics","https://ls.graphics"],
 ["Lummi.ai","https://lummi.ai"],
 ["ManyPixels","https://manypixels.co"],
-["Mockey.ai","https://mockey.ai"],
 ["Mockup World","https://mockupworld.co"],
 ["Mockup Tree","https://mockuptree.com"],
 ["MockupBro","https://mockupbro.com"],
@@ -283,23 +334,17 @@ tools:[
 ["Picjumbo","https://picjumbo.com"],
 ["Pixabay","https://pixabay.com"],
 ["Pixeden","https://pixeden.com"],
-["Placeit","https://placeit.net"],
 ["PSD Repo","https://psdrepo.com"],
-["Shots.so","https://shots.so"],
-["Smartmockups","https://smartmockups.com"],
 ["SVG Repo","https://svgrepo.com"],
-["UI8 Freebies","https://ui8.net/freebies"],
-["Unblast","https://unblast.com"],
 ["Unsplash","https://unsplash.com"],
-["Vecteezy","https://vecteezy.com"],
-["VectorStock","https://vectorstock.com"]
+["Vecteezy","https://vecteezy.com"]
 ]
 },
 
-/* ---------------- MOCKUPS ---------------- */
+/* ========== MOCKUPS ========== */
 {
 name:"Mockups",
-color:"#ffb703",
+color:"#fca311",
 tools:[
 ["Frame Canvas","https://framecanvas.com"],
 ["Mockupanda","https://mockupanda.com"],
@@ -311,17 +356,16 @@ tools:[
 ["Printify","https://printify.com"],
 ["Dieline","https://thedieline.com"],
 ["Renderforest","https://renderforest.com"],
-["Angle Mockups","https://anglemockups.com"],
 ["Cleanmock","https://cleanmock.com"],
 ["Rotato","https://rotato.app"],
 ["Screely","https://screely.com"]
 ]
 },
 
-/* ---------------- WEB / CODING ---------------- */
+/* ========== CODING ========== */
 {
-name:"Coding & Web",
-color:"#4361ee",
+name:"Coding",
+color:"#118ab2",
 tools:[
 ["CodePen","https://codepen.io"],
 ["Coddy","https://coddy.tech"],
@@ -329,84 +373,90 @@ tools:[
 ["JSFiddle","https://jsfiddle.net"],
 ["Replit","https://replit.com"],
 ["Roadmap.sh","https://roadmap.sh"],
-["StackBlitz","https://stackblitz.com"],
-["Spline","https://spline.design"],
-["Figma","https://figma.com"]
+["StackBlitz","https://stackblitz.com"]
 ]
 },
 
-/* ---------------- SCIENCE ---------------- */
+/* ========== SCIENCE ========== */
 {
 name:"Science",
-color:"#90e0ef",
+color:"#06d6a0",
 tools:[
 ["BioDigital Human","https://biodigital.com"],
-["Chemistry Notebook","https://chemistry.com"],
-["Hubble Birthday","https://hubblesite.org"],
+["Chemistry Notebook","https://chemistrylab.com"],
+["Hubble Birthday Generator","https://hubblesite.org"],
 ["JavaLab","https://javalab.org"],
-["Scale of Universe","https://htwins.net/scale2"]
+["Scale of the Universe","https://htwins.net/scale2"]
 ]
 },
 
-/* ---------------- FUN ---------------- */
+/* ========== FUN ========== */
 {
 name:"Fun",
-color:"#ff595e",
+color:"#ef476f",
 tools:[
 ["AirConsole","https://airconsole.com"],
 ["Draw a Fish","https://drawafish.com"],
-["Floor796","https://floor796.com"],
 ["GeoFS","https://geo-fs.com"],
-["Hammy Home","https://hammyhome.com"],
 ["MyRetroTVs","https://myretrotvs.com"],
-["White Screen","https://whitescreen.online"],
-["Slow Reads","https://slowreads.com"]
+["White Screen Online","https://whitescreen.online"]
 ]
 }
 
 ];
 
 /* =========================
-RENDER
+  RENDER ENGINE
 ========================= */
 
-const app=document.getElementById("app");
-
 function render(){
-app.innerHTML="";
+  const app = document.getElementById("app");
+  app.innerHTML = "";
 
-data.forEach(cat=>{
-const div=document.createElement("div");
-div.className="category";
+  data.forEach(cat=>{
+    const div = document.createElement("div");
+    div.className = "category";
 
-let html=`<div class="catTitle" style="color:${cat.color}">${cat.name}</div>`;
+    let html = `
+      <div class="catTitle" style="color:${cat.color}">
+        <span>${cat.name}</span>
+      </div>
+    `;
 
-cat.tools.forEach(t=>{
-const icon="https://www.google.com/s2/favicons?sz=64&domain="+new URL(t[1]).hostname;
+    cat.tools
+      .sort((a,b)=>a[0].localeCompare(b[0]))
+      .forEach(t=>{
+        const icon =
+          "https://www.google.com/s2/favicons?sz=64&domain=" +
+          new URL(t[1]).hostname;
 
-html+=`
-<a class="tool" href="${t[1]}" target="_blank">
-<img src="${icon}">
-<div>
-<b>${t[0]}</b><br>
-<small>${t[1].replace("https://","")}</small>
-</div>
-</a>`;
-});
+        html += `
+          <a class="tool" href="${t[1]}" target="_blank">
+            <img src="${icon}">
+            <div>
+              <b>${t[0]}</b><br>
+              <small>${t[1].replace("https://","")}</small>
+            </div>
+          </a>
+        `;
+      });
 
-div.innerHTML=html;
-app.appendChild(div);
-});
+    div.innerHTML = html;
+    app.appendChild(div);
+  });
 }
 
 render();
 
 /* SEARCH */
-document.getElementById("search").addEventListener("input",e=>{
-const v=e.target.value.toLowerCase();
-document.querySelectorAll(".category").forEach(cat=>{
-cat.style.display=cat.innerText.toLowerCase().includes(v)?"block":"none";
-});
+document.getElementById("search").addEventListener("input", e=>{
+  const v = e.target.value.toLowerCase();
+
+  document.querySelectorAll(".category").forEach(cat=>{
+    cat.style.display = cat.innerText.toLowerCase().includes(v)
+      ? "block"
+      : "none";
+  });
 });
 </script>
 
