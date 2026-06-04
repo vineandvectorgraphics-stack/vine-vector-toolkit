@@ -1,389 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Creative Playground Atlas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Creative Library | Vine & Vector</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, Arial;
-  background:#faf9f6;
-  color:#111;
+font-family:'Nunito',sans-serif;
+background:#f7f7f7;
+color:#111;
 }
 
-/* HEADER */
-header{
-  text-align:center;
-  padding:50px 20px 10px;
+/* HERO */
+
+.hero{
+
+background:
+linear-gradient(
+135deg,
+#14878a,
+#9ddde0
+);
+
+padding:120px 20px;
+
+text-align:center;
 }
 
-h1{
-  font-size:44px;
-  margin:0;
-  letter-spacing:-1px;
+.hero-inner{
+max-width:900px;
+margin:auto;
 }
 
-.subtitle{
-  color:#666;
-  margin-top:8px;
+.eyebrow{
+color:white;
+letter-spacing:3px;
+font-size:13px;
+font-weight:700;
+margin-bottom:20px;
 }
 
-/* TOP ACTIONS */
-.actions{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:20px 0;
-  flex-wrap:wrap;
+.hero h1{
+font-size:clamp(48px,8vw,82px);
+color:white;
+line-height:1;
+margin-bottom:20px;
 }
 
-button{
-  padding:10px 14px;
-  border-radius:999px;
-  border:1px solid #ddd;
-  background:white;
-  cursor:pointer;
-  transition:0.2s ease;
+.hero-text{
+max-width:700px;
+margin:auto;
+font-size:22px;
+line-height:1.7;
+color:white;
 }
 
-button:hover{
-  transform:translateY(-2px);
+.search-wrap{
+margin-top:40px;
 }
 
-/* SEARCH */
-.searchWrap{
-  display:flex;
-  justify-content:center;
-  margin:10px 0 30px;
+#search{
+
+width:700px;
+max-width:95%;
+
+padding:20px 28px;
+
+border:none;
+outline:none;
+
+font-size:18px;
+
+border-radius:999px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
 }
 
-input{
-  width:420px;
-  max-width:90%;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid #ddd;
+.stats{
+
+display:flex;
+justify-content:center;
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+}
+
+.stats span{
+
+background:white;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+font-weight:700;
+}
+
+/* CATEGORY NAV */
+
+.quick-nav{
+
+padding:50px 20px;
+
+display:flex;
+justify-content:center;
+gap:12px;
+
+flex-wrap:wrap;
+}
+
+.quick-nav a{
+
+background:white;
+
+padding:12px 18px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+color:#111;
+
+font-weight:700;
+
+box-shadow:
+0 6px 20px rgba(0,0,0,.05);
+
+transition:.25s;
+}
+
+.quick-nav a:hover{
+transform:translateY(-3px);
+}
+
+/* RESOURCE SECTIONS */
+
+.resources{
+
+max-width:1300px;
+margin:auto;
+
+padding:20px 20px 100px;
+}
+
+.category{
+
+margin-bottom:100px;
+}
+
+.category-title{
+
+font-size:46px;
+margin-bottom:30px;
+
+padding-bottom:12px;
+
+border-bottom:4px solid;
 }
 
 /* GRID */
-.grid{
-  column-count:3;
-  column-gap:18px;
-  padding:20px 30px 80px;
+
+.tool-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fill,minmax(280px,1fr));
+
+gap:24px;
 }
 
-@media(max-width:1000px){ .grid{column-count:2;} }
-@media(max-width:650px){ .grid{column-count:1;} }
+/* CARD */
 
-/* BOARD */
-.board{
-  break-inside: avoid;
-  margin-bottom:18px;
-  padding:16px;
-  border-radius:18px;
-  background:white;
-  border:1px solid rgba(0,0,0,0.06);
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  transition:0.2s ease;
-}
-
-.board:hover{
-  transform:translateY(-3px);
-}
-
-.boardTitle{
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:1px;
-}
-
-.boardDesc{
-  font-size:12px;
-  color:#666;
-  margin-bottom:10px;
-}
-
-/* TOOL */
 .tool{
-  display:flex;
-  gap:10px;
-  padding:10px;
-  margin:6px 0;
-  border-radius:12px;
-  text-decoration:none;
-  color:#111;
-  background:#fafafa;
-  border:1px solid rgba(0,0,0,0.04);
-  transition:0.15s ease;
+
+background:white;
+
+padding:28px;
+
+border-radius:24px;
+
+text-decoration:none;
+
+color:#111;
+
+transition:.3s;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.05);
 }
 
 .tool:hover{
-  transform:scale(1.02);
-  background:white;
+
+transform:
+translateY(-6px);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.08);
 }
 
-.tool img{
-  width:18px;
-  height:18px;
-  border-radius:4px;
+.tool h3{
+font-size:24px;
+margin-bottom:10px;
 }
 
-small{
-  display:block;
-  font-size:11px;
-  color:#666;
+.tool-desc{
+
+font-size:15px;
+line-height:1.6;
+
+color:#666;
+
+margin-bottom:20px;
 }
 
-.tags{
-  font-size:10px;
-  color:#888;
+.visit{
+
+font-weight:800;
+
+font-size:14px;
 }
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+padding:90px 20px;
+}
+
+.hero-text{
+font-size:18px;
+}
+
+.category-title{
+font-size:34px;
+}
+
+}
+
 </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Creative Playground Atlas</h1>
-  <div class="subtitle">A living map of creative tools, experiments, and rabbit holes</div>
+<!-- HERO -->
 
-  <div class="actions">
-    <button onclick="surpriseMe()">🎲 Surprise Me</button>
-  </div>
-</header>
+<section class="hero">
 
-<div class="searchWrap">
-  <input id="search" placeholder="Search tools, ideas, AI, design..." />
+<div class="hero-inner">
+
+<div class="eyebrow">
+VINE & VECTOR
 </div>
 
-<div class="grid" id="app"></div>
+<h1>Creative Library</h1>
+
+<p class="hero-text">
+A growing collection of my favorite design tools,
+creative resources, AI platforms, inspiration websites,
+fonts, mockups, and discoveries.
+</p>
+
+<div class="search-wrap">
+
+<input
+id="search"
+placeholder="Search resources..."
+>
+
+</div>
+
+<div class="stats">
+
+<span>400+ Resources</span>
+
+<span>12 Categories</span>
+
+<span>Updated Regularly</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CATEGORY NAV -->
+
+<section
+class="quick-nav"
+id="quickNav">
+</section>
+
+<!-- RESOURCES -->
+
+<section
+class="resources"
+id="app">
+</section>
 
 <script>
 
-/* =========================
-DATA (EXPANDED + DESCRIPTIVE)
-========================= */
+/* SAMPLE DATA */
 
 const data = [
 
 {
-name:"AI Playground",
-desc:"tools that feel like creative cheating (in a good way)",
+name:"Design Inspiration",
+color:"#1c9ca1",
 tools:[
-["Adobe Firefly","https://firefly.adobe.com","AI image generation","AI Image"],
-["Artbreeder","https://artbreeder.com","blend images into new faces and worlds","AI Image"],
-["Claude","https://claude.ai","creative writing + thinking assistant","AI Text"],
-["DeepAI","https://deepai.org","generative image tools","AI Image"],
-["ElevenLabs","https://elevenlabs.io","hyper-realistic voice AI","AI Audio"],
-["Google Labs","https://labs.google.com","experimental AI tools from Google","AI"],
-["Google Pomelli","https://labs.google.com/pomelli","creative AI experiments","AI"],
-["Hugging Face Spaces","https://huggingface.co/spaces","community AI models playground","AI Dev"],
-["Krea AI","https://krea.ai","real-time AI visuals","AI Image"],
-["Leonardo AI","https://leonardo.ai","game + concept art generator","AI Image"],
-["Luma AI","https://lumalabs.ai","3D capture + generation","AI 3D"],
-["Napkin AI","https://napkin.ai","turn ideas into visuals","AI Notes"],
-["Perplexity","https://perplexity.ai","answer engine with sources","AI Research"],
-["Pika","https://pika.art","AI video generation","AI Video"],
-["Playground AI","https://playgroundai.com","image generation playground","AI Image"],
-["Runable","https://runable.com","creative AI tools suite","AI"],
-["Stable Diffusion","https://stability.ai","open image generation model","AI Image"],
-["Suno","https://suno.com","AI music generation","AI Audio"],
-["Udio","https://udio.com","AI songwriting tool","AI Audio"],
-["Unicorn Studio","https://unicorn.studio","3D web visuals + motion","AI 3D"]
+["Behance","https://behance.net"],
+["Dribbble","https://dribbble.com"],
+["Cosmos","https://cosmos.so"],
+["BP&O","https://bpando.org"]
 ]
 },
 
 {
-name:"Design & Inspiration",
-desc:"where visual ideas start forming",
+name:"Typography",
+color:"#8e6bc8",
 tools:[
-["BrandNew","https://underconsideration.com/brandnew","branding breakdowns","Design"],
-["BP&O","https://bpando.org","branding + packaging inspiration","Design"],
-["Identity Designed","https://identitydesigned.com","identity systems archive","Design"]
+["Google Fonts","https://fonts.google.com"],
+["Font Joy","https://fontjoy.com"],
+["Type Scale","https://type-scale.com"],
+["Typ.io","https://typ.io"]
 ]
 },
 
 {
-name:"Logo Worlds",
-desc:"logo exploration + systems thinking",
+name:"AI Tools",
+color:"#f4a623",
 tools:[
-["Logobook","https://logobook.com","logo archive reference","Logo"],
-["Logggos","https://logggos.com","logo inspiration gallery","Logo"],
-["Logoed","https://logoed.co","curated logo collection","Logo"],
-["LogoLounge","https://logolounge.com","professional logo archive","Logo"]
+["Claude","https://claude.ai"],
+["Perplexity","https://perplexity.ai"],
+["Adobe Firefly","https://firefly.adobe.com"],
+["Krea AI","https://krea.ai"]
 ]
 },
 
 {
-name:"Typography + Type Toys",
-desc:"fonts, type experiments, and generative lettering",
+name:"Mockups",
+color:"#14b86f",
 tools:[
-["AutoDraw","https://autodraw.com","AI-assisted sketching","Type"],
-["Calligrapher AI","https://calligrapher.ai","handwriting generator","Type AI"],
-["Emoji Combos","https://emojicombos.com","text + emoji styling","Type Fun"],
-["Font Joy","https://fontjoy.com","font pairing generator","Type"],
-["Google Fonts","https://fonts.google.com","massive font library","Type"],
-["Paper Animator","https://paperanimator.com","paper animation effects","Motion"],
-["Space Type Generator","https://spacetypegenerator.com","type visual experiments","Type"],
-["Type Scale","https://type-scale.com","typography scale tool","Type"],
-["Typ.io","https://typ.io","font pairing inspiration","Type"],
-["Uniqcode Typewriter","https://uniqcode.com","typewriter aesthetic generator","Type"]
-]
-},
-
-{
-name:"3D + Motion Worlds",
-desc:"objects, animation, simulation, spatial design",
-tools:[
-["Meta SAM3D","https://meta.com","3D AI model tools","3D"],
-["Meshy","https://meshy.ai","text to 3D models","3D AI"],
-["Runway","https://runwayml.com","AI video + motion tools","AI Video"],
-["Sloyd","https://sloyd.ai","procedural 3D generation","3D"],
-["Tripo AI","https://tripo3d.ai","fast 3D generation","3D"]
-]
-},
-
-{
-name:"Visual Effects Lab",
-desc:"weird, experimental, and playful image tools",
-tools:[
-["ASCII Art Generator","https://www.asciiart.eu","text to ASCII visuals","Fun"],
-["Image Color Picker","https://imagecolorpicker.com","extract colors","Design"],
-["Perler Beads","https://beads.com","pixel bead art generator","Fun"],
-["Pixel Motion","https://pixemotions.com","motion pixel effects","Motion"],
-["Tiled Art","https://tiled.art","pattern generation","Design"],
-["Tooools","https://tooools.design","experimental design tools","Design"]
-]
-},
-
-{
-name:"Color & Light",
-desc:"palettes, gradients, and visual mood systems",
-tools:[
-["Coolors","https://coolors.co","color palette generator","Color"],
-["Happy Hues","https://www.happyhues.co","real UI color examples","Color"],
-["Paper Heatmap Playground","https://paperheatmap.com","data visualization colors","Color"],
-["Photo Gradient","https://photogradient.com","photo-based gradients","Color"],
-["Shader Gradient","https://shadergradient.co","animated gradient builder","Color Motion"]
-]
-},
-
-{
-name:"Audio Playground",
-desc:"sound, voice, music, and randomness",
-tools:[
-["A Soft Murmur","https://asoftmurmur.com","ambient sound mixer","Audio"],
-["BBC Sound Effects","https://sound-effects.bbcrewind.co.uk","sound library","Audio"],
-["MyInstants","https://myinstants.com","sound buttons","Audio Fun"],
-["Radio Garden","https://radio.garden","global radio map","Audio"],
-["Split My Song","https://splitmysong.com","stem separation tool","Audio"],
-["Vocal Remover","https://vocalremover.org","separate vocals/instruments","Audio"]
-]
-},
-
-{
-name:"Utility & Editing Lab",
-desc:"fix, convert, edit, and clean assets",
-tools:[
-["123Apps","https://123apps.com","online utility suite","Tools"],
-["Convertio","https://convertio.co","file conversion","Tools"],
-["iLoveIMG","https://iloveimg.com","image editing tools","Tools"],
-["Photopea","https://photopea.com","Photoshop alternative","Tools"],
-["Remove.bg","https://remove.bg","background removal","Tools"],
-["TinyWow","https://tinywow.com","all-in-one utilities","Tools"]
-]
-},
-
-{
-name:"Free Assets Vault",
-desc:"photos, vectors, templates, mockups, and UI kits",
-tools:[
-["Unsplash","https://unsplash.com","free photography","Assets"],
-["Pexels","https://pexels.com","free stock media","Assets"],
-["Pixabay","https://pixabay.com","free images + video","Assets"],
-["Freepik","https://freepik.com","design assets library","Assets"],
-["Nappy","https://nappy.co","diverse stock photography","Assets"],
-["Openverse","https://openverse.org","open licensed media","Assets"]
-]
-},
-
-{
-name:"Fun + Weird Internet",
-desc:"creative rabbit holes and playful experiments",
-tools:[
-["GeoFS","https://geo-fs.com","flight simulator","Fun"],
-["Draw a Fish","https://drawafish.com","interactive art toy","Fun"],
-["MyRetroTVs","https://myretrotvs.com","retro media simulator","Fun"],
-["White Screen Online","https://whitescreen.online","minimal aesthetic tool","Fun"]
+["Mockup World","https://mockupworld.co"],
+["Placeit","https://placeit.net"],
+["Pacdora","https://pacdora.com"]
 ]
 }
 
 ];
 
-/* =========================
-RENDER
-========================= */
+/* RENDER */
 
-const app = document.getElementById("app");
+const app =
+document.getElementById("app");
+
+const quickNav =
+document.getElementById("quickNav");
 
 function render(){
-  app.innerHTML = "";
 
-  data.forEach(board=>{
-    const div = document.createElement("div");
-    div.className = "board";
+app.innerHTML="";
+quickNav.innerHTML="";
 
-    let html = `
-      <div class="boardTitle">${board.name}</div>
-      <div class="boardDesc">${board.desc}</div>
-    `;
+data.forEach(category=>{
 
-    board.tools.forEach(t=>{
-      const icon = "https://www.google.com/s2/favicons?sz=64&domain=" + new URL(t[1]).hostname;
+quickNav.innerHTML += `
 
-      html += `
-        <a class="tool" href="${t[1]}" target="_blank">
-          <img src="${icon}">
-          <div>
-            <b>${t[0]}</b>
-            <small>${t[2]}</small>
-            <div class="tags">${t[3]}</div>
-          </div>
-        </a>
-      `;
-    });
+<a href="#${category.name}">
+${category.name}
+</a>
 
-    div.innerHTML = html;
-    app.appendChild(div);
-  });
+`;
+
+let tools="";
+
+category.tools.forEach(tool=>{
+
+tools += `
+
+<a
+class="tool"
+href="${tool[1]}"
+target="_blank">
+
+<h3>${tool[0]}</h3>
+
+<p class="tool-desc">
+A useful creative resource for designers,
+freelancers and makers.
+</p>
+
+<div class="visit">
+Visit Resource →
+</div>
+
+</a>
+
+`;
+
+});
+
+app.innerHTML += `
+
+<section
+class="category"
+id="${category.name}">
+
+<h2
+class="category-title"
+style="
+color:${category.color};
+border-color:${category.color};
+">
+
+${category.name}
+
+</h2>
+
+<div class="tool-grid">
+
+${tools}
+
+</div>
+
+</section>
+
+`;
+
+});
+
 }
 
 render();
 
-/* =========================
-SURPRISE ME
-========================= */
+/* SEARCH */
 
-function surpriseMe(){
-  const all = data.flatMap(b => b.tools);
-  const pick = all[Math.floor(Math.random()*all.length)];
-  window.open(pick[1], "_blank");
-}
+document
+.getElementById("search")
+.addEventListener("input", e=>{
 
-/* =========================
-SEARCH
-========================= */
+const term =
+e.target.value.toLowerCase();
 
-document.getElementById("search").addEventListener("input", e=>{
-  const v = e.target.value.toLowerCase();
+document
+.querySelectorAll(".tool")
+.forEach(card=>{
 
-  document.querySelectorAll(".board").forEach(board=>{
-    board.style.display = board.innerText.toLowerCase().includes(v)
-      ? "block"
-      : "none";
-  });
+const text =
+card.innerText.toLowerCase();
+
+card.style.display =
+text.includes(term)
+? "block"
+: "none";
+
+});
+
 });
 
 </script>
