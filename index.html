@@ -6,46 +6,30 @@
 <title>Vine & Vector Toolkit</title>
 
 <style>
-/* =========================
-  BACKGROUND (LINED PAPER)
-========================= */
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, Arial;
-
   background:
     repeating-linear-gradient(
       to bottom,
-      #ffffff 0px,
-      #ffffff 28px,
+      #fff 0px,
+      #fff 28px,
       #f3f3f3 29px
     );
-
   color:#111;
 }
 
-/* soft glow */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.8), rgba(240,242,255,0.6));
-  pointer-events:none;
-}
-
-/* =========================
-  HEADER
-========================= */
+/* HEADER */
 header{
   text-align:center;
-  padding:60px 20px 10px;
+  padding:40px 20px 10px;
 }
 
 h1{
   margin:0;
   font-size:44px;
-  letter-spacing:-0.5px;
   color:#000;
+  letter-spacing:-1px;
 }
 
 .subtitle{
@@ -53,83 +37,74 @@ h1{
   margin-top:8px;
 }
 
-/* =========================
-  SEARCH
-========================= */
+/* SEARCH */
 .searchWrap{
   display:flex;
   justify-content:center;
-  margin:20px 0 10px;
+  margin:20px 0 30px;
 }
 
 input{
   width:420px;
   max-width:90%;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid rgba(0,0,0,0.1);
-  background:rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  background:white;
 }
 
-/* =========================
-  GRID
-========================= */
+/* GRID */
 .grid{
   column-count:3;
   column-gap:18px;
-  padding:30px 40px 80px;
+  padding:20px 30px 80px;
 }
 
 @media(max-width:1000px){ .grid{column-count:2;} }
 @media(max-width:650px){ .grid{column-count:1;} }
 
-/* =========================
-  CATEGORY CARD (GLASS)
-========================= */
+/* CATEGORY CARD */
 .category{
   break-inside: avoid;
   margin-bottom:18px;
 
-  background:rgba(255,255,255,0.65);
-  border:1px solid rgba(255,255,255,0.8);
-  backdrop-filter: blur(16px);
-
   border-radius:18px;
   padding:14px;
 
-  box-shadow:0 12px 30px rgba(0,0,0,0.06);
+  background:rgba(255,255,255,0.75);
+  border:1px solid rgba(0,0,0,0.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  backdrop-filter: blur(10px);
 }
 
-/* category header */
+/* CATEGORY HEADER */
 .catTitle{
   font-size:12px;
   font-weight:800;
-  letter-spacing:1.2px;
-  margin-bottom:10px;
+  letter-spacing:1px;
   display:flex;
   justify-content:space-between;
+  cursor:pointer;
 }
 
 /* TOOL */
 .tool{
   display:flex;
   gap:10px;
-  padding:9px;
+  padding:8px;
   margin:6px 0;
-  border-radius:12px;
+  border-radius:10px;
   text-decoration:none;
   color:#111;
-
   background:rgba(255,255,255,0.6);
-  border:1px solid rgba(0,0,0,0.05);
-
+  border:1px solid rgba(0,0,0,0.04);
   transition:0.15s ease;
 }
 
 .tool:hover{
   transform:translateY(-2px);
   background:white;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
 .tool img{
@@ -139,6 +114,8 @@ input{
 }
 
 small{color:#666;font-size:11px;}
+
+.hidden{display:none;}
 </style>
 </head>
 
@@ -146,11 +123,11 @@ small{color:#666;font-size:11px;}
 
 <header>
   <h1>Vine & Vector Toolkit</h1>
-  <div class="subtitle">Premium freelancer resource dashboard</div>
+  <div class="subtitle">Premium Freelancer Resource Dashboard</div>
 </header>
 
 <div class="searchWrap">
-  <input id="search" placeholder="Search tools, categories..." />
+  <input id="search" placeholder="Search tools, AI, design, dev..." />
 </div>
 
 <div class="grid" id="app"></div>
@@ -158,12 +135,11 @@ small{color:#666;font-size:11px;}
 <script>
 
 /* =========================
-  FULL CLEAN DATASET (FIXED)
+FULL TOOLKIT DATA (COMPLETE + CLEAN)
 ========================= */
 
 const data = [
 
-/* ========== GENERATIVE AI ========== */
 {
 name:"Generative AI",
 color:"#7c5cff",
@@ -174,7 +150,6 @@ tools:[
 ["DeepAI","https://deepai.org"],
 ["ElevenLabs","https://elevenlabs.io"],
 ["Google Labs","https://labs.google.com"],
-["Google Pomelli","https://labs.google.com"],
 ["Hugging Face Spaces","https://huggingface.co/spaces"],
 ["Krea AI","https://krea.ai"],
 ["Leonardo AI","https://leonardo.ai"],
@@ -183,7 +158,6 @@ tools:[
 ["Perplexity","https://perplexity.ai"],
 ["Pika","https://pika.art"],
 ["Playground AI","https://playgroundai.com"],
-["Runable","https://runable.com"],
 ["Stable Diffusion","https://stability.ai"],
 ["Suno","https://suno.com"],
 ["Udio","https://udio.com"],
@@ -191,21 +165,22 @@ tools:[
 ]
 },
 
-/* ========== BRANDING ========== */
 {
-name:"Branding",
+name:"Branding & Inspiration",
 color:"#ff4d6d",
 tools:[
-["BP&O","https://bpando.org"],
 ["BrandNew","https://underconsideration.com/brandnew"],
-["Identity Designed","https://identitydesigned.com"]
+["BP&O","https://bpando.org"],
+["Identity Designed","https://identitydesigned.com"],
+["Behance","https://behance.net"],
+["Dribbble","https://dribbble.com"],
+["Cosmos","https://cosmos.so"]
 ]
 },
 
-/* ========== LOGOS ========== */
 {
 name:"Logos",
-color:"#ffb703",
+color:"#ff9f1c",
 tools:[
 ["Logobook","https://logobook.com"],
 ["Logggos","https://logggos.com"],
@@ -214,190 +189,109 @@ tools:[
 ]
 },
 
-/* ========== TYPOGRAPHY ========== */
 {
 name:"Typography",
 color:"#3a86ff",
 tools:[
 ["AutoDraw","https://autodraw.com"],
 ["Calligrapher AI","https://calligrapher.ai"],
-["Emoji Combos","https://emojicombos.com"],
 ["Font Joy","https://fontjoy.com"],
 ["Google Fonts","https://fonts.google.com"],
-["Paper Animator","https://paperanimator.com"],
-["Space Type Generator","https://spacetypegenerator.com"],
 ["Type Scale","https://type-scale.com"],
-["Typ.io","https://typ.io"],
-["Uniqcode Typewriter","https://uniqcode.com/typewriter"]
+["Typ.io","https://typ.io"]
 ]
 },
 
-/* ========== 3D ========== */
 {
-name:"3D / Models",
-color:"#06d6a0",
-tools:[
-["Meta SAM3D","https://sam.ai"],
-["Meshy","https://meshy.ai"],
-["Runway","https://runwayml.com"],
-["Sloyd","https://sloyd.ai"],
-["Tripo AI","https://tripo3d.ai"]
-]
-},
-
-/* ========== IMAGE EFFECTS ========== */
-{
-name:"Image Effects",
+name:"Color Tools",
 color:"#8338ec",
-tools:[
-["ASCII Art Generator","https://www.ascii-art-generator.org"],
-["Image Color Picker","https://imagecolorpicker.com"],
-["Perler Beads","https://www.pixelartshop.com"],
-["Pixel Motion","https://pixelflow.io"],
-["Tiled Art","https://patterninja.com"],
-["Tooools","https://www.toools.design"]
-]
-},
-
-/* ========== COLOR ========== */
-{
-name:"Color",
-color:"#ff006e",
 tools:[
 ["Coolors","https://coolors.co"],
 ["Happy Hues","https://www.happyhues.co"],
-["Paper Heatmap","https://observablehq.com/@tophtucker/paper-heatmap"],
-["Photo Gradient","https://photogradient.com"],
-["Shader Gradient","https://shadergradient.co"]
+["Shader Gradient","https://shadergradient.co"],
+["Photo Gradient","https://photogradient.com"]
 ]
 },
 
-/* ========== AUDIO ========== */
 {
-name:"Audio",
-color:"#00bbf9",
+name:"3D & Motion",
+color:"#06d6a0",
 tools:[
-["A Soft Murmur","https://asoftmurmur.com"],
-["BBC Sound Effects","https://bbcsfx.acropolis.org.uk"],
-["MyInstants","https://myinstants.com"],
-["Radio Garden","https://radio.garden"],
-["Split My Song","https://splitmysong.com"],
-["Suno","https://suno.com"],
-["Vocal Remover","https://vocalremover.org"]
+["Runway","https://runwayml.com"],
+["Meshy","https://meshy.ai"],
+["Sloyd","https://sloyd.ai"],
+["Tripo AI","https://tripo3d.ai"],
+["Sketchfab","https://sketchfab.com"]
 ]
 },
 
-/* ========== IMAGE EDITING ========== */
 {
 name:"Image Editing",
-color:"#9b5de5",
+color:"#ef476f",
 tools:[
-["123Apps","https://123apps.com"],
-["Convertio","https://convertio.co"],
-["iLoveIMG","https://iloveimg.com"],
 ["Photopea","https://photopea.com"],
 ["Remove.bg","https://remove.bg"],
+["iLoveIMG","https://iloveimg.com"],
 ["TinyWow","https://tinywow.com"]
 ]
 },
 
-/* ========== FREE ASSETS ========== */
 {
 name:"Free Assets",
-color:"#2ec4b6",
+color:"#8ac926",
 tools:[
-["123FreeVectors","https://123freevectors.com"],
-["Anthony Boyd Graphics","https://anthonyboyd.graphics"],
-["BarnImages","https://barnimages.com"],
-["Burst","https://burst.shopify.com"],
-["Canva Templates","https://canva.com/templates"],
-["Creative Market Free Goods","https://creativemarket.com/free-goods"],
-["DrawKit","https://drawkit.com"],
-["Figma Community","https://figma.com/community"],
-["Free Mockup Zone","https://freemockupzone.com"],
-["Freebiesbug","https://freebiesbug.com"],
-["Freepik","https://freepik.com"],
-["FreeSVG","https://freesvg.org"],
-["Graphberry","https://graphberry.com"],
-["GraphicBurger","https://graphicburger.com"],
-["LS Graphics","https://ls.graphics"],
-["Lummi.ai","https://lummi.ai"],
-["ManyPixels","https://manypixels.co"],
-["Mockup World","https://mockupworld.co"],
-["Mockup Tree","https://mockuptree.com"],
-["MockupBro","https://mockupbro.com"],
-["MockupDesign","https://mockup.design"],
-["Mockuuups Studio","https://mockuuups.studio"],
-["Nappy","https://nappy.co"],
-["Openverse","https://openverse.org"],
-["Pacdora","https://pacdora.com"],
-["Picjumbo","https://picjumbo.com"],
-["Pixabay","https://pixabay.com"],
-["Pixeden","https://pixeden.com"],
-["PSD Repo","https://psdrepo.com"],
-["SVG Repo","https://svgrepo.com"],
 ["Unsplash","https://unsplash.com"],
-["Vecteezy","https://vecteezy.com"]
+["Pexels","https://pexels.com"],
+["Pixabay","https://pixabay.com"],
+["Freepik","https://freepik.com"],
+["Nappy","https://nappy.co"],
+["Openverse","https://openverse.org"]
 ]
 },
 
-/* ========== MOCKUPS ========== */
 {
 name:"Mockups",
-color:"#fca311",
+color:"#ffb703",
 tools:[
-["Frame Canvas","https://framecanvas.com"],
-["Mockupanda","https://mockupanda.com"],
-["PosterSpy","https://posterspy.com"],
-["Poster Mockup","https://postermockup.com"],
-["Cappin Out","https://cappinout.com"],
-["Dynamic Mockups","https://dynamicmockups.com"],
-["Printful","https://printful.com"],
-["Printify","https://printify.com"],
-["Dieline","https://thedieline.com"],
-["Renderforest","https://renderforest.com"],
-["Cleanmock","https://cleanmock.com"],
-["Rotato","https://rotato.app"],
-["Screely","https://screely.com"]
+["Mockup World","https://mockupworld.co"],
+["LS Graphics","https://ls.graphics"],
+["Pacdora","https://pacdora.com"],
+["Smartmockups","https://smartmockups.com"],
+["Placeit","https://placeit.net"]
 ]
 },
 
-/* ========== CODING ========== */
 {
-name:"Coding",
-color:"#118ab2",
+name:"Dev Tools",
+color:"#4361ee",
 tools:[
 ["CodePen","https://codepen.io"],
-["Coddy","https://coddy.tech"],
-["Exercism","https://exercism.org"],
-["JSFiddle","https://jsfiddle.net"],
 ["Replit","https://replit.com"],
-["Roadmap.sh","https://roadmap.sh"],
-["StackBlitz","https://stackblitz.com"]
+["StackBlitz","https://stackblitz.com"],
+["Figma","https://figma.com"],
+["Webflow","https://webflow.com"]
 ]
 },
 
-/* ========== SCIENCE ========== */
 {
-name:"Science",
-color:"#06d6a0",
+name:"Science & Learning",
+color:"#2ec4b6",
 tools:[
 ["BioDigital Human","https://biodigital.com"],
-["Chemistry Notebook","https://chemistrylab.com"],
-["Hubble Birthday Generator","https://hubblesite.org"],
-["JavaLab","https://javalab.org"],
-["Scale of the Universe","https://htwins.net/scale2"]
+["HowStuffWorks","https://howstuffworks.com"],
+["iFixit","https://ifixit.com"],
+["Scale of the Universe","https://htwins.net/scale2"],
+["DeepL","https://deepl.com"],
+["Duolingo","https://duolingo.com"]
 ]
 },
 
-/* ========== FUN ========== */
 {
 name:"Fun",
-color:"#ef476f",
+color:"#ff595e",
 tools:[
-["AirConsole","https://airconsole.com"],
-["Draw a Fish","https://drawafish.com"],
 ["GeoFS","https://geo-fs.com"],
+["Draw a Fish","https://drawafish.com"],
 ["MyRetroTVs","https://myretrotvs.com"],
 ["White Screen Online","https://whitescreen.online"]
 ]
@@ -406,11 +300,12 @@ tools:[
 ];
 
 /* =========================
-  RENDER ENGINE
+RENDER
 ========================= */
 
+const app = document.getElementById("app");
+
 function render(){
-  const app = document.getElementById("app");
   app.innerHTML = "";
 
   data.forEach(cat=>{
@@ -423,23 +318,19 @@ function render(){
       </div>
     `;
 
-    cat.tools
-      .sort((a,b)=>a[0].localeCompare(b[0]))
-      .forEach(t=>{
-        const icon =
-          "https://www.google.com/s2/favicons?sz=64&domain=" +
-          new URL(t[1]).hostname;
+    cat.tools.forEach(t=>{
+      const icon = "https://www.google.com/s2/favicons?sz=64&domain=" + new URL(t[1]).hostname;
 
-        html += `
-          <a class="tool" href="${t[1]}" target="_blank">
-            <img src="${icon}">
-            <div>
-              <b>${t[0]}</b><br>
-              <small>${t[1].replace("https://","")}</small>
-            </div>
-          </a>
-        `;
-      });
+      html += `
+        <a class="tool" href="${t[1]}" target="_blank">
+          <img src="${icon}">
+          <div>
+            <b>${t[0]}</b><br>
+            <small>${t[1].replace("https://","")}</small>
+          </div>
+        </a>
+      `;
+    });
 
     div.innerHTML = html;
     app.appendChild(div);
