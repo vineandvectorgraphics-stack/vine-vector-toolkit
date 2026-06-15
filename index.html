@@ -62,6 +62,7 @@ const groups = [
 
 {
 title:"🌼 CREATE",
+
 categories:[
 "AI & Generative Tools",
 "Branding & Identity",
@@ -76,6 +77,7 @@ categories:[
 
 {
 title:"💡 INSPIRE",
+
 categories:[
 "Design Inspiration",
 "Maps, Geography & Travel",
@@ -85,6 +87,7 @@ categories:[
 
 {
 title:"🛠 BUILD",
+
 categories:[
 "Web Design & UI Systems",
 "Coding & Development",
@@ -95,6 +98,7 @@ categories:[
 
 {
 title:"🌱 GROW",
+
 categories:[
 "Productivity & Collaboration",
 "Portfolio & Freelance",
@@ -134,6 +138,7 @@ nav.innerHTML += `
 
 <a href="#${category.name}">
 ${category.icon}
+${category.name}
 </a>
 
 `;
@@ -157,7 +162,9 @@ loading="lazy">
 
 <h3>${tool.name}</h3>
 
-<p>${tool.description}</p>
+<p>
+${tool.description}
+</p>
 
 <div class="tags">
 
@@ -183,7 +190,6 @@ id="${category.name}">
 class="category-title"
 style="
 color:${category.color};
-border-color:${category.color};
 ">
 
 ${category.icon}
