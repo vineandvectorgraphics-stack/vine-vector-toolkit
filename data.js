@@ -4,6 +4,134 @@ const data = [
 name:"AI & Generative Tools",
 icon:"🤖",
 color:"#f4a623",
+tools:[]
+},
+
+{
+name:"Branding & Identity",
+icon:"🎨",
+color:"#e76f51",
+tools:[]
+},
+
+{
+name:"Typography & Fonts",
+icon:"🔤",
+color:"#8e6bc8",
+tools:[]
+},
+
+{
+name:"Color & Gradients",
+icon:"🌈",
+color:"#ffb703",
+tools:[]
+},
+
+{
+name:"Image Editing & Optimization",
+icon:"🖼️",
+color:"#3b82f6",
+tools:[]
+},
+
+{
+name:"Illustration Libraries",
+icon:"🎨",
+color:"#9b5de5",
+tools:[]
+},
+
+{
+name:"Stock Assets & Vectors",
+icon:"📦",
+color:"#06d6a0",
+tools:[]
+},
+
+{
+name:"Mockups",
+icon:"🧩",
+color:"#14b86f",
+tools:[]
+},
+
+{
+name:"Design Inspiration",
+icon:"💡",
+color:"#ff6b6b",
+tools:[]
+},
+
+{
+name:"Maps, Geography & Travel",
+icon:"🗺️",
+color:"#2a9d8f",
+tools:[]
+},
+
+{
+name:"Creative Experiments",
+icon:"⚡",
+color:"#ff006e",
+tools:[]
+},
+
+{
+name:"Web Design & UI Systems",
+icon:"🧰",
+color:"#4cc9f0",
+tools:[]
+},
+
+{
+name:"Coding & Development",
+icon:"💻",
+color:"#4361ee",
+tools:[]
+},
+
+{
+name:"3D, Motion & Animation",
+icon:"🧠",
+color:"#7209b7",
+tools:[]
+},
+
+{
+name:"Audio & Music",
+icon:"🔊",
+color:"#f72585",
+tools:[]
+},
+
+{
+name:"Productivity & Collaboration",
+icon:"🧠",
+color:"#4895ef",
+tools:[]
+},
+
+{
+name:"Portfolio & Freelance",
+icon:"💼",
+color:"#f77f00",
+tools:[]
+},
+
+{
+name:"Learning & Education",
+icon:"📚",
+color:"#43aa8b",
+tools:[]
+}
+
+];
+
+{
+name:"AI & Generative Tools",
+icon:"🤖",
+color:"#f4a623",
 
 tools:[
 
