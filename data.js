@@ -156,4 +156,179 @@ tags:["Color"]
 
 }
 
+,
+
+{
+name:"Image Editing & Utilities",
+icon:"🖼️",
+color:"#3b82f6",
+
+tools:[
+
+{
+name:"Canva",
+url:"https://canva.com",
+logo:"https://www.google.com/s2/favicons?domain=canva.com&sz=128",
+description:"Graphic design platform for social media, presentations and marketing.",
+tags:["Design","Templates"]
+},
+
+{
+name:"Photopea",
+url:"https://photopea.com",
+logo:"https://www.google.com/s2/favicons?domain=photopea.com&sz=128",
+description:"Browser-based Photoshop alternative with PSD support.",
+tags:["Editing","PSD"]
+},
+
+{
+name:"Remove.bg",
+url:"https://remove.bg",
+logo:"https://www.google.com/s2/favicons?domain=remove.bg&sz=128",
+description:"Automatic background removal tool.",
+tags:["Images","AI"]
+},
+
+{
+name:"Pixlr",
+url:"https://pixlr.com",
+logo:"https://www.google.com/s2/favicons?domain=pixlr.com&sz=128",
+description:"Online image editing with AI tools.",
+tags:["Editing","AI"]
+},
+
+{
+name:"Squoosh",
+url:"https://squoosh.app",
+logo:"https://www.google.com/s2/favicons?domain=squoosh.app&sz=128",
+description:"Compress and optimize images for the web.",
+tags:["Optimization","Web"]
+}
+
+]
+
+},
+
+{
+name:"Mockups",
+icon:"🧩",
+color:"#14b86f",
+
+tools:[
+
+{
+name:"Mockup World",
+url:"https://mockupworld.co",
+logo:"https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128",
+description:"Large collection of free PSD mockups.",
+tags:["Mockups"]
+},
+
+{
+name:"Placeit",
+url:"https://placeit.net",
+logo:"https://www.google.com/s2/favicons?domain=placeit.net&sz=128",
+description:"Generate apparel, device and branding mockups.",
+tags:["Mockups","Apparel"]
+},
+
+{
+name:"Pacdora",
+url:"https://pacdora.com",
+logo:"https://www.google.com/s2/favicons?domain=pacdora.com&sz=128",
+description:"Packaging design and 3D mockup platform.",
+tags:["Packaging","3D"]
+}
+
+]
+
+},
+
+{
+name:"Assets, Photos & Vectors",
+icon:"📦",
+color:"#06d6a0",
+
+tools:[
+
+{
+name:"Unsplash",
+url:"https://unsplash.com",
+logo:"https://www.google.com/s2/favicons?domain=unsplash.com&sz=128",
+description:"Free high-quality photography library.",
+tags:["Photos"]
+},
+
+{
+name:"Freepik",
+url:"https://freepik.com",
+logo:"https://www.google.com/s2/favicons?domain=freepik.com&sz=128",
+description:"Vectors, templates and design assets.",
+tags:["Vectors","Templates"]
+},
+
+{
+name:"Vecteezy",
+url:"https://vecteezy.com",
+logo:"https://www.google.com/s2/favicons?domain=vecteezy.com&sz=128",
+description:"Vector graphics and stock resources.",
+tags:["Vectors"]
+},
+
+{
+name:"SVG Repo",
+url:"https://svgrepo.com",
+logo:"https://www.google.com/s2/favicons?domain=svgrepo.com&sz=128",
+description:"Large SVG icon and illustration library.",
+tags:["SVG","Icons"]
+}
+
+]
+
+},
+
+{
+name:"Illustration Libraries",
+icon:"🎨",
+color:"#9b5de5",
+
+tools:[
+
+{
+name:"DrawKit",
+url:"https://drawkit.com",
+logo:"https://www.google.com/s2/favicons?domain=drawkit.com&sz=128",
+description:"Illustrations, icons and UI assets.",
+tags:["Illustrations"]
+},
+
+{
+name:"Humaaans",
+url:"https://humaaans.com",
+logo:"https://www.google.com/s2/favicons?domain=humaaans.com&sz=128",
+description:"Customizable human illustrations.",
+tags:["Characters"]
+},
+
+{
+name:"Storyset",
+url:"https://storyset.com",
+logo:"https://www.google.com/s2/favicons?domain=storyset.com&sz=128",
+description:"Animated and static illustration collections.",
+tags:["Illustrations","Animation"]
+},
+
+{
+name:"unDraw",
+url:"https://undraw.co",
+logo:"https://www.google.com/s2/favicons?domain=undraw.co&sz=128",
+description:"Open-source SVG illustrations.",
+tags:["SVG","Illustrations"]
+}
+
+]
+
+}
+
 ];
+
