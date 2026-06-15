@@ -335,3 +335,10 @@ font-size: .75rem;
     background: #65795b;
     transform: translateY(-4px);
 }
+
+.site-logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 140px;
+    height: auto;
+}
