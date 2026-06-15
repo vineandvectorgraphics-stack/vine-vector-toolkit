@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vine & Vector | Creative Library</title>
+<title>Vine & Vector | Creative Resource Library</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -24,17 +24,19 @@
 
 <h1>Vine & Vector</h1>
 
-<h2>Creative Library</h2>
+<h2>Creative Resource Library</h2>
 
 <p>
-Design tools, inspiration, AI resources,
-maps, assets, mockups and internet discoveries.
+A curated collection of creative tools, design resources,
+AI platforms, inspiration websites, mockups, assets,
+learning resources and internet discoveries.
 </p>
 
 <input
 id="search"
 type="text"
-placeholder="Search resources..."
+placeholder="Search 363+ resources..."
+
 >
 
 </div>
@@ -55,6 +57,29 @@ placeholder="Search resources..."
 
 </nav>
 
+<section class="featured">
+
+<div class="featured-card">
+
+<div class="featured-content">
+
+<span class="featured-label">
+FEATURED RESOURCE
+</span>
+
+<h2>Discover New Creative Tools Every Week</h2>
+
+<p>
+Explore AI tools, design inspiration, branding resources,
+mockups, development tools, creative workflows and more.
+Everything is organized into categories so you can find
+the perfect resource faster.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 <section
@@ -70,20 +95,22 @@ class="favorite-card"
 href="https://chatgpt.com"
 target="_blank">
 
-<div class="favorite-image logo-card"></div>
+<div class="favorite-gradient chatgpt"></div>
+
+<div class="favorite-body">
 
 <img
-class="favorite-logo"
-src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128">
+src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128"
+class="favorite-logo">
 
 <h3>ChatGPT</h3>
 
 <p>
-My go-to AI assistant for
-brainstorming, writing and research.
+My go-to AI assistant for brainstorming,
+writing, research and creative workflows.
 </p>
 
-<span>AI Assistant</span>
+</div>
 
 </a>
 
@@ -92,42 +119,22 @@ class="favorite-card"
 href="https://claude.ai"
 target="_blank">
 
-<div class="favorite-image claude-gradient"></div>
+<div class="favorite-gradient claude"></div>
+
+<div class="favorite-body">
 
 <img
-class="favorite-logo"
-src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128">
+src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128"
+class="favorite-logo">
 
 <h3>Claude</h3>
 
 <p>
 Excellent for long-form writing,
-organization and planning.
+organization and project planning.
 </p>
 
-<span>AI Writing</span>
-
-</a>
-
-<a
-class="favorite-card"
-href="https://firefly.adobe.com"
-target="_blank">
-
-<div class="favorite-image firefly-gradient"></div>
-
-<img
-class="favorite-logo"
-src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128">
-
-<h3>Adobe Firefly</h3>
-
-<p>
-Commercial-safe AI image generation
-inside Adobe workflows.
-</p>
-
-<span>AI Design</span>
+</div>
 
 </a>
 
@@ -136,20 +143,22 @@ class="favorite-card"
 href="https://www.behance.net"
 target="_blank">
 
-<div class="favorite-image behance-gradient"></div>
+<div class="favorite-gradient behance"></div>
+
+<div class="favorite-body">
 
 <img
-class="favorite-logo"
-src="https://www.google.com/s2/favicons?domain=behance.net&sz=128">
+src="https://www.google.com/s2/favicons?domain=behance.net&sz=128"
+class="favorite-logo">
 
 <h3>Behance</h3>
 
 <p>
-One of my favorite places
-to discover creative inspiration.
+One of my favorite places for
+creative inspiration and portfolio browsing.
 </p>
 
-<span>Inspiration</span>
+</div>
 
 </a>
 
@@ -158,42 +167,22 @@ class="favorite-card"
 href="https://mobbin.com"
 target="_blank">
 
-<div class="favorite-image mobbin-gradient"></div>
+<div class="favorite-gradient mobbin"></div>
+
+<div class="favorite-body">
 
 <img
-class="favorite-logo"
-src="https://www.google.com/s2/favicons?domain=mobbin.com&sz=128">
+src="https://www.google.com/s2/favicons?domain=mobbin.com&sz=128"
+class="favorite-logo">
 
 <h3>Mobbin</h3>
 
 <p>
-A huge collection of real-world
-mobile UI patterns.
+A massive library of real-world
+mobile and web UI inspiration.
 </p>
 
-<span>UI Design</span>
-
-</a>
-
-<a
-class="favorite-card"
-href="https://mapbox.com/studio"
-target="_blank">
-
-<div class="favorite-image map-gradient"></div>
-
-<img
-class="favorite-logo"
-src="https://www.google.com/s2/favicons?domain=mapbox.com&sz=128">
-
-<h3>Mapbox Studio</h3>
-
-<p>
-Create beautiful custom maps
-for storytelling and design.
-</p>
-
-<span>Maps</span>
+</div>
 
 </a>
 
@@ -210,19 +199,21 @@ for storytelling and design.
 const app =
 document.getElementById("app");
 
-const groups = [
+const sections = [
 
 {
 id:"create",
 title:"🌼 CREATE",
 categories:[
-"AI & Generative Tools",
-"Branding & Identity",
-"Typography & Fonts",
-"Color & Gradients",
-"Image Editing & Optimization",
-"Illustration Libraries",
-"Stock Assets & Vectors",
+"🤖 AI & Generative Tools",
+"🎨 Branding & Identity",
+"🪪 Logo Resources",
+"🔤 Typography & Fonts",
+"🎨 Color Tools",
+"🖼️ Image Editing & File Tools",
+"🎨 Image Effects & Generators",
+"🎨 Illustration Libraries",
+"Stock Assets & Photos",
 "Mockups"
 ]
 },
@@ -231,9 +222,7 @@ categories:[
 id:"inspire",
 title:"💡 INSPIRE",
 categories:[
-"Design Inspiration",
-"Maps, Geography & Travel",
-"Creative Experiments"
+"🎨 Design Inspiration"
 ]
 },
 
@@ -241,10 +230,10 @@ categories:[
 id:"build",
 title:"🛠 BUILD",
 categories:[
-"Web Design & UI Systems",
-"Coding & Development",
-"3D, Motion & Animation",
-"Audio & Music"
+"Web & Design Development",
+"💻 Coding & Development",
+"🧠 3D, Motion & Animation",
+"🔊 Audio & Music"
 ]
 },
 
@@ -252,33 +241,32 @@ categories:[
 id:"grow",
 title:"🌱 GROW",
 categories:[
-"Productivity & Collaboration",
+"Workflow & Collaboration",
 "Portfolio & Freelance",
-"Learning & Education"
+"📚 Learning & Education"
 ]
 }
 
 ];
-
 function render(){
 
 app.innerHTML="";
 
-groups.forEach(group=>{
+sections.forEach(section=>{
 
 app.innerHTML += `
 
-<div
-class="section-header"
-id="${group.id}">
+<section
+class="section-banner"
+id="${section.id}">
 
-<h2>${group.title}</h2>
+<h2>${section.title}</h2>
 
-</div>
+</section>
 
 `;
 
-group.categories.forEach(categoryName=>{
+section.categories.forEach(categoryName=>{
 
 const category =
 data.find(item =>
@@ -286,32 +274,43 @@ item.name === categoryName);
 
 if(!category) return;
 
-let cards="";
+let cards = "";
 
 category.tools.forEach(tool=>{
+
+const logo =
+`https://www.google.com/s2/favicons?domain=${
+new URL(tool.url).hostname
+}&sz=128`;
 
 cards += `
 
 <a
-class="tool"
+class="tool-card"
 href="${tool.url}"
 target="_blank">
 
+<div class="tool-logo-wrap">
+
 <img
 class="tool-logo"
-src="${tool.logo}"
+src="${logo}"
 alt="${tool.name}"
 loading="lazy">
 
+</div>
+
 <h3>${tool.name}</h3>
 
-<p>${tool.description}</p>
+<p>${tool.description || ""}</p>
 
 <div class="tags">
 
-${tool.tags.map(tag =>
+${(tool.tags || [])
+.map(tag =>
 `<span>${tag}</span>`
-).join("")}
+)
+.join("")}
 
 </div>
 
@@ -325,18 +324,28 @@ app.innerHTML += `
 
 <section class="category">
 
-<h2
+<div class="category-header">
+
+<h3
 class="category-title"
 style="
 color:${category.color};
 ">
 
-${category.icon}
 ${category.name}
 
-</h2>
+</h3>
 
-<div class="grid">
+<span class="resource-count">
+
+${category.tools.length}
+Resources
+
+</span>
+
+</div>
+
+<div class="tool-grid">
 
 ${cards}
 
@@ -362,7 +371,7 @@ const search =
 e.target.value.toLowerCase();
 
 document
-.querySelectorAll(".tool")
+.querySelectorAll(".tool-card")
 .forEach(card=>{
 
 const text =
@@ -380,5 +389,4 @@ text.includes(search)
 </script>
 
 </body>
-
 </html>
