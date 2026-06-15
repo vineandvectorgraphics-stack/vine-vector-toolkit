@@ -1,416 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creative Library | Vine & Vector</title>
+<title>Creative Library</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Nunito',sans-serif;
-background:#f7f7f7;
-color:#111;
-}
-
-/* HERO */
-
-.hero{
-
-background:
-linear-gradient(
-135deg,
-#14878a,
-#9ddde0
-);
-
-padding:120px 20px;
-
-text-align:center;
-}
-
-.hero-inner{
-max-width:900px;
-margin:auto;
-}
-
-.eyebrow{
-color:white;
-letter-spacing:3px;
-font-size:13px;
-font-weight:700;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:clamp(48px,8vw,82px);
-color:white;
-line-height:1;
-margin-bottom:20px;
-}
-
-.hero-text{
-max-width:700px;
-margin:auto;
-font-size:22px;
-line-height:1.7;
-color:white;
-}
-
-.search-wrap{
-margin-top:40px;
-}
-
-#search{
-
-width:700px;
-max-width:95%;
-
-padding:20px 28px;
-
-border:none;
-outline:none;
-
-font-size:18px;
-
-border-radius:999px;
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.08);
-}
-
-.stats{
-
-display:flex;
-justify-content:center;
-gap:15px;
-
-flex-wrap:wrap;
-
-margin-top:35px;
-}
-
-.stats span{
-
-background:white;
-
-padding:10px 18px;
-
-border-radius:999px;
-
-font-weight:700;
-}
-
-/* CATEGORY NAV */
-
-.quick-nav{
-
-padding:50px 20px;
-
-display:flex;
-justify-content:center;
-gap:12px;
-
-flex-wrap:wrap;
-}
-
-.quick-nav a{
-
-background:white;
-
-padding:12px 18px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-color:#111;
-
-font-weight:700;
-
-box-shadow:
-0 6px 20px rgba(0,0,0,.05);
-
-transition:.25s;
-}
-
-.quick-nav a:hover{
-transform:translateY(-3px);
-}
-
-/* RESOURCE SECTIONS */
-
-.resources{
-
-max-width:1300px;
-margin:auto;
-
-padding:20px 20px 100px;
-}
-
-.category{
-
-margin-bottom:100px;
-}
-
-.category-title{
-
-font-size:46px;
-margin-bottom:30px;
-
-padding-bottom:12px;
-
-border-bottom:4px solid;
-}
-
-/* GRID */
-
-.tool-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fill,minmax(280px,1fr));
-
-gap:24px;
-}
-
-/* CARD */
-
-.tool{
-
-background:white;
-
-padding:28px;
-
-border-radius:24px;
-
-text-decoration:none;
-
-color:#111;
-
-transition:.3s;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.05);
-}
-
-.tool:hover{
-
-transform:
-translateY(-6px);
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.08);
-}
-
-.tool h3{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.tool-desc{
-
-font-size:15px;
-line-height:1.6;
-
-color:#666;
-
-margin-bottom:20px;
-}
-
-.visit{
-
-font-weight:800;
-
-font-size:14px;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero{
-padding:90px 20px;
-}
-
-.hero-text{
-font-size:18px;
-}
-
-.category-title{
-font-size:34px;
-}
-
-}
-
-</style>
 </head>
+
 <body>
 
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-inner">
-
-<div class="eyebrow">
-VINE & VECTOR
-</div>
+<header class="hero">
 
 <h1>Creative Library</h1>
 
-<p class="hero-text">
-A growing collection of my favorite design tools,
-creative resources, AI platforms, inspiration websites,
-fonts, mockups, and discoveries.
+<p>
+My favorite design tools, AI resources, mockups,
+fonts, inspiration websites, stock assets and more.
 </p>
-
-<div class="search-wrap">
 
 <input
 id="search"
 placeholder="Search resources..."
 >
 
-</div>
+</header>
 
-<div class="stats">
+<nav id="nav"></nav>
 
-<span>400+ Resources</span>
+<main id="app"></main>
 
-<span>12 Categories</span>
-
-<span>Updated Regularly</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CATEGORY NAV -->
-
-<section
-class="quick-nav"
-id="quickNav">
-</section>
-
-<!-- RESOURCES -->
-
-<section
-class="resources"
-id="app">
-</section>
+<script src="data.js"></script>
 
 <script>
-
-/* SAMPLE DATA */
-
-const data = [
-
-{
-name:"Design Inspiration",
-color:"#1c9ca1",
-tools:[
-["Behance","https://behance.net"],
-["Dribbble","https://dribbble.com"],
-["Cosmos","https://cosmos.so"],
-["BP&O","https://bpando.org"]
-]
-},
-
-{
-name:"Typography",
-color:"#8e6bc8",
-tools:[
-["Google Fonts","https://fonts.google.com"],
-["Font Joy","https://fontjoy.com"],
-["Type Scale","https://type-scale.com"],
-["Typ.io","https://typ.io"]
-]
-},
-
-{
-name:"AI Tools",
-color:"#f4a623",
-tools:[
-["Claude","https://claude.ai"],
-["Perplexity","https://perplexity.ai"],
-["Adobe Firefly","https://firefly.adobe.com"],
-["Krea AI","https://krea.ai"]
-]
-},
-
-{
-name:"Mockups",
-color:"#14b86f",
-tools:[
-["Mockup World","https://mockupworld.co"],
-["Placeit","https://placeit.net"],
-["Pacdora","https://pacdora.com"]
-]
-}
-
-];
-
-/* RENDER */
 
 const app =
 document.getElementById("app");
 
-const quickNav =
-document.getElementById("quickNav");
+const nav =
+document.getElementById("nav");
 
 function render(){
 
 app.innerHTML="";
-quickNav.innerHTML="";
+nav.innerHTML="";
 
 data.forEach(category=>{
 
-quickNav.innerHTML += `
-
+nav.innerHTML += `
 <a href="#${category.name}">
-${category.name}
+${category.icon} ${category.name}
 </a>
-
 `;
 
-let tools="";
+let cards="";
 
 category.tools.forEach(tool=>{
 
-tools += `
+cards += `
 
 <a
 class="tool"
-href="${tool[1]}"
+href="${tool.url}"
 target="_blank">
 
-<h3>${tool[0]}</h3>
+<img
+class="tool-logo"
+src="${tool.logo}"
+alt="${tool.name}">
 
-<p class="tool-desc">
-A useful creative resource for designers,
-freelancers and makers.
+<h3>${tool.name}</h3>
+
+<p>
+${tool.description}
 </p>
 
-<div class="visit">
-Visit Resource →
+<div class="tags">
+
+${tool.tags.map(tag =>
+`<span>${tag}</span>`
+).join("")}
+
 </div>
 
 </a>
@@ -426,19 +102,19 @@ class="category"
 id="${category.name}">
 
 <h2
-class="category-title"
 style="
-color:${category.color};
 border-color:${category.color};
+color:${category.color};
 ">
 
+${category.icon}
 ${category.name}
 
 </h2>
 
-<div class="tool-grid">
+<div class="grid">
 
-${tools}
+${cards}
 
 </div>
 
@@ -452,13 +128,11 @@ ${tools}
 
 render();
 
-/* SEARCH */
-
 document
 .getElementById("search")
-.addEventListener("input", e=>{
+.addEventListener("input",e=>{
 
-const term =
+const search =
 e.target.value.toLowerCase();
 
 document
@@ -469,7 +143,7 @@ const text =
 card.innerText.toLowerCase();
 
 card.style.display =
-text.includes(term)
+text.includes(search)
 ? "block"
 : "none";
 
