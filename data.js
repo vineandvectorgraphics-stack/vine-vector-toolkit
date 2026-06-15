@@ -60,6 +60,146 @@ tags:["Branding"]
 
 ]
 
+},
+
+{
+name:"Typography & Fonts",
+icon:"🔤",
+color:"#8e6bc8",
+
+tools:[
+
+{
+name:"Google Fonts",
+url:"https://fonts.google.com",
+logo:"https://www.google.com/s2/favicons?domain=fonts.google.com&sz=128",
+description:"Free font library from Google.",
+tags:["Fonts"]
+},
+
+{
+name:"Adobe Fonts",
+url:"https://fonts.adobe.com",
+logo:"https://www.google.com/s2/favicons?domain=fonts.adobe.com&sz=128",
+description:"Fonts included with Creative Cloud.",
+tags:["Fonts"]
+},
+
+{
+name:"Fontjoy",
+url:"https://fontjoy.com",
+logo:"https://www.google.com/s2/favicons?domain=fontjoy.com&sz=128",
+description:"AI-powered font pairing generator.",
+tags:["Typography"]
+}
+
+]
+
+},
+
+{
+name:"Color Tools",
+icon:"🌈",
+color:"#ffb703",
+
+tools:[
+
+{
+name:"Adobe Color",
+url:"https://color.adobe.com",
+logo:"https://www.google.com/s2/favicons?domain=color.adobe.com&sz=128",
+description:"Create color palettes and harmonies.",
+tags:["Color"]
+},
+
+{
+name:"Coolors",
+url:"https://coolors.co",
+logo:"https://www.google.com/s2/favicons?domain=coolors.co&sz=128",
+description:"Popular palette generator.",
+tags:["Color"]
+},
+
+{
+name:"Color Hunt",
+url:"https://colorhunt.co",
+logo:"https://www.google.com/s2/favicons?domain=colorhunt.co&sz=128",
+description:"Curated color palette collection.",
+tags:["Color"]
+}
+
+]
+
+},
+
+{
+name:"Image Editing & File Tools",
+icon:"🖼️",
+color:"#3b82f6",
+
+tools:[
+
+{
+name:"Canva",
+url:"https://canva.com",
+logo:"https://www.google.com/s2/favicons?domain=canva.com&sz=128",
+description:"Graphic design platform.",
+tags:["Design"]
+},
+
+{
+name:"Photopea",
+url:"https://photopea.com",
+logo:"https://www.google.com/s2/favicons?domain=photopea.com&sz=128",
+description:"Browser-based Photoshop alternative.",
+tags:["Editing"]
+},
+
+{
+name:"Remove.bg",
+url:"https://remove.bg",
+logo:"https://www.google.com/s2/favicons?domain=remove.bg&sz=128",
+description:"Automatic background remover.",
+tags:["Images"]
+}
+
+]
+
+},
+
+{
+name:"Mockups",
+icon:"🧩",
+color:"#14b86f",
+
+tools:[
+
+{
+name:"Mockup World",
+url:"https://mockupworld.co",
+logo:"https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128",
+description:"Free PSD mockup library.",
+tags:["Mockups"]
+},
+
+{
+name:"Placeit",
+url:"https://placeit.net",
+logo:"https://www.google.com/s2/favicons?domain=placeit.net&sz=128",
+description:"Online mockup generator.",
+tags:["Mockups"]
+},
+
+{
+name:"Pacdora",
+url:"https://pacdora.com",
+logo:"https://www.google.com/s2/favicons?domain=pacdora.com&sz=128",
+description:"Packaging mockups and 3D previews.",
+tags:["Packaging"]
+}
+
+]
+
 }
 
 ];
