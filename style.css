@@ -308,8 +308,8 @@ font-size: .75rem;
     bottom: 24px;
     right: 24px;
 
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
 
     border: none;
     border-radius: 50%;
@@ -317,23 +317,21 @@ font-size: .75rem;
     background: #7b8f71;
     color: white;
 
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    z-index: 9999;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
 
-    transition: all .25s ease;
+    z-index: 99999;
 }
 
 #backToTop:hover {
-    transform: translateY(-4px);
-    background: #687a60;
-}
-
-#backToTop:active {
-    transform: translateY(-1px);
+    background: #65795b;
+    transform: translateY(-3px);
 }
