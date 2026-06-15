@@ -200,6 +200,178 @@ tags:["Packaging"]
 
 ]
 
+},
+
+{
+name:"Design Inspiration",
+icon:"💡",
+color:"#ff6b6b",
+
+tools:[
+
+{
+name:"Behance",
+url:"https://behance.net",
+logo:"https://www.google.com/s2/favicons?domain=behance.net&sz=128",
+description:"Creative portfolios and inspiration.",
+tags:["Inspiration"]
+},
+
+{
+name:"Dribbble",
+url:"https://dribbble.com",
+logo:"https://www.google.com/s2/favicons?domain=dribbble.com&sz=128",
+description:"Design inspiration and UI showcases.",
+tags:["Inspiration"]
+},
+
+{
+name:"Awwwards",
+url:"https://awwwards.com",
+logo:"https://www.google.com/s2/favicons?domain=awwwards.com&sz=128",
+description:"Award-winning websites and digital experiences.",
+tags:["Web Design"]
+},
+
+{
+name:"Mobbin",
+url:"https://mobbin.com",
+logo:"https://www.google.com/s2/favicons?domain=mobbin.com&sz=128",
+description:"Mobile UI inspiration library.",
+tags:["UI"]
+}
+
+]
+
+},
+
+{
+name:"Maps & Travel",
+icon:"🗺️",
+color:"#2a9d8f",
+
+tools:[
+
+{
+name:"Anvaka City Roads",
+url:"https://anvaka.github.io/city-roads/",
+logo:"https://www.google.com/s2/favicons?domain=anvaka.github.io&sz=128",
+description:"Visualize road networks worldwide.",
+tags:["Maps"]
+},
+
+{
+name:"Inkarnate",
+url:"https://inkarnate.com",
+logo:"https://www.google.com/s2/favicons?domain=inkarnate.com&sz=128",
+description:"Fantasy and world map creation.",
+tags:["Maps"]
+},
+
+{
+name:"Mapbox Studio",
+url:"https://mapbox.com/studio",
+logo:"https://www.google.com/s2/favicons?domain=mapbox.com&sz=128",
+description:"Create custom maps.",
+tags:["Maps"]
+},
+
+{
+name:"Felt",
+url:"https://felt.com",
+logo:"https://www.google.com/s2/favicons?domain=felt.com&sz=128",
+description:"Collaborative mapping platform.",
+tags:["Maps"]
+}
+
+]
+
+},
+
+{
+name:"Fun & Weird Internet",
+icon:"🎮",
+color:"#8338ec",
+
+tools:[
+
+{
+name:"Neal.fun",
+url:"https://neal.fun",
+logo:"https://www.google.com/s2/favicons?domain=neal.fun&sz=128",
+description:"Interactive internet experiments.",
+tags:["Fun"]
+},
+
+{
+name:"Window Swap",
+url:"https://window-swap.com",
+logo:"https://www.google.com/s2/favicons?domain=window-swap.com&sz=128",
+description:"Views from around the world.",
+tags:["Travel"]
+},
+
+{
+name:"Zoom Quilt",
+url:"https://zoomquilt.org",
+logo:"https://www.google.com/s2/favicons?domain=zoomquilt.org&sz=128",
+description:"Infinite collaborative artwork.",
+tags:["Art"]
+},
+
+{
+name:"Patatap",
+url:"https://patatap.com",
+logo:"https://www.google.com/s2/favicons?domain=patatap.com&sz=128",
+description:"Interactive sound and animation toy.",
+tags:["Music"]
+}
+
+]
+
+},
+
+{
+name:"Workflow & Collaboration",
+icon:"🧠",
+color:"#4361ee",
+
+tools:[
+
+{
+name:"Notion",
+url:"https://notion.so",
+logo:"https://www.google.com/s2/favicons?domain=notion.so&sz=128",
+description:"All-in-one workspace.",
+tags:["Productivity"]
+},
+
+{
+name:"Miro",
+url:"https://miro.com",
+logo:"https://www.google.com/s2/favicons?domain=miro.com&sz=128",
+description:"Collaborative whiteboard.",
+tags:["Collaboration"]
+},
+
+{
+name:"FigJam",
+url:"https://figma.com/figjam",
+logo:"https://www.google.com/s2/favicons?domain=figma.com&sz=128",
+description:"Visual brainstorming.",
+tags:["Collaboration"]
+},
+
+{
+name:"Airtable",
+url:"https://airtable.com",
+logo:"https://www.google.com/s2/favicons?domain=airtable.com&sz=128",
+description:"Flexible database platform.",
+tags:["Organization"]
+}
+
+]
+
 }
 
 ];
