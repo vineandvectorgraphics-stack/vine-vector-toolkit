@@ -360,3 +360,40 @@ font-size: .75rem;
     margin-left: 10px;
     text-decoration: underline;
 }
+#search-results {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    display: none;
+    text-align: left;
+}
+
+.search-result {
+    display: block;
+    padding: 14px 18px;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background .2s ease;
+}
+
+.search-result:hover {
+    background: #f7f7f7;
+}
+
+.search-result:last-child {
+    border-bottom: none;
+}
+
+.search-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.search-desc {
+    font-size: .9rem;
+    opacity: .7;
+}
