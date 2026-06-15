@@ -587,6 +587,262 @@ tags:["Learning","Development"]
 
 }
 
-];
+,
 
+{
+name:"3D, Motion & Animation",
+icon:"🧠",
+color:"#7209b7",
+
+tools:[
+
+{
+name:"Blender",
+url:"https://blender.org",
+logo:"https://www.google.com/s2/favicons?domain=blender.org&sz=128",
+description:"Free open-source 3D modeling and animation software.",
+tags:["3D","Animation"]
+},
+
+{
+name:"Spline",
+url:"https://spline.design",
+logo:"https://www.google.com/s2/favicons?domain=spline.design&sz=128",
+description:"Interactive 3D design for web experiences.",
+tags:["3D","Web"]
+},
+
+{
+name:"Mixamo",
+url:"https://mixamo.com",
+logo:"https://www.google.com/s2/favicons?domain=mixamo.com&sz=128",
+description:"Character rigging and animation library.",
+tags:["Animation","Characters"]
+},
+
+{
+name:"Sketchfab",
+url:"https://sketchfab.com",
+logo:"https://www.google.com/s2/favicons?domain=sketchfab.com&sz=128",
+description:"Explore and download 3D models.",
+tags:["3D","Models"]
+},
+
+{
+name:"Meshy",
+url:"https://meshy.ai",
+logo:"https://www.google.com/s2/favicons?domain=meshy.ai&sz=128",
+description:"Generate 3D assets with AI.",
+tags:["AI","3D"]
+}
+
+]
+
+},
+
+{
+name:"Productivity & Collaboration",
+icon:"🧠",
+color:"#4895ef",
+
+tools:[
+
+{
+name:"Notion",
+url:"https://notion.so",
+logo:"https://www.google.com/s2/favicons?domain=notion.so&sz=128",
+description:"Notes, projects and team collaboration.",
+tags:["Productivity","Notes"]
+},
+
+{
+name:"Miro",
+url:"https://miro.com",
+logo:"https://www.google.com/s2/favicons?domain=miro.com&sz=128",
+description:"Collaborative whiteboard platform.",
+tags:["Collaboration","Whiteboard"]
+},
+
+{
+name:"Airtable",
+url:"https://airtable.com",
+logo:"https://www.google.com/s2/favicons?domain=airtable.com&sz=128",
+description:"Spreadsheet-database hybrid for organizing projects.",
+tags:["Database","Organization"]
+},
+
+{
+name:"ClickUp",
+url:"https://clickup.com",
+logo:"https://www.google.com/s2/favicons?domain=clickup.com&sz=128",
+description:"Project management and productivity platform.",
+tags:["Projects","Productivity"]
+},
+
+{
+name:"Whimsical",
+url:"https://whimsical.com",
+logo:"https://www.google.com/s2/favicons?domain=whimsical.com&sz=128",
+description:"Flowcharts, wireframes and brainstorming.",
+tags:["Planning","Diagrams"]
+}
+
+]
+
+},
+
+{
+name:"Portfolio & Freelance",
+icon:"💼",
+color:"#f77f00",
+
+tools:[
+
+{
+name:"Behance",
+url:"https://behance.net",
+logo:"https://www.google.com/s2/favicons?domain=behance.net&sz=128",
+description:"Creative portfolio platform.",
+tags:["Portfolio"]
+},
+
+{
+name:"Adobe Portfolio",
+url:"https://portfolio.adobe.com",
+logo:"https://www.google.com/s2/favicons?domain=portfolio.adobe.com&sz=128",
+description:"Build portfolio websites with Adobe.",
+tags:["Portfolio","Website"]
+},
+
+{
+name:"Contra",
+url:"https://contra.com",
+logo:"https://www.google.com/s2/favicons?domain=contra.com&sz=128",
+description:"Commission-free freelance marketplace.",
+tags:["Freelance"]
+},
+
+{
+name:"LinkedIn",
+url:"https://linkedin.com",
+logo:"https://www.google.com/s2/favicons?domain=linkedin.com&sz=128",
+description:"Professional networking and career platform.",
+tags:["Networking","Jobs"]
+},
+
+{
+name:"Upwork",
+url:"https://upwork.com",
+logo:"https://www.google.com/s2/favicons?domain=upwork.com&sz=128",
+description:"Freelance job marketplace.",
+tags:["Freelance","Clients"]
+}
+
+]
+
+},
+
+{
+name:"Learning & Education",
+icon:"📚",
+color:"#43aa8b",
+
+tools:[
+
+{
+name:"Skillshare",
+url:"https://skillshare.com",
+logo:"https://www.google.com/s2/favicons?domain=skillshare.com&sz=128",
+description:"Creative courses and tutorials.",
+tags:["Courses","Design"]
+},
+
+{
+name:"Domestika",
+url:"https://domestika.org",
+logo:"https://www.google.com/s2/favicons?domain=domestika.org&sz=128",
+description:"Creative classes from industry professionals.",
+tags:["Learning","Creative"]
+},
+
+{
+name:"Coursera",
+url:"https://coursera.org",
+logo:"https://www.google.com/s2/favicons?domain=coursera.org&sz=128",
+description:"University-level online courses.",
+tags:["Education","Courses"]
+},
+
+{
+name:"The Futur",
+url:"https://thefutur.com",
+logo:"https://www.google.com/s2/favicons?domain=thefutur.com&sz=128",
+description:"Business and design education.",
+tags:["Business","Design"]
+},
+
+{
+name:"Frontend Masters",
+url:"https://frontendmasters.com",
+logo:"https://www.google.com/s2/favicons?domain=frontendmasters.com&sz=128",
+description:"Advanced web development training.",
+tags:["Development","Courses"]
+}
+
+]
+
+},
+
+{
+name:"Audio & Music",
+icon:"🔊",
+color:"#f72585",
+
+tools:[
+
+{
+name:"Adobe Podcast",
+url:"https://podcast.adobe.com",
+logo:"https://www.google.com/s2/favicons?domain=podcast.adobe.com&sz=128",
+description:"AI-powered audio cleanup and podcast tools.",
+tags:["Audio","AI"]
+},
+
+{
+name:"Audacity",
+url:"https://audacityteam.org",
+logo:"https://www.google.com/s2/favicons?domain=audacityteam.org&sz=128",
+description:"Free audio editing software.",
+tags:["Audio","Editing"]
+},
+
+{
+name:"ElevenLabs",
+url:"https://elevenlabs.io",
+logo:"https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128",
+description:"AI voice generation and cloning.",
+tags:["AI","Voice"]
+},
+
+{
+name:"Suno",
+url:"https://suno.com",
+logo:"https://www.google.com/s2/favicons?domain=suno.com&sz=128",
+description:"Generate music with AI.",
+tags:["Music","AI"]
+},
+
+{
+name:"Udio",
+url:"https://udio.com",
+logo:"https://www.google.com/s2/favicons?domain=udio.com&sz=128",
+description:"Create songs using generative AI.",
+tags:["Music","AI"]
+}
+
+]
+
+}
+
+];
 
