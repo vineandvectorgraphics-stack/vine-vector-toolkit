@@ -19,7 +19,7 @@ tags:["AI","Writing","Research"]
 name:"Perplexity",
 url:"https://perplexity.ai",
 logo:"https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128",
-description:"AI-powered search and research assistant with citations.",
+description:"AI-powered search and research assistant.",
 tags:["AI","Search"]
 },
 
@@ -37,7 +37,7 @@ url:"https://midjourney.com",
 logo:"https://www.google.com/s2/favicons?domain=midjourney.com&sz=128",
 description:"Industry-leading artistic AI image generation.",
 tags:["AI","Images","Art"]
-},
+}
 
 {
 name:"Ideogram",
