@@ -56,25 +56,20 @@ font-size:18px;
 }
 
 .stats{
-
 display:flex;
 justify-content:center;
 gap:12px;
-
 flex-wrap:wrap;
-
-margin-top:25px;
+margin-top:28px;
 }
 
 .stats span{
-
 background:white;
-
 padding:10px 18px;
-
 border-radius:999px;
-
 font-weight:700;
+color:#111;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 #nav{
