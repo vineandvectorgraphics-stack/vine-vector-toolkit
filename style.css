@@ -136,61 +136,36 @@ gap:28px;
 }
 
 .tool{
-
 background:white;
-
-padding:30px;
-
+padding:28px;
 border-radius:24px;
-
 text-decoration:none;
-
 color:#111;
-
-min-height:300px;
-
-display:flex;
-flex-direction:column;
-
-box-shadow:
-0 12px 30px rgba(0,0,0,.06);
-
+box-shadow:0 12px 30px rgba(0,0,0,.06);
 transition:.3s;
 }
 
 .tool:hover{
-
-transform:
-translateY(-8px);
-
-box-shadow:
-0 18px 45px rgba(0,0,0,.10);
+transform:translateY(-6px);
+box-shadow:0 18px 45px rgba(0,0,0,.10);
 }
 
 .tool-logo{
-
-width:72px;
-height:72px;
-
+width:48px;
+height:48px;
 object-fit:contain;
-
-margin-bottom:20px;
+margin-bottom:16px;
 }
 
 .tool h3{
-
-font-size:30px;
-
-margin-bottom:12px;
+font-size:22px;
+margin-bottom:10px;
 }
 
 .tool p{
-
-font-size:16px;
-
-line-height:1.7;
-
-color:#666;
+font-size:15px;
+line-height:1.6;
+color:#777;
 }
 
 .tags{
