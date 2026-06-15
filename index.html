@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creative Library</title>
+<title>Creative Library | Vine & Vector</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -19,26 +21,36 @@
 
 <header class="hero">
 
+<div class="hero-content">
+
+<div class="eyebrow">
+VINE & VECTOR
+</div>
+
 <h1>Creative Library</h1>
 
 <p>
-A growing collection of AI tools, design resources,
-fonts, mockups, stock assets, map tools, creative
-experiments, and internet discoveries curated by Kate.
+A curated collection of AI tools, design resources,
+fonts, mockups, stock assets, creative inspiration,
+maps, experiments, and internet discoveries.
 </p>
 
 <input
 id="search"
+type="text"
 placeholder="Search resources..."
+
 >
 
 <div class="stats">
 
-<span>150+ Resources</span>
+<span>250+ Resources</span>
 
 <span>20 Categories</span>
 
-<span>Updated Regularly</span>
+<span>Updated Weekly</span>
+
+</div>
 
 </div>
 
@@ -50,21 +62,34 @@ placeholder="Search resources..."
 
 <div class="featured-grid">
 
-<a href="https://claude.ai" target="_blank">Claude</a>
+<a href="https://claude.ai" target="_blank">
+Claude
+</a>
 
-<a href="https://firefly.adobe.com" target="_blank">Adobe Firefly</a>
+<a href="https://chatgpt.com" target="_blank">
+ChatGPT
+</a>
 
-<a href="https://www.behance.net" target="_blank">Behance</a>
+<a href="https://www.behance.net" target="_blank">
+Behance
+</a>
 
-<a href="https://mobbin.com" target="_blank">Mobbin</a>
+<a href="https://mobbin.com" target="_blank">
+Mobbin
+</a>
 
-<a href="https://mapbox.com/studio" target="_blank">Mapbox Studio</a>
+<a href="https://mapbox.com/studio" target="_blank">
+Mapbox Studio
+</a>
 
-<a href="https://neal.fun" target="_blank">Neal.fun</a>
+<a href="https://neal.fun" target="_blank">
+Neal.fun
+</a>
 
 </div>
 
 </section>
+
 <nav id="nav"></nav>
 
 <main id="app"></main>
@@ -79,11 +104,6 @@ document.getElementById("app");
 const nav =
 document.getElementById("nav");
 
-function render(){
-
-app.innerHTML="";
-nav.innerHTML="";
-
 const groups = [
 
 {
@@ -91,10 +111,14 @@ title:"🚀 CREATE",
 categories:[
 "AI & Generative Tools",
 "Branding & Identity",
+"Logo Design",
 "Typography & Fonts",
-"Color Tools",
-"Image Editing & File Tools",
-"Mockups"
+"Color & Gradients",
+"Image Editing & Utilities",
+"Effects & Generators",
+"Mockups",
+"Assets, Photos & Vectors",
+"Illustration Libraries"
 ]
 },
 
@@ -102,8 +126,8 @@ categories:[
 title:"💡 INSPIRE",
 categories:[
 "Design Inspiration",
-"Maps & Travel",
-"Fun & Weird Internet"
+"Maps, Geography & Travel",
+"Fun, Experimental & Weird Internet"
 ]
 },
 
@@ -119,7 +143,7 @@ categories:[
 {
 title:"📈 GROW",
 categories:[
-"Workflow & Collaboration",
+"Productivity & Collaboration",
 "Portfolio & Freelance",
 "Learning & Education",
 "Audio & Music"
@@ -128,16 +152,17 @@ categories:[
 
 ];
 
+function render(){
+
+app.innerHTML = "";
+nav.innerHTML = "";
+
 groups.forEach(group=>{
 
 app.innerHTML += `
-
 <div class="section-header">
-
 <h2>${group.title}</h2>
-
 </div>
-
 `;
 
 group.categories.forEach(categoryName=>{
@@ -150,15 +175,13 @@ item.name === categoryName
 if(!category) return;
 
 nav.innerHTML += `
-
 <a href="#${category.name}">
 ${category.icon}
 ${category.name}
 </a>
-
 `;
 
-let cards="";
+let cards = "";
 
 category.tools.forEach(tool=>{
 
@@ -177,7 +200,9 @@ loading="lazy">
 
 <h3>${tool.name}</h3>
 
-<p>${tool.description}</p>
+<p>
+${tool.description}
+</p>
 
 <div class="tags">
 
@@ -200,6 +225,7 @@ class="category"
 id="${category.name}">
 
 <h2
+class="category-title"
 style="
 color:${category.color};
 border-color:${category.color};
@@ -225,3 +251,34 @@ ${cards}
 });
 
 }
+
+render();
+
+document
+.getElementById("search")
+.addEventListener("input",e=>{
+
+const search =
+e.target.value.toLowerCase();
+
+document
+.querySelectorAll(".tool")
+.forEach(card=>{
+
+const text =
+card.textContent.toLowerCase();
+
+card.style.display =
+text.includes(search)
+? "block"
+: "none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
