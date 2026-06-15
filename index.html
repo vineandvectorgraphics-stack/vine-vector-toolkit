@@ -28,9 +28,8 @@
 <h2>Creative Library</h2>
 
 <p>
-A curated collection of design tools, AI resources,
-creative inspiration, maps, mockups, assets,
-and internet discoveries.
+Design tools, inspiration, AI resources,
+maps, assets and internet discoveries.
 </p>
 
 <input
@@ -44,36 +43,122 @@ placeholder="Search resources..."
 
 </header>
 
-<nav id="nav"></nav>
+<nav id="nav">
 
-<section class="featured">
+<a href="#favorites">⭐ Favorites</a>
 
-<h2>⭐ Featured Resources</h2>
+<a href="#create">🌼 Create</a>
 
-<div class="featured-grid">
+<a href="#inspire">💡 Inspire</a>
 
-<a href="https://chatgpt.com" target="_blank">
-🤖 ChatGPT
+<a href="#build">🛠 Build</a>
+
+<a href="#grow">🌱 Grow</a>
+
+</nav>
+
+<section
+class="favorites"
+id="favorites">
+
+<h2>⭐ Kate's Favorites</h2>
+
+<div class="favorites-grid">
+
+<a
+class="favorite-card"
+href="https://chatgpt.com"
+target="_blank">
+
+<h3>🤖 ChatGPT</h3>
+
+<p>
+My go-to tool for brainstorming,
+writing, coding and research.
+</p>
+
+<span>AI Assistant</span>
+
 </a>
 
-<a href="https://claude.ai" target="_blank">
-🧠 Claude
+<a
+class="favorite-card"
+href="https://claude.ai"
+target="_blank">
+
+<h3>🧠 Claude</h3>
+
+<p>
+Excellent for long-form writing,
+organization and planning.
+</p>
+
+<span>AI Writing</span>
+
 </a>
 
-<a href="https://firefly.adobe.com" target="_blank">
-🔥 Adobe Firefly
+<a
+class="favorite-card"
+href="https://firefly.adobe.com"
+target="_blank">
+
+<h3>🔥 Adobe Firefly</h3>
+
+<p>
+Commercial-safe AI image generation
+that fits perfectly into Adobe workflows.
+</p>
+
+<span>AI Design</span>
+
 </a>
 
-<a href="https://www.behance.net" target="_blank">
-🎨 Behance
+<a
+class="favorite-card"
+href="https://behance.net"
+target="_blank">
+
+<h3>🎨 Behance</h3>
+
+<p>
+One of my favorite places
+to discover creative inspiration.
+</p>
+
+<span>Inspiration</span>
+
 </a>
 
-<a href="https://mobbin.com" target="_blank">
-📱 Mobbin
+<a
+class="favorite-card"
+href="https://mobbin.com"
+target="_blank">
+
+<h3>📱 Mobbin</h3>
+
+<p>
+Amazing collection of real-world
+mobile UI inspiration.
+</p>
+
+<span>UI Design</span>
+
 </a>
 
-<a href="https://mapbox.com/studio" target="_blank">
-🗺️ Mapbox Studio
+<a
+class="favorite-card"
+href="https://mapbox.com/studio"
+target="_blank">
+
+<h3>🗺️ Mapbox Studio</h3>
+
+<p>
+Create beautiful custom maps
+for design and storytelling.
+</p>
+
+<span>Maps</span>
+
 </a>
 
 </div>
@@ -89,14 +174,11 @@ placeholder="Search resources..."
 const app =
 document.getElementById("app");
 
-const nav =
-document.getElementById("nav");
-
 const groups = [
 
 {
+id:"create",
 title:"🌼 CREATE",
-
 categories:[
 "AI & Generative Tools",
 "Branding & Identity",
@@ -110,8 +192,8 @@ categories:[
 },
 
 {
+id:"inspire",
 title:"💡 INSPIRE",
-
 categories:[
 "Design Inspiration",
 "Maps, Geography & Travel",
@@ -120,8 +202,8 @@ categories:[
 },
 
 {
+id:"build",
 title:"🛠 BUILD",
-
 categories:[
 "Web Design & UI Systems",
 "Coding & Development",
@@ -131,8 +213,8 @@ categories:[
 },
 
 {
+id:"grow",
 title:"🌱 GROW",
-
 categories:[
 "Productivity & Collaboration",
 "Portfolio & Freelance",
@@ -145,44 +227,30 @@ categories:[
 function render(){
 
 app.innerHTML="";
-nav.innerHTML="";
 
 groups.forEach(group=>{
 
 app.innerHTML += `
-
-<div class="section-header">
-
+<div
+class="section-header"
+id="${group.id}">
 <h2>${group.title}</h2>
-
 </div>
-
 `;
 
 group.categories.forEach(categoryName=>{
 
 const category =
 data.find(item =>
-item.name === categoryName
-);
+item.name === categoryName);
 
 if(!category) return;
-
-nav.innerHTML += `
-
-<a href="#${category.name}">
-${category.icon}
-${category.name}
-</a>
-
-`;
 
 let cards="";
 
 category.tools.forEach(tool=>{
 
 cards += `
-
 <a
 class="tool"
 href="${tool.url}"
@@ -191,40 +259,29 @@ target="_blank">
 <img
 class="tool-logo"
 src="${tool.logo}"
-alt="${tool.name}"
-loading="lazy">
+alt="${tool.name}">
 
 <h3>${tool.name}</h3>
 
-<p>
-${tool.description}
-</p>
+<p>${tool.description}</p>
 
 <div class="tags">
-
 ${tool.tags.map(tag =>
 `<span>${tag}</span>`
 ).join("")}
-
 </div>
 
 </a>
-
 `;
 
 });
 
 app.innerHTML += `
-
-<section
-class="category"
-id="${category.name}">
+<section class="category">
 
 <h2
 class="category-title"
-style="
-color:${category.color};
-">
+style="color:${category.color};">
 
 ${category.icon}
 ${category.name}
@@ -232,13 +289,10 @@ ${category.name}
 </h2>
 
 <div class="grid">
-
 ${cards}
-
 </div>
 
 </section>
-
 `;
 
 });
@@ -248,29 +302,6 @@ ${cards}
 }
 
 render();
-
-document
-.getElementById("search")
-.addEventListener("input",e=>{
-
-const search =
-e.target.value.toLowerCase();
-
-document
-.querySelectorAll(".tool")
-.forEach(card=>{
-
-const text =
-card.textContent.toLowerCase();
-
-card.style.display =
-text.includes(search)
-? "block"
-: "none";
-
-});
-
-});
 
 </script>
 
