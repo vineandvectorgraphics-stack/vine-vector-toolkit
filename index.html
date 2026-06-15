@@ -173,3 +173,255 @@ inside Adobe workflows.
 <span>AI Design</span>
 
 </a>
+
+<a
+class="favorite-card"
+href="https://www.behance.net"
+target="_blank">
+
+<div class="favorite-image behance-gradient"></div>
+
+<img
+class="favorite-logo"
+src="https://www.google.com/s2/favicons?domain=behance.net&sz=128">
+
+<h3>Behance</h3>
+
+<p>
+One of my favorite places
+to discover creative inspiration.
+</p>
+
+<span>Inspiration</span>
+
+</a>
+
+<a
+class="favorite-card"
+href="https://mobbin.com"
+target="_blank">
+
+<div class="favorite-image mobbin-gradient"></div>
+
+<img
+class="favorite-logo"
+src="https://www.google.com/s2/favicons?domain=mobbin.com&sz=128">
+
+<h3>Mobbin</h3>
+
+<p>
+A huge collection of real-world
+mobile UI patterns.
+</p>
+
+<span>UI Design</span>
+
+</a>
+
+<a
+class="favorite-card"
+href="https://mapbox.com/studio"
+target="_blank">
+
+<div class="favorite-image map-gradient"></div>
+
+<img
+class="favorite-logo"
+src="https://www.google.com/s2/favicons?domain=mapbox.com&sz=128">
+
+<h3>Mapbox Studio</h3>
+
+<p>
+Create beautiful custom maps
+for storytelling and design.
+</p>
+
+<span>Maps</span>
+
+</a>
+
+</div>
+
+</section>
+
+<main id="app"></main>
+
+<script src="data.js"></script>
+
+<script>
+
+const app =
+document.getElementById("app");
+
+const groups = [
+
+{
+id:"create",
+title:"🌼 CREATE",
+categories:[
+"AI & Generative Tools",
+"Branding & Identity",
+"Typography & Fonts",
+"Color & Gradients",
+"Image Editing & Optimization",
+"Illustration Libraries",
+"Stock Assets & Vectors",
+"Mockups"
+]
+},
+
+{
+id:"inspire",
+title:"💡 INSPIRE",
+categories:[
+"Design Inspiration",
+"Maps, Geography & Travel",
+"Creative Experiments"
+]
+},
+
+{
+id:"build",
+title:"🛠 BUILD",
+categories:[
+"Web Design & UI Systems",
+"Coding & Development",
+"3D, Motion & Animation",
+"Audio & Music"
+]
+},
+
+{
+id:"grow",
+title:"🌱 GROW",
+categories:[
+"Productivity & Collaboration",
+"Portfolio & Freelance",
+"Learning & Education"
+]
+}
+
+];
+
+function render(){
+
+app.innerHTML="";
+
+groups.forEach(group=>{
+
+app.innerHTML += `
+
+<div
+class="section-header"
+id="${group.id}">
+
+<h2>${group.title}</h2>
+
+</div>
+
+`;
+
+group.categories.forEach(categoryName=>{
+
+const category =
+data.find(item =>
+item.name === categoryName);
+
+if(!category) return;
+
+let cards="";
+
+category.tools.forEach(tool=>{
+
+cards += `
+
+<a
+class="tool"
+href="${tool.url}"
+target="_blank">
+
+<img
+class="tool-logo"
+src="${tool.logo}"
+alt="${tool.name}"
+loading="lazy">
+
+<h3>${tool.name}</h3>
+
+<p>${tool.description}</p>
+
+<div class="tags">
+
+${tool.tags.map(tag =>
+`<span>${tag}</span>`
+).join("")}
+
+</div>
+
+</a>
+
+`;
+
+});
+
+app.innerHTML += `
+
+<section class="category">
+
+<h2
+class="category-title"
+style="
+color:${category.color};
+">
+
+${category.icon}
+${category.name}
+
+</h2>
+
+<div class="grid">
+
+${cards}
+
+</div>
+
+</section>
+
+`;
+
+});
+
+});
+
+}
+
+render();
+
+document
+.getElementById("search")
+.addEventListener("input",e=>{
+
+const search =
+e.target.value.toLowerCase();
+
+document
+.querySelectorAll(".tool")
+.forEach(card=>{
+
+const text =
+card.textContent.toLowerCase();
+
+card.style.display =
+text.includes(search)
+? "block"
+: "none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
