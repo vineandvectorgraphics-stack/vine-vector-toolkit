@@ -8,6 +8,7 @@
 <title>Creative Library</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
@@ -29,6 +30,14 @@ fonts, inspiration websites, stock assets and more.
 id="search"
 placeholder="Search resources..."
 >
+
+<div class="stats">
+
+<span>250+ Resources</span>
+<span>18 Categories</span>
+<span>Updated Weekly</span>
+
+</div>
 
 </header>
 
@@ -54,9 +63,15 @@ nav.innerHTML="";
 data.forEach(category=>{
 
 nav.innerHTML += `
+
 <a href="#${category.name}">
-${category.icon} ${category.name}
+
+${category.icon}
+${category.name}
+(${category.tools.length})
+
 </a>
+
 `;
 
 let cards="";
@@ -73,7 +88,8 @@ target="_blank">
 <img
 class="tool-logo"
 src="${tool.logo}"
-alt="${tool.name}">
+alt="${tool.name}"
+loading="lazy">
 
 <h3>${tool.name}</h3>
 
@@ -87,6 +103,10 @@ ${tool.tags.map(tag =>
 `<span>${tag}</span>`
 ).join("")}
 
+</div>
+
+<div class="visit">
+Visit Resource →
 </div>
 
 </a>
@@ -103,8 +123,8 @@ id="${category.name}">
 
 <h2
 style="
-border-color:${category.color};
 color:${category.color};
+border-color:${category.color};
 ">
 
 ${category.icon}
@@ -140,7 +160,7 @@ document
 .forEach(card=>{
 
 const text =
-card.innerText.toLowerCase();
+card.textContent.toLowerCase();
 
 card.style.display =
 text.includes(search)
