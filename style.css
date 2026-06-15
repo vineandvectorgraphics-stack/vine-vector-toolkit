@@ -20,12 +20,12 @@ color:#333;
 
 background:
 linear-gradient(
-135deg,
+180deg,
 #ffffff,
-#f5fbfa
+#f8fbfb
 );
 
-padding:90px 20px;
+padding:80px 20px;
 
 text-align:center;
 
@@ -42,7 +42,7 @@ margin:auto;
 .hero h1{
 
 font-size:
-clamp(54px,7vw,84px);
+clamp(52px,7vw,84px);
 
 font-weight:700;
 
@@ -53,7 +53,7 @@ margin-bottom:6px;
 
 .hero h2{
 
-font-size:26px;
+font-size:24px;
 
 font-weight:400;
 
@@ -98,7 +98,7 @@ box-shadow:
 0 8px 20px rgba(0,0,0,.05);
 }
 
-/* NAVIGATION */
+/* NAV */
 
 #nav{
 
@@ -128,11 +128,11 @@ box-shadow:
 
 text-decoration:none;
 
-background:rgba(255,255,255,.15);
+background:rgba(255,255,255,.12);
 
 color:white;
 
-padding:10px 18px;
+padding:10px 16px;
 
 border-radius:999px;
 
@@ -150,113 +150,102 @@ background:white;
 color:#14878A;
 }
 
-/* FEATURED RESOURCE */
+/* FEATURED THIS MONTH */
 
-.featured-resource{
+.featured-month{
 
-max-width:1400px;
+max-width:1200px;
 
-margin:70px auto;
+margin:50px auto 30px;
 
 padding:0 20px;
 }
 
-.featured-resource-content{
+.featured-month-card{
 
 background:
 linear-gradient(
 135deg,
 #14878A,
-#4BA6A8,
-#A8C4E8
+#4BA6A8
 );
 
-border-radius:32px;
+padding:28px;
 
-padding:50px;
+border-radius:28px;
 
 display:flex;
 
 align-items:center;
 
-gap:40px;
+gap:24px;
 
 color:white;
 
-overflow:hidden;
-
 box-shadow:
-0 20px 50px rgba(20,135,138,.18);
+0 18px 40px rgba(20,135,138,.15);
 }
 
-.featured-resource-logo{
+.featured-logo{
 
-width:140px;
-height:140px;
+width:80px;
+height:80px;
 
 background:white;
 
-border-radius:30px;
+padding:15px;
 
-display:flex;
-
-align-items:center;
-
-justify-content:center;
+border-radius:20px;
 
 flex-shrink:0;
 }
 
-.featured-resource-logo img{
-
-width:80px;
-height:80px;
-}
-
 .featured-label{
 
-display:inline-block;
+display:block;
 
-margin-bottom:12px;
-
-font-size:12px;
+font-size:11px;
 
 letter-spacing:2px;
 
 font-weight:600;
+
+margin-bottom:8px;
+
+opacity:.9;
 }
 
-.featured-resource h2{
+.featured-month-card h2{
 
-font-size:42px;
+font-size:28px;
 
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
-.featured-resource p{
+.featured-month-card p{
 
-font-size:18px;
+font-size:15px;
 
 line-height:1.7;
 
-max-width:600px;
+margin-bottom:14px;
 
-margin-bottom:20px;
+max-width:550px;
 }
 
-.featured-button{
+.featured-link{
 
 display:inline-block;
+
+text-decoration:none;
 
 background:white;
 
 color:#14878A;
 
-padding:12px 18px;
+padding:10px 14px;
 
 border-radius:999px;
-
-text-decoration:none;
 
 font-weight:600;
 }
@@ -267,14 +256,14 @@ font-weight:600;
 
 max-width:1400px;
 
-margin:70px auto;
+margin:40px auto 70px;
 
 padding:0 20px;
 }
 
 .favorites h2{
 
-font-size:36px;
+font-size:34px;
 
 font-weight:600;
 
@@ -288,7 +277,7 @@ display:grid;
 grid-template-columns:
 repeat(auto-fill,minmax(340px,1fr));
 
-gap:28px;
+gap:24px;
 }
 
 .favorite-card{
@@ -324,7 +313,17 @@ box-shadow:
 height:170px;
 }
 
-/* Gradient Headers */
+/* VISUAL HEADERS */
+
+.logo-card{
+
+background:
+radial-gradient(
+circle at top left,
+#10A37F,
+#14878A
+);
+}
 
 .claude-gradient{
 
@@ -377,16 +376,6 @@ linear-gradient(
 );
 }
 
-.figma-gradient{
-
-background:
-linear-gradient(
-135deg,
-#111827,
-#374151
-);
-}
-
 .favorite-logo{
 
 width:56px;
@@ -397,7 +386,7 @@ margin:20px 24px 0;
 
 .favorite-card h3{
 
-font-size:24px;
+font-size:22px;
 
 margin:15px 24px 10px;
 }
@@ -430,7 +419,7 @@ font-size:12px;
 font-weight:500;
 }
 
-/* MAIN */
+/* APP */
 
 #app{
 
@@ -449,7 +438,7 @@ width:100vw;
 
 margin-left:calc(-50vw + 50%);
 
-padding:65px 20px;
+padding:60px 20px;
 
 margin-top:90px;
 margin-bottom:50px;
@@ -459,10 +448,12 @@ text-align:center;
 
 .section-header h2{
 
-font-size:46px;
+font-size:44px;
 
 font-weight:600;
 }
+
+/* CREATE */
 
 .section-header:nth-of-type(4n+1){
 
@@ -471,12 +462,16 @@ background:#F4CC18;
 color:#333;
 }
 
+/* INSPIRE */
+
 .section-header:nth-of-type(4n+2){
 
 background:#B895C7;
 
 color:white;
 }
+
+/* BUILD */
 
 .section-header:nth-of-type(4n+3){
 
@@ -485,6 +480,8 @@ background:#A8C4E8;
 color:#333;
 }
 
+/* GROW */
+
 .section-header:nth-of-type(4n+4){
 
 background:#14878A;
@@ -492,7 +489,7 @@ background:#14878A;
 color:white;
 }
 
-/* CATEGORY */
+/* CATEGORIES */
 
 .category{
 
@@ -523,6 +520,8 @@ repeat(auto-fill,minmax(320px,1fr));
 
 gap:24px;
 }
+
+/* RESOURCE CARDS */
 
 .tool{
 
@@ -610,7 +609,7 @@ font-weight:500;
 
 @media(max-width:900px){
 
-.featured-resource-content{
+.featured-month-card{
 
 flex-direction:column;
 
