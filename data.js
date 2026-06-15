@@ -120,11 +120,95 @@ color:"#14b86f",
 
 tools:[
 
-{name:"Mockup World",url:"https://mockupworld.co",logo:"https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128",description:"Free PSD mockups.",tags:["Mockups"]},
+{name:"Mockup World",url:"[https://mockupworld.co",logo:"https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128",description:"Free](https://mockupworld.co%22,logo:%22https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128%22,description:%22Free) PSD mockups.",tags:["Mockups"]},
 
-{name:"Placeit",url:"https://placeit.net",logo:"https://www.google.com/s2/favicons?domain=placeit.net&sz=128",description:"Mockup generator.",tags:["Mockups"]},
+{name:"Placeit",url:"[https://placeit.net",logo:"https://www.google.com/s2/favicons?domain=placeit.net&sz=128",description:"Mockup](https://placeit.net%22,logo:%22https://www.google.com/s2/favicons?domain=placeit.net&sz=128%22,description:%22Mockup) generator.",tags:["Mockups"]},
 
-{name:"Pacdora",url:"https://pacdora.com",logo:"https://www.google.com/s2/favicons?domain=pacdora.com&sz=128",description:"Packaging mockups.",tags:["Packaging"]}
+{name:"Pacdora",url:"[https://pacdora.com",logo:"https://www.google.com/s2/favicons?domain=pacdora.com&sz=128",description:"Packaging](https://pacdora.com%22,logo:%22https://www.google.com/s2/favicons?domain=pacdora.com&sz=128%22,description:%22Packaging) mockups.",tags:["Packaging"]}
+
+]
+
+},
+
+{
+name:"Design Inspiration",
+icon:"💡",
+color:"#ff6b6b",
+
+tools:[
+
+{name:"Behance",url:"[https://behance.net",logo:"https://www.google.com/s2/favicons?domain=behance.net&sz=128",description:"Creative](https://behance.net%22,logo:%22https://www.google.com/s2/favicons?domain=behance.net&sz=128%22,description:%22Creative) portfolios and inspiration.",tags:["Inspiration"]},
+
+{name:"Dribbble",url:"[https://dribbble.com",logo:"https://www.google.com/s2/favicons?domain=dribbble.com&sz=128",description:"Design](https://dribbble.com%22,logo:%22https://www.google.com/s2/favicons?domain=dribbble.com&sz=128%22,description:%22Design) inspiration and UI showcases.",tags:["Inspiration"]},
+
+{name:"Awwwards",url:"[https://awwwards.com",logo:"https://www.google.com/s2/favicons?domain=awwwards.com&sz=128",description:"Award-winning](https://awwwards.com%22,logo:%22https://www.google.com/s2/favicons?domain=awwwards.com&sz=128%22,description:%22Award-winning) website inspiration.",tags:["Web Design"]},
+
+{name:"Mobbin",url:"[https://mobbin.com",logo:"https://www.google.com/s2/favicons?domain=mobbin.com&sz=128",description:"Mobile](https://mobbin.com%22,logo:%22https://www.google.com/s2/favicons?domain=mobbin.com&sz=128%22,description:%22Mobile) UI inspiration library.",tags:["UI"]},
+
+{name:"Site Inspire",url:"[https://siteinspire.com",logo:"https://www.google.com/s2/favicons?domain=siteinspire.com&sz=128",description:"Curated](https://siteinspire.com%22,logo:%22https://www.google.com/s2/favicons?domain=siteinspire.com&sz=128%22,description:%22Curated) web design gallery.",tags:["Web Design"]}
+
+]
+
+},
+
+{
+name:"Maps & Travel",
+icon:"🗺️",
+color:"#2a9d8f",
+
+tools:[
+
+{name:"Anvaka City Roads",url:"https://anvaka.github.io/city-roads/",logo:"https://www.google.com/s2/favicons?domain=anvaka.github.io&sz=128",description:"Visualize road networks worldwide.",tags:["Maps"]},
+
+{name:"Inkarnate",url:"[https://inkarnate.com",logo:"https://www.google.com/s2/favicons?domain=inkarnate.com&sz=128",description:"Fantasy](https://inkarnate.com%22,logo:%22https://www.google.com/s2/favicons?domain=inkarnate.com&sz=128%22,description:%22Fantasy) and world map creation.",tags:["Maps"]},
+
+{name:"Mapbox Studio",url:"https://mapbox.com/studio",logo:"https://www.google.com/s2/favicons?domain=mapbox.com&sz=128",description:"Create custom interactive maps.",tags:["Maps"]},
+
+{name:"Felt",url:"[https://felt.com",logo:"https://www.google.com/s2/favicons?domain=felt.com&sz=128",description:"Collaborative](https://felt.com%22,logo:%22https://www.google.com/s2/favicons?domain=felt.com&sz=128%22,description:%22Collaborative) mapping platform.",tags:["Maps"]},
+
+{name:"ShadeMap",url:"[https://shademap.app",logo:"https://www.google.com/s2/favicons?domain=shademap.app&sz=128",description:"Visualize](https://shademap.app%22,logo:%22https://www.google.com/s2/favicons?domain=shademap.app&sz=128%22,description:%22Visualize) sunlight and shadows anywhere.",tags:["Maps"]}
+
+]
+
+},
+
+{
+name:"Fun & Weird Internet",
+icon:"🎮",
+color:"#8338ec",
+
+tools:[
+
+{name:"Neal.fun",url:"[https://neal.fun",logo:"https://www.google.com/s2/favicons?domain=neal.fun&sz=128",description:"Interactive](https://neal.fun%22,logo:%22https://www.google.com/s2/favicons?domain=neal.fun&sz=128%22,description:%22Interactive) internet experiments.",tags:["Fun"]},
+
+{name:"Window Swap",url:"[https://window-swap.com",logo:"https://www.google.com/s2/favicons?domain=window-swap.com&sz=128",description:"Look](https://window-swap.com%22,logo:%22https://www.google.com/s2/favicons?domain=window-swap.com&sz=128%22,description:%22Look) through windows around the world.",tags:["Travel"]},
+
+{name:"Zoom Quilt",url:"[https://zoomquilt.org",logo:"https://www.google.com/s2/favicons?domain=zoomquilt.org&sz=128",description:"Infinite](https://zoomquilt.org%22,logo:%22https://www.google.com/s2/favicons?domain=zoomquilt.org&sz=128%22,description:%22Infinite) collaborative artwork.",tags:["Art"]},
+
+{name:"Patatap",url:"[https://patatap.com",logo:"https://www.google.com/s2/favicons?domain=patatap.com&sz=128",description:"Interactive](https://patatap.com%22,logo:%22https://www.google.com/s2/favicons?domain=patatap.com&sz=128%22,description:%22Interactive) sound and animation toy.",tags:["Music"]},
+
+{name:"The Useless Web",url:"[https://theuselessweb.com",logo:"https://www.google.com/s2/favicons?domain=theuselessweb.com&sz=128",description:"Random](https://theuselessweb.com%22,logo:%22https://www.google.com/s2/favicons?domain=theuselessweb.com&sz=128%22,description:%22Random) strange websites.",tags:["Fun"]}
+
+]
+
+},
+
+{
+name:"Workflow & Collaboration",
+icon:"🧠",
+color:"#4361ee",
+
+tools:[
+
+{name:"Notion",url:"[https://notion.so",logo:"https://www.google.com/s2/favicons?domain=notion.so&sz=128",description:"All-in-one](https://notion.so%22,logo:%22https://www.google.com/s2/favicons?domain=notion.so&sz=128%22,description:%22All-in-one) workspace.",tags:["Productivity"]},
+
+{name:"Miro",url:"[https://miro.com",logo:"https://www.google.com/s2/favicons?domain=miro.com&sz=128",description:"Collaborative](https://miro.com%22,logo:%22https://www.google.com/s2/favicons?domain=miro.com&sz=128%22,description:%22Collaborative) whiteboard.",tags:["Collaboration"]},
+
+{name:"FigJam",url:"https://figma.com/figjam",logo:"https://www.google.com/s2/favicons?domain=figma.com&sz=128",description:"Visual brainstorming and planning.",tags:["Collaboration"]},
+
+{name:"Airtable",url:"[https://airtable.com",logo:"https://www.google.com/s2/favicons?domain=airtable.com&sz=128",description:"Flexible](https://airtable.com%22,logo:%22https://www.google.com/s2/favicons?domain=airtable.com&sz=128%22,description:%22Flexible) database platform.",tags:["Organization"]},
+
+{name:"ClickUp",url:"[https://clickup.com",logo:"https://www.google.com/s2/favicons?domain=clickup.com&sz=128",description:"Project](https://clickup.com%22,logo:%22https://www.google.com/s2/favicons?domain=clickup.com&sz=128%22,description:%22Project) and task management.",tags:["Productivity"]}
 
 ]
 
