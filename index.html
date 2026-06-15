@@ -84,16 +84,76 @@ function render(){
 app.innerHTML="";
 nav.innerHTML="";
 
-data.forEach(category=>{
+const groups = [
+
+{
+title:"🚀 CREATE",
+categories:[
+"AI & Generative Tools",
+"Branding & Identity",
+"Typography & Fonts",
+"Color Tools",
+"Image Editing & File Tools",
+"Mockups"
+]
+},
+
+{
+title:"💡 INSPIRE",
+categories:[
+"Design Inspiration",
+"Maps & Travel",
+"Fun & Weird Internet"
+]
+},
+
+{
+title:"🛠️ BUILD",
+categories:[
+"Web & UI Design",
+"Coding & Development",
+"3D, Motion & Animation"
+]
+},
+
+{
+title:"📈 GROW",
+categories:[
+"Workflow & Collaboration",
+"Portfolio & Freelance",
+"Learning & Education",
+"Audio & Music"
+]
+}
+
+];
+
+groups.forEach(group=>{
+
+app.innerHTML += `
+
+<div class="section-header">
+
+<h2>${group.title}</h2>
+
+</div>
+
+`;
+
+group.categories.forEach(categoryName=>{
+
+const category =
+data.find(item =>
+item.name === categoryName
+);
+
+if(!category) return;
 
 nav.innerHTML += `
 
 <a href="#${category.name}">
-
 ${category.icon}
 ${category.name}
-(${category.tools.length})
-
 </a>
 
 `;
@@ -117,9 +177,7 @@ loading="lazy">
 
 <h3>${tool.name}</h3>
 
-<p>
-${tool.description}
-</p>
+<p>${tool.description}</p>
 
 <div class="tags">
 
@@ -164,34 +222,6 @@ ${cards}
 
 });
 
+});
+
 }
-
-render();
-
-document
-.getElementById("search")
-.addEventListener("input",e=>{
-
-const search =
-e.target.value.toLowerCase();
-
-document
-.querySelectorAll(".tool")
-.forEach(card=>{
-
-const text =
-card.textContent.toLowerCase();
-
-card.style.display =
-text.includes(search)
-? "block"
-: "none";
-
-});
-
-});
-
-</script>
-
-</body>
-</html>
