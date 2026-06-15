@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -21,7 +20,7 @@
 
 <header class="hero">
 
-<div class="hero-content">
+<div class="hero-inner">
 
 <div class="eyebrow">
 VINE & VECTOR
@@ -30,25 +29,21 @@ VINE & VECTOR
 <h1>Creative Library</h1>
 
 <p>
-A curated collection of AI tools, design resources,
-fonts, mockups, stock assets, creative inspiration,
-maps, experiments, and internet discoveries.
+A curated collection of design tools, AI resources,
+creative inspiration, maps, experiments, and internet discoveries.
 </p>
 
 <input
 id="search"
 type="text"
 placeholder="Search resources..."
-
 >
 
 <div class="stats">
 
-<span>250+ Resources</span>
-
-<span>20 Categories</span>
-
-<span>Updated Weekly</span>
+<span>100+ Resources</span>
+<span>15 Categories</span>
+<span>Curated by Kate</span>
 
 </div>
 
@@ -62,29 +57,17 @@ placeholder="Search resources..."
 
 <div class="featured-grid">
 
-<a href="https://claude.ai" target="_blank">
-Claude
-</a>
+<a href="https://chatgpt.com" target="_blank">ChatGPT</a>
 
-<a href="https://chatgpt.com" target="_blank">
-ChatGPT
-</a>
+<a href="https://claude.ai" target="_blank">Claude</a>
 
-<a href="https://www.behance.net" target="_blank">
-Behance
-</a>
+<a href="https://www.behance.net" target="_blank">Behance</a>
 
-<a href="https://mobbin.com" target="_blank">
-Mobbin
-</a>
+<a href="https://mobbin.com" target="_blank">Mobbin</a>
 
-<a href="https://mapbox.com/studio" target="_blank">
-Mapbox Studio
-</a>
+<a href="https://mapbox.com/studio" target="_blank">Mapbox Studio</a>
 
-<a href="https://neal.fun" target="_blank">
-Neal.fun
-</a>
+<a href="https://neal.fun" target="_blank">Neal.fun</a>
 
 </div>
 
@@ -111,14 +94,12 @@ title:"🚀 CREATE",
 categories:[
 "AI & Generative Tools",
 "Branding & Identity",
-"Logo Design",
 "Typography & Fonts",
 "Color & Gradients",
-"Image Editing & Utilities",
-"Effects & Generators",
-"Mockups",
-"Assets, Photos & Vectors",
-"Illustration Libraries"
+"Image Editing & Optimization",
+"Illustration Libraries",
+"Stock Assets & Vectors",
+"Mockups"
 ]
 },
 
@@ -127,16 +108,17 @@ title:"💡 INSPIRE",
 categories:[
 "Design Inspiration",
 "Maps, Geography & Travel",
-"Fun, Experimental & Weird Internet"
+"Creative Experiments"
 ]
 },
 
 {
 title:"🛠️ BUILD",
 categories:[
-"Web & UI Design",
+"Web Design & UI Systems",
 "Coding & Development",
-"3D, Motion & Animation"
+"3D, Motion & Animation",
+"Audio & Music"
 ]
 },
 
@@ -145,8 +127,7 @@ title:"📈 GROW",
 categories:[
 "Productivity & Collaboration",
 "Portfolio & Freelance",
-"Learning & Education",
-"Audio & Music"
+"Learning & Education"
 ]
 }
 
@@ -154,8 +135,8 @@ categories:[
 
 function render(){
 
-app.innerHTML = "";
-nav.innerHTML = "";
+app.innerHTML="";
+nav.innerHTML="";
 
 groups.forEach(group=>{
 
@@ -181,12 +162,11 @@ ${category.name}
 </a>
 `;
 
-let cards = "";
+let cards="";
 
 category.tools.forEach(tool=>{
 
 cards += `
-
 <a
 class="tool"
 href="${tool.url}"
@@ -200,26 +180,20 @@ loading="lazy">
 
 <h3>${tool.name}</h3>
 
-<p>
-${tool.description}
-</p>
+<p>${tool.description}</p>
 
 <div class="tags">
-
 ${tool.tags.map(tag =>
 `<span>${tag}</span>`
 ).join("")}
-
 </div>
 
 </a>
-
 `;
 
 });
 
 app.innerHTML += `
-
 <section
 class="category"
 id="${category.name}">
@@ -243,7 +217,6 @@ ${cards}
 </div>
 
 </section>
-
 `;
 
 });
@@ -280,5 +253,4 @@ text.includes(search)
 </script>
 
 </body>
-
 </html>
