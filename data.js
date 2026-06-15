@@ -7,17 +7,49 @@ color:"#f4a623",
 
 tools:[
 
-{name:"Claude",url:"[https://claude.ai",logo:"https://www.google.com/s2/favicons?domain=claude.ai&sz=128",description:"AI](https://claude.ai%22,logo:%22https://www.google.com/s2/favicons?domain=claude.ai&sz=128%22,description:%22AI) assistant for writing, research and brainstorming.",tags:["AI","Writing"]},
+{
+name:"Claude",
+url:"https://claude.ai",
+logo:"https://www.google.com/s2/favicons?domain=claude.ai&sz=128",
+description:"AI assistant for writing, research and brainstorming.",
+tags:["AI","Writing"]
+},
 
-{name:"ChatGPT",url:"[https://chatgpt.com",logo:"https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128",description:"Conversational](https://chatgpt.com%22,logo:%22https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128%22,description:%22Conversational) AI assistant for creativity and productivity.",tags:["AI","Chat"]},
+{
+name:"ChatGPT",
+url:"https://chatgpt.com",
+logo:"https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128",
+description:"Conversational AI assistant for creativity and productivity.",
+tags:["AI","Chat"]
+},
 
-{name:"Perplexity",url:"[https://perplexity.ai",logo:"https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128",description:"AI-powered](https://perplexity.ai%22,logo:%22https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128%22,description:%22AI-powered) search and research assistant.",tags:["AI","Search"]},
+{
+name:"Perplexity",
+url:"https://perplexity.ai",
+logo:"https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128",
+description:"AI-powered search and research assistant.",
+tags:["AI","Search"]
+},
 
-{name:"Adobe Firefly",url:"[https://firefly.adobe.com",logo:"https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128",description:"AI](https://firefly.adobe.com%22,logo:%22https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128%22,description:%22AI) image and video generation from Adobe.",tags:["AI","Adobe"]},
+{
+name:"Adobe Firefly",
+url:"https://firefly.adobe.com",
+logo:"https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128",
+description:"AI image and video generation from Adobe.",
+tags:["AI","Adobe"]
+},
 
-{name:"Midjourney",url:"[https://midjourney.com",logo:"https://www.google.com/s2/favicons?domain=midjourney.com&sz=128",description:"Industry-leading](https://midjourney.com%22,logo:%22https://www.google.com/s2/favicons?domain=midjourney.com&sz=128%22,description:%22Industry-leading) AI image generation.",tags:["AI","Images"]}
+{
+name:"Midjourney",
+url:"https://midjourney.com",
+logo:"https://www.google.com/s2/favicons?domain=midjourney.com&sz=128",
+description:"Industry-leading artistic AI image generation.",
+tags:["AI","Images"]
+}
 
 ]
+
+}
 
 },
 
