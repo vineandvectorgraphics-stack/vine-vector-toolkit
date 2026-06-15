@@ -9,13 +9,13 @@ tools:[
 
 {name:"Claude",url:"[https://claude.ai",logo:"https://www.google.com/s2/favicons?domain=claude.ai&sz=128",description:"AI](https://claude.ai%22,logo:%22https://www.google.com/s2/favicons?domain=claude.ai&sz=128%22,description:%22AI) assistant for writing, research and brainstorming.",tags:["AI","Writing"]},
 
-{name:"ChatGPT",url:"[https://chatgpt.com",logo:"https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128",description:"Conversational](https://chatgpt.com%22,logo:%22https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128%22,description:%22Conversational) AI assistant.",tags:["AI","Chat"]},
+{name:"ChatGPT",url:"[https://chatgpt.com",logo:"https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128",description:"Conversational](https://chatgpt.com%22,logo:%22https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128%22,description:%22Conversational) AI assistant for creativity and productivity.",tags:["AI","Chat"]},
 
-{name:"Perplexity",url:"[https://perplexity.ai",logo:"https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128",description:"AI-powered](https://perplexity.ai%22,logo:%22https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128%22,description:%22AI-powered) search.",tags:["AI","Search"]},
+{name:"Perplexity",url:"[https://perplexity.ai",logo:"https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128",description:"AI-powered](https://perplexity.ai%22,logo:%22https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128%22,description:%22AI-powered) search and research assistant.",tags:["AI","Search"]},
 
-{name:"Adobe Firefly",url:"[https://firefly.adobe.com",logo:"https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128",description:"AI](https://firefly.adobe.com%22,logo:%22https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128%22,description:%22AI) image generation from Adobe.",tags:["AI","Adobe"]},
+{name:"Adobe Firefly",url:"[https://firefly.adobe.com",logo:"https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128",description:"AI](https://firefly.adobe.com%22,logo:%22https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128%22,description:%22AI) image and video generation from Adobe.",tags:["AI","Adobe"]},
 
-{name:"Midjourney",url:"[https://midjourney.com",logo:"https://www.google.com/s2/favicons?domain=midjourney.com&sz=128",description:"AI](https://midjourney.com%22,logo:%22https://www.google.com/s2/favicons?domain=midjourney.com&sz=128%22,description:%22AI) image generation.",tags:["AI","Images"]}
+{name:"Midjourney",url:"[https://midjourney.com",logo:"https://www.google.com/s2/favicons?domain=midjourney.com&sz=128",description:"Industry-leading](https://midjourney.com%22,logo:%22https://www.google.com/s2/favicons?domain=midjourney.com&sz=128%22,description:%22Industry-leading) AI image generation.",tags:["AI","Images"]}
 
 ]
 
@@ -28,9 +28,9 @@ color:"#e76f51",
 
 tools:[
 
-{name:"BP&O",url:"[https://bpando.org",logo:"https://www.google.com/s2/favicons?domain=bpando.org&sz=128",description:"Branding](https://bpando.org%22,logo:%22https://www.google.com/s2/favicons?domain=bpando.org&sz=128%22,description:%22Branding) inspiration.",tags:["Branding"]},
+{name:"BP&O",url:"[https://bpando.org",logo:"https://www.google.com/s2/favicons?domain=bpando.org&sz=128",description:"Branding](https://bpando.org%22,logo:%22https://www.google.com/s2/favicons?domain=bpando.org&sz=128%22,description:%22Branding) and packaging inspiration.",tags:["Branding"]},
 
-{name:"Brand New",url:"https://underconsideration.com/brandnew",logo:"https://www.google.com/s2/favicons?domain=underconsideration.com&sz=128",description:"Logo redesign critiques.",tags:["Branding"]},
+{name:"Brand New",url:"https://underconsideration.com/brandnew",logo:"https://www.google.com/s2/favicons?domain=underconsideration.com&sz=128",description:"Logo redesign critiques and reviews.",tags:["Branding"]},
 
 {name:"Identity Designed",url:"[https://identitydesigned.com",logo:"https://www.google.com/s2/favicons?domain=identitydesigned.com&sz=128",description:"Identity](https://identitydesigned.com%22,logo:%22https://www.google.com/s2/favicons?domain=identitydesigned.com&sz=128%22,description:%22Identity) design showcase.",tags:["Identity"]}
 
@@ -47,11 +47,11 @@ tools:[
 
 {name:"Google Fonts",url:"[https://fonts.google.com",logo:"https://www.google.com/s2/favicons?domain=fonts.google.com&sz=128",description:"Free](https://fonts.google.com%22,logo:%22https://www.google.com/s2/favicons?domain=fonts.google.com&sz=128%22,description:%22Free) font library.",tags:["Fonts"]},
 
-{name:"Adobe Fonts",url:"[https://fonts.adobe.com",logo:"https://www.google.com/s2/favicons?domain=fonts.adobe.com&sz=128",description:"Creative](https://fonts.adobe.com%22,logo:%22https://www.google.com/s2/favicons?domain=fonts.adobe.com&sz=128%22,description:%22Creative) Cloud fonts.",tags:["Fonts"]},
+{name:"Adobe Fonts",url:"[https://fonts.adobe.com",logo:"https://www.google.com/s2/favicons?domain=fonts.adobe.com&sz=128",description:"Fonts](https://fonts.adobe.com%22,logo:%22https://www.google.com/s2/favicons?domain=fonts.adobe.com&sz=128%22,description:%22Fonts) included with Creative Cloud.",tags:["Fonts"]},
 
-{name:"Fontjoy",url:"[https://fontjoy.com",logo:"https://www.google.com/s2/favicons?domain=fontjoy.com&sz=128",description:"Font](https://fontjoy.com%22,logo:%22https://www.google.com/s2/favicons?domain=fontjoy.com&sz=128%22,description:%22Font) pairing generator.",tags:["Typography"]},
+{name:"Fontjoy",url:"[https://fontjoy.com",logo:"https://www.google.com/s2/favicons?domain=fontjoy.com&sz=128",description:"AI-powered](https://fontjoy.com%22,logo:%22https://www.google.com/s2/favicons?domain=fontjoy.com&sz=128%22,description:%22AI-powered) font pairing generator.",tags:["Typography"]},
 
-{name:"Typewolf",url:"[https://typewolf.com",logo:"https://www.google.com/s2/favicons?domain=typewolf.com&sz=128",description:"Typography](https://typewolf.com%22,logo:%22https://www.google.com/s2/favicons?domain=typewolf.com&sz=128%22,description:%22Typography) inspiration.",tags:["Typography"]}
+{name:"Typewolf",url:"[https://typewolf.com",logo:"https://www.google.com/s2/favicons?domain=typewolf.com&sz=128",description:"Typography](https://typewolf.com%22,logo:%22https://www.google.com/s2/favicons?domain=typewolf.com&sz=128%22,description:%22Typography) inspiration and recommendations.",tags:["Typography"]}
 
 ]
 
@@ -68,7 +68,7 @@ tools:[
 
 {name:"Coolors",url:"[https://coolors.co",logo:"https://www.google.com/s2/favicons?domain=coolors.co&sz=128",description:"Palette](https://coolors.co%22,logo:%22https://www.google.com/s2/favicons?domain=coolors.co&sz=128%22,description:%22Palette) generator.",tags:["Color"]},
 
-{name:"Color Hunt",url:"[https://colorhunt.co",logo:"https://www.google.com/s2/favicons?domain=colorhunt.co&sz=128",description:"Curated](https://colorhunt.co%22,logo:%22https://www.google.com/s2/favicons?domain=colorhunt.co&sz=128%22,description:%22Curated) palettes.",tags:["Color"]}
+{name:"Color Hunt",url:"[https://colorhunt.co",logo:"https://www.google.com/s2/favicons?domain=colorhunt.co&sz=128",description:"Curated](https://colorhunt.co%22,logo:%22https://www.google.com/s2/favicons?domain=colorhunt.co&sz=128%22,description:%22Curated) color palettes.",tags:["Color"]}
 
 ]
 
@@ -83,9 +83,9 @@ tools:[
 
 {name:"Canva",url:"[https://canva.com",logo:"https://www.google.com/s2/favicons?domain=canva.com&sz=128",description:"Graphic](https://canva.com%22,logo:%22https://www.google.com/s2/favicons?domain=canva.com&sz=128%22,description:%22Graphic) design platform.",tags:["Design"]},
 
-{name:"Photopea",url:"[https://photopea.com",logo:"https://www.google.com/s2/favicons?domain=photopea.com&sz=128",description:"Browser](https://photopea.com%22,logo:%22https://www.google.com/s2/favicons?domain=photopea.com&sz=128%22,description:%22Browser) Photoshop alternative.",tags:["Editing"]},
+{name:"Photopea",url:"[https://photopea.com",logo:"https://www.google.com/s2/favicons?domain=photopea.com&sz=128",description:"Browser-based](https://photopea.com%22,logo:%22https://www.google.com/s2/favicons?domain=photopea.com&sz=128%22,description:%22Browser-based) Photoshop alternative.",tags:["Editing"]},
 
-{name:"Remove.bg",url:"[https://remove.bg",logo:"https://www.google.com/s2/favicons?domain=remove.bg&sz=128",description:"Background](https://remove.bg%22,logo:%22https://www.google.com/s2/favicons?domain=remove.bg&sz=128%22,description:%22Background) remover.",tags:["Images"]},
+{name:"Remove.bg",url:"[https://remove.bg",logo:"https://www.google.com/s2/favicons?domain=remove.bg&sz=128",description:"Automatic](https://remove.bg%22,logo:%22https://www.google.com/s2/favicons?domain=remove.bg&sz=128%22,description:%22Automatic) background remover.",tags:["Images"]},
 
 {name:"Pixlr",url:"[https://pixlr.com",logo:"https://www.google.com/s2/favicons?domain=pixlr.com&sz=128",description:"Online](https://pixlr.com%22,logo:%22https://www.google.com/s2/favicons?domain=pixlr.com&sz=128%22,description:%22Online) photo editor.",tags:["Editing"]}
 
@@ -100,11 +100,11 @@ color:"#14b86f",
 
 tools:[
 
-{name:"Mockup World",url:"[https://mockupworld.co",logo:"https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128",description:"Free](https://mockupworld.co%22,logo:%22https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128%22,description:%22Free) PSD mockups.",tags:["Mockups"]},
+{name:"Mockup World",url:"[https://mockupworld.co",logo:"https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128",description:"Free](https://mockupworld.co%22,logo:%22https://www.google.com/s2/favicons?domain=mockupworld.co&sz=128%22,description:%22Free) PSD mockup library.",tags:["Mockups"]},
 
 {name:"Placeit",url:"[https://placeit.net",logo:"https://www.google.com/s2/favicons?domain=placeit.net&sz=128",description:"Mockup](https://placeit.net%22,logo:%22https://www.google.com/s2/favicons?domain=placeit.net&sz=128%22,description:%22Mockup) generator.",tags:["Mockups"]},
 
-{name:"Pacdora",url:"[https://pacdora.com",logo:"https://www.google.com/s2/favicons?domain=pacdora.com&sz=128",description:"Packaging](https://pacdora.com%22,logo:%22https://www.google.com/s2/favicons?domain=pacdora.com&sz=128%22,description:%22Packaging) mockups.",tags:["Packaging"]}
+{name:"Pacdora",url:"[https://pacdora.com",logo:"https://www.google.com/s2/favicons?domain=pacdora.com&sz=128",description:"Packaging](https://pacdora.com%22,logo:%22https://www.google.com/s2/favicons?domain=pacdora.com&sz=128%22,description:%22Packaging) mockups and 3D previews.",tags:["Packaging"]}
 
 ]
 
@@ -121,9 +121,9 @@ tools:[
 
 {name:"Dribbble",url:"[https://dribbble.com",logo:"https://www.google.com/s2/favicons?domain=dribbble.com&sz=128",description:"Design](https://dribbble.com%22,logo:%22https://www.google.com/s2/favicons?domain=dribbble.com&sz=128%22,description:%22Design) inspiration and UI showcases.",tags:["Inspiration"]},
 
-{name:"Awwwards",url:"[https://awwwards.com",logo:"https://www.google.com/s2/favicons?domain=awwwards.com&sz=128",description:"Award-winning](https://awwwards.com%22,logo:%22https://www.google.com/s2/favicons?domain=awwwards.com&sz=128%22,description:%22Award-winning) websites.",tags:["Web Design"]},
+{name:"Awwwards",url:"[https://awwwards.com",logo:"https://www.google.com/s2/favicons?domain=awwwards.com&sz=128",description:"Award-winning](https://awwwards.com%22,logo:%22https://www.google.com/s2/favicons?domain=awwwards.com&sz=128%22,description:%22Award-winning) websites and digital experiences.",tags:["Web Design"]},
 
-{name:"Mobbin",url:"[https://mobbin.com",logo:"https://www.google.com/s2/favicons?domain=mobbin.com&sz=128",description:"Mobile](https://mobbin.com%22,logo:%22https://www.google.com/s2/favicons?domain=mobbin.com&sz=128%22,description:%22Mobile) UI inspiration.",tags:["UI"]}
+{name:"Mobbin",url:"[https://mobbin.com",logo:"https://www.google.com/s2/favicons?domain=mobbin.com&sz=128",description:"Mobile](https://mobbin.com%22,logo:%22https://www.google.com/s2/favicons?domain=mobbin.com&sz=128%22,description:%22Mobile) UI inspiration library.",tags:["UI"]}
 
 ]
 
@@ -138,7 +138,7 @@ tools:[
 
 {name:"Anvaka City Roads",url:"https://anvaka.github.io/city-roads/",logo:"https://www.google.com/s2/favicons?domain=anvaka.github.io&sz=128",description:"Visualize road networks worldwide.",tags:["Maps"]},
 
-{name:"Inkarnate",url:"[https://inkarnate.com",logo:"https://www.google.com/s2/favicons?domain=inkarnate.com&sz=128",description:"Fantasy](https://inkarnate.com%22,logo:%22https://www.google.com/s2/favicons?domain=inkarnate.com&sz=128%22,description:%22Fantasy) map creation.",tags:["Maps"]},
+{name:"Inkarnate",url:"[https://inkarnate.com",logo:"https://www.google.com/s2/favicons?domain=inkarnate.com&sz=128",description:"Fantasy](https://inkarnate.com%22,logo:%22https://www.google.com/s2/favicons?domain=inkarnate.com&sz=128%22,description:%22Fantasy) and world map creation.",tags:["Maps"]},
 
 {name:"Mapbox Studio",url:"https://mapbox.com/studio",logo:"https://www.google.com/s2/favicons?domain=mapbox.com&sz=128",description:"Create custom maps.",tags:["Maps"]},
 
@@ -161,7 +161,7 @@ tools:[
 
 {name:"Zoom Quilt",url:"[https://zoomquilt.org",logo:"https://www.google.com/s2/favicons?domain=zoomquilt.org&sz=128",description:"Infinite](https://zoomquilt.org%22,logo:%22https://www.google.com/s2/favicons?domain=zoomquilt.org&sz=128%22,description:%22Infinite) collaborative artwork.",tags:["Art"]},
 
-{name:"Patatap",url:"[https://patatap.com",logo:"https://www.google.com/s2/favicons?domain=patatap.com&sz=128",description:"Interactive](https://patatap.com%22,logo:%22https://www.google.com/s2/favicons?domain=patatap.com&sz=128%22,description:%22Interactive) sound toy.",tags:["Music"]}
+{name:"Patatap",url:"[https://patatap.com",logo:"https://www.google.com/s2/favicons?domain=patatap.com&sz=128",description:"Interactive](https://patatap.com%22,logo:%22https://www.google.com/s2/favicons?domain=patatap.com&sz=128%22,description:%22Interactive) sound and animation toy.",tags:["Music"]}
 
 ]
 
