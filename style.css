@@ -217,3 +217,34 @@ font-size:34px;
 }
 
 }
+.featured{
+max-width:1400px;
+margin:40px auto;
+padding:0 20px;
+}
+
+.featured h2{
+margin-bottom:20px;
+font-size:32px;
+}
+
+.featured-grid{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.featured-grid a{
+background:white;
+padding:14px 20px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+color:#111;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+transition:.25s;
+}
+
+.featured-grid a:hover{
+transform:translateY(-3px);
+}
