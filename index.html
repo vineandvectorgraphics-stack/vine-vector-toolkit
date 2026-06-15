@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -6,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creative Library | Vine & Vector</title>
+<title>Creative Library</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -22,27 +23,26 @@
 
 <div class="hero-inner">
 
-<div class="eyebrow">
-VINE & VECTOR
-</div>
-
 <h1>Creative Library</h1>
 
 <p>
 A curated collection of design tools, AI resources,
-creative inspiration, maps, experiments, and internet discoveries.
+creative inspiration, maps, experiments and internet discoveries.
 </p>
 
 <input
 id="search"
 type="text"
 placeholder="Search resources..."
+
 >
 
 <div class="stats">
 
 <span>100+ Resources</span>
+
 <span>15 Categories</span>
+
 <span>Curated by Kate</span>
 
 </div>
@@ -50,28 +50,6 @@ placeholder="Search resources..."
 </div>
 
 </header>
-
-<section class="featured">
-
-<h2>⭐ Featured Resources</h2>
-
-<div class="featured-grid">
-
-<a href="https://chatgpt.com" target="_blank">ChatGPT</a>
-
-<a href="https://claude.ai" target="_blank">Claude</a>
-
-<a href="https://www.behance.net" target="_blank">Behance</a>
-
-<a href="https://mobbin.com" target="_blank">Mobbin</a>
-
-<a href="https://mapbox.com/studio" target="_blank">Mapbox Studio</a>
-
-<a href="https://neal.fun" target="_blank">Neal.fun</a>
-
-</div>
-
-</section>
 
 <nav id="nav"></nav>
 
@@ -91,6 +69,8 @@ const groups = [
 
 {
 title:"🚀 CREATE",
+color:"#ff7b54",
+
 categories:[
 "AI & Generative Tools",
 "Branding & Identity",
@@ -105,6 +85,8 @@ categories:[
 
 {
 title:"💡 INSPIRE",
+color:"#9b5de5",
+
 categories:[
 "Design Inspiration",
 "Maps, Geography & Travel",
@@ -114,6 +96,8 @@ categories:[
 
 {
 title:"🛠️ BUILD",
+color:"#4361ee",
+
 categories:[
 "Web Design & UI Systems",
 "Coding & Development",
@@ -124,6 +108,8 @@ categories:[
 
 {
 title:"📈 GROW",
+color:"#14b86f",
+
 categories:[
 "Productivity & Collaboration",
 "Portfolio & Freelance",
@@ -141,9 +127,18 @@ nav.innerHTML="";
 groups.forEach(group=>{
 
 app.innerHTML += `
-<div class="section-header">
+
+<div
+class="section-header"
+style="
+color:${group.color};
+border-color:${group.color};
+">
+
 <h2>${group.title}</h2>
+
 </div>
+
 `;
 
 group.categories.forEach(categoryName=>{
@@ -156,10 +151,12 @@ item.name === categoryName
 if(!category) return;
 
 nav.innerHTML += `
+
 <a href="#${category.name}">
 ${category.icon}
 ${category.name}
 </a>
+
 `;
 
 let cards="";
@@ -167,6 +164,7 @@ let cards="";
 category.tools.forEach(tool=>{
 
 cards += `
+
 <a
 class="tool"
 href="${tool.url}"
@@ -175,25 +173,28 @@ target="_blank">
 <img
 class="tool-logo"
 src="${tool.logo}"
-alt="${tool.name}"
-loading="lazy">
+alt="${tool.name}">
 
 <h3>${tool.name}</h3>
 
 <p>${tool.description}</p>
 
 <div class="tags">
+
 ${tool.tags.map(tag =>
 `<span>${tag}</span>`
 ).join("")}
+
 </div>
 
 </a>
+
 `;
 
 });
 
 app.innerHTML += `
+
 <section
 class="category"
 id="${category.name}">
@@ -217,6 +218,7 @@ ${cards}
 </div>
 
 </section>
+
 `;
 
 });
@@ -253,4 +255,5 @@ text.includes(search)
 </script>
 
 </body>
+
 </html>
