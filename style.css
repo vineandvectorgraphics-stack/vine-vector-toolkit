@@ -248,3 +248,27 @@ transition:.25s;
 .featured-grid a:hover{
 transform:translateY(-3px);
 }
+
+.section-header{
+
+margin-top:80px;
+margin-bottom:50px;
+
+padding:25px 0;
+
+border-top:3px solid #ddd;
+border-bottom:3px solid #ddd;
+
+text-align:center;
+
+}
+
+.section-header h2{
+
+font-size:42px;
+font-weight:800;
+letter-spacing:1px;
+
+color:#14878a;
+
+}
